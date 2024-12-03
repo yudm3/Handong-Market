@@ -1,0 +1,62 @@
+<!-- post_item.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Handong Harvest - Post Item</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <h1>Handong Harvest</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="profile.html">Profile</a>
+        <a href="logout.html">Logout</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Post Item Form -->
+  <div class="container">
+    <h2>Post New Item</h2>
+    <form action="post_item.html" method="post" enctype="multipart/form-data">
+      <label for="images">Add pictures (0/10):</label>
+      <input type="file" id="images" name="images" accept="image/*" multiple>
+
+      <label for="title">Title:</label>
+      <input type="text" id="title" name="title" required>
+
+      <label for="listingType">Listing type:</label>
+      <select id="listingType" name="listingType" required>
+        <option value="forSale">For Sale</option>
+        <option value="openToOffers">Open to Offers</option>
+        <option value="free">Free</option>
+        <option value="lostAndFound">Lost & Found</option>
+      </select>
+
+      <label for="description">Description:</label>
+      <textarea id="description" name="description" placeholder="Tell us about your item..." required></textarea>
+
+      <label for="location">Where to meet:</label>
+      <select id="location" name="location" required>
+        <option value="campusCenter">Campus Center</option>
+        <option value="library">Library</option>
+        <option value="dormitories">Dormitories</option>
+        <!-- Add more locations as needed -->
+      </select>
+
+      <button type="submit">Post Item</button>
+    </form>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Handong Harvest</p>
+  </footer>
+
+</body>
+</html>

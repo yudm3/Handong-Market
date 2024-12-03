@@ -1,0 +1,64 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Handong Harvest - Home</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <h1>Handong Harvest</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="favorites.html">Favorites</a>
+        <a href="login.html">Login</a>
+        <a href="register.html">Sign Up</a>
+        <a href="post_item.html">+Post</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <h2>Categories</h2>
+    <ul>
+      <li><a href="#">Books</a></li>
+      <li><a href="#">Electronics</a></li>
+      <li><a href="#">Clothes & Accessories</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Food & Coupons</a></li>
+      <li><a href="#">Lost & Found</a></li>
+      <li><a href="#">Free</a></li>
+      <li><a href="#">Others</a></li>
+    </ul>
+
+    <!-- Search Bar -->
+    <input type="text" id="searchBar" placeholder="Search items...">
+    <button onclick="searchItems()">Search</button>
+
+    <!-- Items List -->
+    <h2>Latest Items</h2>
+    <div id="items-list">
+      <!-- Display items dynamically here -->
+      <p>Please log in to view items.</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Handong Harvest</p>
+    <nav>
+      <a href="#">About</a>
+      <a href="#">User Policy</a>
+      <a href="#">Support</a>
+      <a href="#">Contact Us</a>
+    </nav>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

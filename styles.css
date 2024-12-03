@@ -1,0 +1,47 @@
+/* styles.css */
+
+/* Color Palette Variables */
+:root {
+    --primary-color: #606C38;
+    --secondary-color: #283618;
+    --background-color: #FEFAE0;
+    --accent-color: #DDA15E;
+    --highlight-color: #BC6C25;
+    --text-color: #283618;
+  }
+  
+  /* Global Styles */
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+  
+  header, footer {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    padding: 10px 0;
+    text-align: center;
+  }
+  
+  header a, footer a {
+    color: var(--background-color);
+    text-decoration: none;
+    margin: 0 15px;
+  }
+  
+  .container {
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
+  }
+  
+  /* Responsive Layout */
+  @media (max-width: 768px) {
+    .container {
+      width: 100%;
+    }
+  }
+  
+  /* Add more styles as needed */
