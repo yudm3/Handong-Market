@@ -1,64 +1,56 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Handong Harvest - Home</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HandongHarvest</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Top Header -->
+    <header class="top-header">
+        <div class="logo">HandongHarvest</div>
+        <div class="icon-group">
+            <button class="icon-btn">🛒</button>
+            <button class="icon-btn">❤️</button>
+            <button class="auth-btn">Log In</button>
+            <button class="auth-btn">Sign Up</button>
+        </div>
+    </header>
 
-  <!-- Header -->
-  <header>
-    <div class="container">
-      <h1>Handong Harvest</h1>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="favorites.html">Favorites</a>
-        <a href="login.html">Login</a>
-        <a href="register.html">Sign Up</a>
-        <a href="post_item.html">+Post</a>
-      </nav>
-    </div>
-  </header>
+    <!-- Secondary Header -->
+    <header class="secondary-header">
+        <div class="categories">
+            <button id="categories-btn" class="categories-btn">
+                All Categories <span id="arrow" class="arrow">⬇</span>
+            </button>
+            <ul id="categories-list" class="categories-list hidden">
+                <li><a href="#">Category 1</a></li>
+                <li><a href="#">Category 2</a></li>
+                <li><a href="#">Category 3</a></li>
+            </ul>
+        </div>
+        <div class="search-bar">
+            <input type="text" class="search-input" placeholder="Search...">
+            <button class="search-btn">Search</button>
+        </div>
+    </header>
 
-  <!-- Main Content -->
-  <div class="container">
-    <h2>Categories</h2>
-    <ul>
-      <li><a href="#">Books</a></li>
-      <li><a href="#">Electronics</a></li>
-      <li><a href="#">Clothes & Accessories</a></li>
-      <li><a href="#">Services</a></li>
-      <li><a href="#">Food & Coupons</a></li>
-      <li><a href="#">Lost & Found</a></li>
-      <li><a href="#">Free</a></li>
-      <li><a href="#">Others</a></li>
-    </ul>
+    <!-- Main Content -->
+    <main>
+        <h1>Welcome to HandongHarvest!</h1>
+        <p>Buy and sell items within your university community.</p>
+    </main>
 
-    <!-- Search Bar -->
-    <input type="text" id="searchBar" placeholder="Search items...">
-    <button onclick="searchItems()">Search</button>
+    <!-- Floating Add Button -->
+    <button class="add-btn">+</button>
 
-    <!-- Items List -->
-    <h2>Latest Items</h2>
-    <div id="items-list">
-      <!-- Display items dynamically here -->
-      <p>Please log in to view items.</p>
-    </div>
-  </div>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 HandongHarvest. All rights reserved.</p>
+    </footer>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2024 Handong Harvest</p>
-    <nav>
-      <a href="#">About</a>
-      <a href="#">User Policy</a>
-      <a href="#">Support</a>
-      <a href="#">Contact Us</a>
-    </nav>
-  </footer>
-
-  <script src="script.js"></script>
+    <!-- JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>
