@@ -1,46 +1,61 @@
-<!-- register.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Handong Harvest - Register</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap">
 </head>
 <body>
+    <header class="header">
+        <a href="index.html"><img src="images/logo.svg" alt="textlogo" width="150px"></a>
+        <div class="menu">
+            <a href="favorites.html"><img src="images/heart.svg" alt="heart"></a>
+            <a href="login.html">login</a>
+            <div class="post_btn">
+                <a href="post_item.html">+post</a>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="login-title">
+            <p style="font-weight: bold;">Create Account</p>
+        </div>
+        <form class="login-form" action="action_page.php" method="post">
+            <div class="login-form-container">
+                <label for="uname"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="uname" required>
 
-  <!-- Header -->
-  <header>
-    <div class="container">
-      <h1>Handong Harvest</h1>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="login.html">Login</a>
-      </nav>
-    </div>
-  </header>
+                <label for="psw"><b>Create Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required><br><br>
 
-  <!-- Registration Form -->
-  <div class="container">
-    <h2>Register</h2>
-    <form action="register.html" method="post">
-      <label for="email">Handong Email:</label>
-      <input type="email" id="email" name="email" placeholder="example@handong.edu" required>
+                <button type="submit" class="login-form-button">Register</button>
+            </div>
+        </form>
+    </main>
 
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password" required>
-
-      <label for="confirm_password">Confirm Password:</label>
-      <input type="password" id="confirm_password" name="confirm_password" required>
-
-      <button type="submit">Register</button>
-    </form>
-    <p>Already have an account? <a href="login.html">Login here</a>.</p>
-  </div>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2024 Handong Harvest</p>
-  </footer>
-
+    <footer class="footer">
+        <div class="bottomMenu">
+            <div class="sns">
+                <a href="#insta"><img src="images/instagram.svg" alt="instagram"></a>
+                <a href="#x"><img src="images/x.svg" alt="x"></a>
+                <a href="#mail"><img src="images/mail.svg" alt="mail"></a>
+            </div>
+            <div class="info">
+                <a href="#about">about us</a>
+                <a href="#policy">user policy</a>
+                <a href="#support">support</a>
+            </div>
+            <div>
+                <img src="images/logo.svg" alt="logo" height="24px">
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2024 HandongHarvest</p>
+        </div>
+    </footer>
 </body>
 </html>

@@ -1,36 +1,72 @@
-<!-- login.html -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap">
 </head>
 <body>
-    <form class="login-form-main" action="action_page.php" method="post">
-        <div class="login-form-img-container">
-            <img src="img_avatar2.png" alt="Avatar" class="login-form-avatar">
+    <header class="header">
+        <a href="index.html"><img src="images/logo.svg" alt="textlogo" width="150px"></a>
+        <div class="menu">
+            <a href="favorites.html"><img src="images/heart.svg" alt="heart"></a>
+            <a href="login.html">login</a>
+            <div class="post_btn">
+                <a href="post_item.html">+post</a>
+            </div>
         </div>
-
-        <div class="login-form-container">
-            <label for="uname"><b>Username</b></label><br>
-            <input type="text" placeholder="Enter Username" name="uname" required>
-
-            <label for="psw"><b>Password</b></label><br>
-            <input type="password" placeholder="Enter Password" name="psw" required>
-
-            <button type="submit" class="login-form-button">Login</button>
-            <label>
-                <input type="checkbox" checked="checked" name="remember"> Remember me
-            </label>
+    </header>
+    
+    <main>
+        <div class="login-title">
+            <p style="font-weight: bold;">Login to Your Account</p>
         </div>
+        <form class="login-form" action="action_page.php" method="post">
+            <div class="login-form-container">
+                <label for="uname"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="uname" required>
 
-        <div class="login-form-container-footer">
-            <button type="button" class="login-form-button-cancel">Cancel</button>
-            <span class="login-form-psw">Forgot <a href="#">password?</a></span>
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+
+                <div class="remember-me login-label228">
+                  <label>
+                    <input type="checkbox" class="login-remember-checkbox" checked="checked" name="remember"> Remember me
+                </label>
+                
+                </div>
+
+                <button type="submit" class="login-form-button">Login</button>
+            </div>
+
+            <div class="login-form-container-footer">
+                <span class="login-form-psw"><a href="register.html">Don't have an account yet?</a></span>
+            </div>
+        </form>
+    </main>
+
+    <footer class="footer">
+        <div class="bottomMenu">
+            <div class="sns">
+                <a href="#insta"><img src="images/instagram.svg" alt="instagram"></a>
+                <a href="#x"><img src="images/x.svg" alt="x"></a>
+                <a href="#mail"><img src="images/mail.svg" alt="mail"></a>
+            </div>
+            <div class="info">
+                <a href="#about">about us</a>
+                <a href="#policy">user policy</a>
+                <a href="#support">support</a>
+            </div>
+            <div>
+                <img src="images/logo.svg" alt="logo" height="24px">
+            </div>
         </div>
-    </form>
+        <div class="copyright">
+            <p>© 2024 HandongHarvest</p>
+        </div>
+    </footer>
 </body>
 </html>

@@ -230,51 +230,59 @@ footer p {
     color: #acacac;
 }
 
-/* Login form styles renamed */
-.login-form-main {
-    border: 2px solid rgba(112, 96, 96, 0.349);
-    border-radius: 25px;
-    width: fit-content;
-    height: fit-content;
-    margin: 5% auto;
-    box-sizing: border-box;
-    padding: 1em;
+.login-title p {
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.login-form {
+    background-color: #fff;
+    padding: 2em;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+}
+
+.login-form-img-container {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.login-form-avatar {
+    width: 60px;
+    border-radius: 50%;
+    height: auto;
 }
 
 .login-form-container {
-    width: 90%;
-    max-width: 300px;
-    margin: auto;
-    display: block;
-    box-sizing: border-box;
-}
-
-.login-form-container-footer {
-    background-color: #f1f1f1;
-    padding: 1em;
-    box-sizing: border-box;
-}
-
-.login-form-container input[type=text],
-.login-form-container input[type=password] {
     width: 100%;
-    padding: 0.75em;
+    display: block;
+    margin-bottom: 1em;
+}
+
+.login-form-container input[type="text"],
+.login-form-container input[type="password"] {
+    width: 100%;
+    padding: 1em;
     margin: 0.5em 0;
     border: 1px solid #c0a9a9;
+    border-radius: 10px;
     box-sizing: border-box;
     font-size: 1em;
 }
 
 .login-form-button {
-    background-color: #000000;
+    background-color: #000;
     color: white;
-    padding: 0.75em;
-    margin: 0.5em 0;
+    padding: 1em;
     border: none;
     cursor: pointer;
     width: 100%;
     border-radius: 50px;
-    font-size: 1em;
+    font-size: 1.2em;
     box-sizing: border-box;
 }
 
@@ -293,32 +301,85 @@ footer p {
     margin: 0.5em 0;
 }
 
-.login-form-img-container {
-    text-align: center;
-    margin: 1em 0;
-}
-
-.login-form-avatar {
-    width: 40%;
-    border-radius: 50%;
-    height: auto;
-}
-
 .login-form-psw {
-    float: right;
-    padding-top: 16px;
+    text-align: right;
     font-size: 0.9em;
 }
 
-@media screen and (max-width: 300px) {
-    .login-form-psw {
-        display: block;
-        float: none;
-    }
-    .login-form-button-cancel {
-        width: 100%;
-    }
+.login-form-psw a {
+    color: #000;
+    text-decoration: none;
 }
+
+.remember-me {
+    margin-bottom: 1em;
+}
+
+/* Стили для чекбокса с классом .login-remember-checkbox */
+.login-remember-checkbox {
+    -webkit-appearance: none; /* Убираем стандартный стиль чекбокса */
+    -moz-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc; /* Граница по умолчанию */
+    border-radius: 5px; /* Округлая форма */
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+/* Когда чекбокс активирован (галочка стоит) */
+.login-remember-checkbox:checked {
+    border-color: #28a745; /* Зеленая граница */
+    background-color: #28a745; /* Зеленый фон */
+}
+
+/* Стили для галочки внутри чекбокса */
+/* Стили для чекбокса с классом .login-remember-checkbox */
+.login-remember-checkbox {
+    -webkit-appearance: none; /* Убираем стандартный стиль чекбокса */
+    -moz-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc; /* Граница по умолчанию */
+    border-radius: 5px; /* Округлая форма */
+    position: relative;
+    cursor: pointer;
+    display: inline-block; /* Делаем чекбокс и текст на одной линии */
+    vertical-align: middle; /* Выравниваем по центру по вертикали */
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+/* Когда чекбокс активирован (галочка стоит) */
+.login-remember-checkbox:checked {
+    border-color: #28a745; /* Зеленая граница */
+    background-color: #28a745; /* Зеленый фон */
+}
+
+/* Стили для галочки внутри чекбокса */
+.login-remember-checkbox:checked::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
+/* Стили для текста */
+.login-label228 {
+    display: inline-flex; /* Делаем label как inline-flex для выравнивания */
+    align-items: center; /* Выравниваем по центру по вертикали */
+    font-size: 1em; /* Размер шрифта */
+    margin-left: 5px; /* Немного отступа от чекбокса */
+}
+
+
 
 /* Responsive adjustments for mobile screens */
 @media only screen and (max-width: 768px) {
