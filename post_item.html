@@ -1,51 +1,72 @@
-<!-- post_item.html -->
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Post Item</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap">
 </head>
+
 <body>
     <header class="header">
-        <a href="index.html"><img src="images/logo.svg" alt="Harvest" style="max-width:150px;"></a>
+        <a href="index.html"><img src="images/logo.svg" alt="textlogo" width="150px"></a>
         <div class="menu">
-            <a href="favorites.html"><img src="images/heart.svg" alt="heart"></a>
-            <a href="login.html">login</a>
+            <a href="favorites.html" class="icon-link"><img src="images/heart.svg" alt="heart"></a>
+            <span id="login-link-container"></span>
             <div class="post_btn">
                 <a href="post_item.html"><span class="desktop-label">+post</span><span class="mobile-label">+</span></a>
             </div>
         </div>
     </header>
-    
-    <main>
-        <!-- Post Item Form -->
-        <form id="post-item-form" style="max-width:600px; margin: 50px auto; background-color:#fefae0; border:2px solid #1F4529; border-radius:15px; padding:20px; box-sizing:border-box; font-family:Jost,sans-serif;">
-            <h2 style="text-align:center; color:#1F4529;">Post New Item</h2>
-            
-            <label for="images" style="display:block; margin-top:20px;">Add pictures (0/10):</label>
-            <input type="file" id="images" name="images" accept="image/*" multiple style="display:block; margin-bottom:20px;">
 
-            <label for="title" style="display:block; margin-top:20px;">Title:</label>
-            <input type="text" id="title" name="title" required style="width:100%; padding:10px; margin-bottom:20px;">
+    <main style="display:flex; justify-content:center; margin-top:50px;">
+        <form id="postItemForm" class="post-item-form">
+            <h2>Post New Item</h2>
 
-            <label for="listingType" style="display:block; margin-top:20px;">Listing type:</label>
-            <div style="margin-bottom:20px;">
-                <label><input type="radio" name="listingType" value="forSale" required> For Sale</label><br>
-                <label style="margin-left:20px;"><input type="checkbox" name="openToOffers" value="true"> Open to offers</label><br>
+            <label><b>Add pictures (0/10):</b></label>
+            <input type="file" id="postImages" name="images" accept="image/*" multiple style="margin-bottom:15px;">
+
+            <label for="postTitle"><b>Title:</b></label>
+            <input type="text" id="postTitle" name="title" required style="margin-bottom:15px; width:100%;">
+
+            <label><b>Category:</b></label>
+            <select id="postCategory" style="margin-bottom:15px; width:100%;">
+                <option value="Books">Books</option>
+                <option value="Electronics">Electronics</option>
+                <option value="Services">Services</option>
+                <option value="FoodnCoupons">Food & Coupons</option>
+                <option value="Clothes">Clothes</option>
+                <option value="LostnFound">Lost & Found</option>
+                <option value="Free">Free</option>
+                <option value="Others">Others</option>
+            </select>
+
+            <label><b>Listing type:</b></label>
+            <div class="listing-type" style="margin-bottom:15px;">
+                <label><input type="radio" name="listingType" value="forSale" required> For Sale</label>
+                <span id="priceInputContainer" style="display:none; margin-left:10px;">
+                    Price: <input type="number" id="postPrice" min="0" style="width:80px;">
+                    <label style="margin-left:10px;"><input type="checkbox" id="openToOffers"> Open to offers</label>
+                </span>
+                <br>
                 <label><input type="radio" name="listingType" value="free" required> Free</label><br>
                 <label><input type="radio" name="listingType" value="lostAndFound" required> Lost & Found</label>
             </div>
 
-            <label for="description" style="display:block; margin-top:20px;">Description:</label>
-            <textarea id="description" name="description" rows="5" required style="width:100%; padding:10px; margin-bottom:20px;" placeholder="Tell us about your item..."></textarea>
+            <label for="postDescription"><b>Description:</b></label>
+            <textarea id="postDescription" name="description" rows="5" required
+                style="margin-bottom:15px; width:100%; box-sizing:border-box;"></textarea>
 
-            <label for="location" style="display:block; margin-top:20px;">Where to meet (Location in Handong):</label>
-            <input type="text" id="location" name="location" required style="width:100%; padding:10px; margin-bottom:20px;">
+            <label for="postLocation"><b>Where to meet (Location in Handong):</b></label>
+            <input type="text" id="postLocation" name="location" required
+                style="margin-bottom:20px; width:100%; box-sizing:border-box;">
 
-            <button type="submit" style="background-color:#1F4529; color:#fffef5; padding:10px 20px; border:none; border-radius:20px; cursor:pointer;">Post Item</button>
+            <button type="submit"
+                style="padding:10px 20px; border:none; background:#1F4529; color:#fff; border-radius:10px; cursor:pointer;">Post
+                Item</button>
         </form>
     </main>
 
@@ -57,44 +78,18 @@
                 <a href="#mail"><img src="images/mail.svg" alt="mail"></a>
             </div>
             <div class="info">
-                <a href="#about">about us</a>
-                <a href="#policy">user policy</a>
-                <a href="#support">support</a>
+                <a href="about.html">about us</a>
+                <a href="policy.html">user policy</a>
+                <a href="faq.html">FAQ</a>
+                <a href="honorcode.html">honor code</a>
             </div>
             <div>
-                <img src="images/logo.svg" alt="logo" style="max-height:24px;">
+                <img src="images/logo.svg" alt="logo" height="24px">
             </div>
         </div>
         <p>© 2024 HandongHarvest</p>
     </footer>
-
-    <script>
-        document.getElementById('post-item-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            
-            const title = document.getElementById('title').value;
-            const listingType = document.querySelector('input[name="listingType"]:checked').value;
-            const openToOffers = document.querySelector('input[name="openToOffers"]')?.checked ? true : false;
-            const description = document.getElementById('description').value;
-            const location = document.getElementById('location').value;
-
-            // Simulate saving data to localStorage as a "database"
-            const newItem = {
-                title: title,
-                listingType: listingType,
-                openToOffers: openToOffers,
-                description: description,
-                location: location,
-                images: [] // In a real scenario, you'd handle image uploads differently.
-            };
-
-            let postedItems = JSON.parse(localStorage.getItem('postedItems') || '[]');
-            postedItems.push(newItem);
-            localStorage.setItem('postedItems', JSON.stringify(postedItems));
-
-            alert('Item posted successfully!');
-            this.reset();
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
+
 </html>

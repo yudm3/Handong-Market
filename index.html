@@ -10,69 +10,88 @@
 </head>
 <body>
     <header class="header">
-        <a href="index.html"><img src="images/logo.svg" alt="textlogo" style="max-width:150px;"></a>
+        <a href="index.html"><img src="images/logo.svg" alt="textlogo" width="150px"></a>
         <div class="menu">
-            <a href="favorites.html"><img src="images/heart.svg" alt="heart"></a>
-            <span id="login-link-container">
-                <a href="login.html" id="loginLink">login</a>
-            </span>
+            <a href="favorites.html" class="icon-link"><img src="images/heart.svg" alt="heart"></a>
+            <span id="login-link-container"><a href="login.html" id="loginLink">login</a></span>
             <div class="post_btn">
                 <a href="post_item.html"><span class="desktop-label">+post</span><span class="mobile-label">+</span></a>
             </div>
         </div>
     </header>
-
-    <main>
-        <!-- Your index page content goes here -->
+    
+    <main style="text-align:center;">
         <div class="handongs-marketplace">
             <p>Handong's Marketplace</p>
         </div><br>
         <img src="images/logoV2.svg" alt="logov2" style="max-width:30%;height:auto;">
+
+        <!-- Search bar -->
         <div class="parent-container">
-            <form id="search-form" class="search-container" action="/search" method="GET">
-                <input type="text" name="q" id="search-input" placeholder="Search" required>
+            <form id="search-form" class="search-container" method="GET">
+                <input type="text" name="q" id="search-input" placeholder="Search items..." required>
                 <button class="search-icon" type="submit">
                     <img src="images/search.svg" alt="Search Icon">
                 </button>
             </form>
         </div>
+        <div id="searchResults" style="margin:20px; text-align:center;"></div>
+
+        <!-- Categories -->
         <div class="categories">
             <div class="category">
-                <img src="images/book.svg" alt="book">
-                <p>Books</p>
+                <a href="category.html?cat=Books">
+                    <img src="images/book.svg" alt="book">
+                    <p>Books</p>
+                </a>
             </div>
             <div class="category">
-                <img src="images/electronics.svg" alt="electronics">
-                <p>Electronics</p>
+                <a href="category.html?cat=Electronics">
+                    <img src="images/electronics.svg" alt="electronics">
+                    <p>Electronics</p>
+                </a>
             </div>
             <div class="category">
-                <img src="images/services.svg" alt="services">
-                <p>Services</p>
+                <a href="category.html?cat=Services">
+                    <img src="images/services.svg" alt="services">
+                    <p>Services</p>
+                </a>
             </div>
             <div class="category">
-                <img src="images/food.svg" alt="food">
-                <p>Food & Coupons</p>
+                <a href="category.html?cat=FoodnCoupons">
+                    <img src="images/food.svg" alt="food">
+                    <p>Food & Coupons</p>
+                </a>
             </div>
             <div class="category">
-                <img src="images/clothes.svg" alt="clothes">
-                <p>Clothes</p>
+                <a href="category.html?cat=Clothes">
+                    <img src="images/clothes.svg" alt="clothes">
+                    <p>Clothes</p>
+                </a>
             </div>
             <div class="category">
-                <img src="images/lost.svg" alt="eye">
-                <p>Lost & Found</p>
+                <a href="category.html?cat=LostnFound">
+                    <img src="images/lost.svg" alt="eye">
+                    <p>Lost & Found</p>
+                </a>
             </div>
             <div class="category">
-                <img src="images/free.svg" alt="present">
-                <p>Free</p>
+                <a href="category.html?cat=Free">
+                    <img src="images/free.svg" alt="present">
+                    <p>Free</p>
+                </a>
             </div>
             <div class="category">
-                <img src="images/more.svg" alt="more">
-                <p>Others</p>
+                <a href="category.html?cat=Others">
+                    <img src="images/more.svg" alt="more">
+                    <p>Others</p>
+                </a>
             </div>
         </div>
+
         <div class="text-block">
             <p>Buy and Sell</p>
-            <p>with <span class="highlight">Honor</span> Code</p>
+            <p>with <a href="honorcode.html" style="color:#bc6c25; font-weight:bold; text-decoration:none;">Honor</a> Code</p>
         </div>
     </main>
 
@@ -84,9 +103,10 @@
                 <a href="#mail"><img src="images/mail.svg" alt="mail"></a>
             </div>
             <div class="info">
-                <a href="#about">about us</a>
-                <a href="#policy">user policy</a>
-                <a href="#support">support</a>
+                <a href="about.html">about us</a>
+                <a href="policy.html">user policy</a>
+                <a href="faq.html">FAQ</a>
+                <a href="honorcode.html">honor code</a>
             </div>
             <div>
                 <img src="images/logo.svg" alt="logo" style="max-height:24px;">
@@ -94,7 +114,6 @@
         </div>
         <p>© 2024 HandongHarvest</p>
     </footer>
-
     <script src="script.js"></script>
 </body>
 </html>

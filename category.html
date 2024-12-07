@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Favorites</title>
+    <title>Category Items</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap">
@@ -17,20 +17,36 @@
             <a href="favorites.html" class="icon-link"><img src="images/heart.svg" alt="heart"></a>
             <span id="login-link-container"></span>
             <div class="post_btn">
-                <a href="post_item.html"><span class="desktop-label">+post</span><span class="mobile-label">+</span></a>
+                <a href="post_item.html">+post</a>
             </div>
         </div>
     </header>
 
-    <main>
-        <h1 class="favorites-title">Your Favorite Items</h1>
-        <div class="favorites-container" id="favoritesContainer">
-            <!-- Образец заполняющего контента -->
-            <div class="favorite-item">Item 1</div>
-            <div class="favorite-item">Item 2</div>
-            <div class="favorite-item">Item 3</div>
-            <div class="favorite-item">Item 4</div>
+    <main style="margin:50px;">
+        <h1 style="text-align:center;">Category Items</h1>
+        <div style="text-align:center; margin-bottom:20px;">
+            <select id="categorySelect">
+                <option value="">All Categories</option>
+                <option value="Books">Books</option>
+                <option value="Electronics">Electronics</option>
+                <option value="Clothes">Clothes & Accessories</option>
+                <option value="Services">Services</option>
+                <option value="FoodnCoupons">Food & Coupons</option>
+                <option value="LostnFound">Lost & Found</option>
+                <option value="Free">Free</option>
+                <option value="Others">Others</option>
+            </select>
+
+            <select id="sortSelect">
+                <option value="time_desc">Sort by Time (Newest First)</option>
+                <option value="time_asc">Sort by Time (Oldest First)</option>
+                <option value="price_asc">Sort by Price (Low to High)</option>
+                <option value="price_desc">Sort by Price (High to Low)</option>
+            </select>
+
+            <button id="applyFiltersBtn" style="padding:5px 10px;">Apply Filters</button>
         </div>
+        <div id="categoryItems" style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center;"></div>
     </main>
 
     <footer class="footer">

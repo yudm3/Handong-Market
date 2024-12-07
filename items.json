@@ -1,0 +1,283 @@
+{
+    "Books": [
+      {
+        "title": "Introduction to Marketing: Theory and Practice",
+        "description": "By Adrian Palmer. The book used in the marketing classes. Good condition.",
+        "image": "images/book1.jpg",
+        "location": "Library Entrance",
+        "seller": "dariti",
+        "listingType": "forSale",
+        "openToOffers": false,
+        "price": 8000,
+        "postedDate": "2024-12-02T10:15:00Z"
+      },
+      {
+        "title": "Organizational Behaviour",
+        "description": "Managing People in Dynamic Organizations by Paul E. Smith et al. Bought new and used carefully, great condition.",
+        "image": "images/book2.jpg",
+        "location": "Dorm Lobby",
+        "seller": "yudima",
+        "listingType": "forSale",
+        "openToOffers": false,
+        "price": 20000,
+        "postedDate": "2024-12-03T14:20:00Z"
+      },
+      {
+        "title": "Psychology : Core Concepts",
+        "description": "By Robert L. Johnson, Philip G. Zimbardo and Vivian McCann (2016, Ringbound). NEW!",
+        "image": "images/book3.jpg",
+        "location": "Study Room",
+        "seller": "vasya06",
+        "listingType": "forSale",
+        "openToOffers": false,
+        "price": 38000,
+        "postedDate": "2024-12-05T09:00:00Z"
+      }
+    ],
+    "Electronics": [
+      {
+        "title": "CANON SURE SHOT JOY",
+        "description": "The original vintage canon camera. Unused for a long time. Battery replaced, works well.",
+        "image": "images/camera.jpg",
+        "location": "Cafeteria",
+        "seller": "yudima",
+        "listingType": "forSale",
+        "openToOffers": false,
+        "price": 60000,
+        "postedDate": "2024-12-01T11:45:00Z"
+      },
+      {
+        "title": "AirPods 2nd generation",
+        "description": "Used for a year, carefully. Battery ~5 hours.",
+        "image": "images/airpods.jpg",
+        "location": "Dorm Lobby",
+        "seller": "leolyab",
+        "listingType": "forSale",
+        "openToOffers": false,
+        "price": 55000,
+        "postedDate": "2024-12-07T16:10:00Z"
+      },
+      {
+        "title": "Iphone 14 pro 128gb",
+        "description": "iPhone 14 Pro 256GB camera and LCD clean, battery 84%. Inquire about price!",
+        "image": "images/iphone.jpg",
+        "location": "Campus Center",
+        "seller": "vasya06",
+        "listingType": "forSale",
+        "openToOffers": true,
+        "price": 650000,
+        "postedDate": "2024-12-08T20:30:00Z"
+      }
+    ],
+    "Clothes": [
+      {
+        "title": "Rebook Club C Ground UK - Red",
+        "description": "Size 250mm. Tried once, too big.",
+        "image": "images/shoes.jpg",
+        "location": "Dorm 2",
+        "seller": "lealea",
+        "listingType": "forSale",
+        "openToOffers": false,
+        "price": 65000,
+        "postedDate": "2024-12-04T08:00:00Z"
+      },
+      {
+        "title": "Vest",
+        "description": "Checkered sweater vest",
+        "image": "images/vest.jpg",
+        "location": "Library Entrance",
+        "seller": "abcaca",
+        "listingType": "forSale",
+        "openToOffers": false,
+        "price": 3000,
+        "postedDate": "2024-12-05T12:10:00Z"
+      },
+      {
+        "title": "Sunglasses Miu Miu Regard",
+        "description": "New with tag, shape didn't suit me.",
+        "image": "images/sunglasses.jpg",
+        "location": "Cafeteria",
+        "seller": "miaffa",
+        "listingType": "forSale",
+        "openToOffers": false,
+        "price": 120000,
+        "postedDate": "2024-12-06T14:45:00Z"
+      }
+    ],
+    "Services": [
+      {
+        "title": "Manicure + Design",
+        "description": "Certificate available. Complex designs cost extra.",
+        "image": "images/nails.jpg",
+        "location": "Dorm 4",
+        "seller": "naily",
+        "listingType": "forSale",
+        "openToOffers": false,
+        "price": 25000,
+        "postedDate": "2024-12-02T13:00:00Z"
+      },
+      {
+        "title": "Cut & Hairstyle services",
+        "description": "Pretty hair for special events, also simple cuts.",
+        "image": "images/hair.jpg",
+        "location": "Campus Salon",
+        "seller": "olihair",
+        "listingType": "forSale",
+        "openToOffers": false,
+        "price": 20000,
+        "postedDate": "2024-12-03T09:30:00Z"
+      },
+      {
+        "title": "Korean Tutoring",
+        "description": "For intermediate learners. Conversation or TOPIK 2 prep.",
+        "image": "images/korean.jpg",
+        "location": "Study Room 2",
+        "seller": "koroek",
+        "listingType": "forSale",
+        "openToOffers": false,
+        "price": 8000,
+        "postedDate": "2024-12-06T18:05:00Z"
+      }
+    ],
+    "FoodnCoupons": [
+      {
+        "title": "Rice (12pc)",
+        "description": "Selling 12 pc of ottogi cooked rice.",
+        "image": "images/rice.jpg",
+        "location": "Cafeteria",
+        "seller": "eirt",
+        "listingType": "forSale",
+        "openToOffers": false,
+        "price": 11000,
+        "postedDate": "2024-12-02T17:20:00Z"
+      },
+      {
+        "title": "BBC Chicken Coupon",
+        "description": "I don't eat chicken, selling cheaper than original.",
+        "image": "images/chickencoupon.jpg",
+        "location": "Dorm 1",
+        "seller": "hartoe",
+        "listingType": "forSale",
+        "openToOffers": false,
+        "price": 18000,
+        "postedDate": "2024-12-07T09:40:00Z"
+      },
+      {
+        "title": "Starbucks Coupon",
+        "description": "Expires January. Use soon!",
+        "image": "images/starbuckscoupon.jpg",
+        "location": "Campus Center",
+        "seller": "rewtyu",
+        "listingType": "forSale",
+        "openToOffers": false,
+        "price": 20000,
+        "postedDate": "2024-12-08T08:55:00Z"
+      }
+    ],
+    "LostnFound": [
+      {
+        "title": "LOST Bracelet with heart",
+        "description": "Lost on December 1st around Cafeteria",
+        "image": "images/bracelet.jpg",
+        "location": "Cafeteria",
+        "seller": "kolioai",
+        "listingType": "lostAndFound",
+        "openToOffers": false,
+        "price": 0,
+        "postedDate": "2024-12-01T09:00:00Z"
+      },
+      {
+        "title": "FOUND Hydro Flusk Water bottle",
+        "description": "Found behind the Soccer Field (Hiddink)",
+        "image": "images/waterbottle.jpg",
+        "location": "Soccer Field",
+        "seller": "lkslils",
+        "listingType": "lostAndFound",
+        "openToOffers": false,
+        "price": 0,
+        "postedDate": "2024-12-05T15:30:00Z"
+      },
+      {
+        "title": "FOUND KB Bank Card",
+        "description": "FOUND KB Card with the name Yugay Dmitriy on Romantic Field",
+        "image": "images/bankcard.jpg",
+        "location": "Romantic Field",
+        "seller": "golity",
+        "listingType": "lostAndFound",
+        "openToOffers": false,
+        "price": 0,
+        "postedDate": "2024-12-03T20:10:00Z"
+      }
+    ],
+    "Free": [
+      {
+        "title": "Plates 6pcs",
+        "description": "Giving away 6 plates",
+        "image": "images/plates.jpg",
+        "location": "Dorm 3",
+        "seller": "polina",
+        "listingType": "free",
+        "openToOffers": false,
+        "price": 0,
+        "postedDate": "2024-12-04T11:00:00Z"
+      },
+      {
+        "title": "Stand with shelves",
+        "description": "Don't need it anymore, take if you need.",
+        "image": "images/shelves.jpg",
+        "location": "Library Entrance",
+        "seller": "gorya",
+        "listingType": "free",
+        "openToOffers": false,
+        "price": 0,
+        "postedDate": "2024-12-06T07:20:00Z"
+      },
+      {
+        "title": "Bag",
+        "description": "Moving out, don't need this bag. Comfortable and spacious.",
+        "image": "images/bag.jpg",
+        "location": "Dorm Lobby",
+        "seller": "lina",
+        "listingType": "free",
+        "openToOffers": false,
+        "price": 0,
+        "postedDate": "2024-12-07T21:00:00Z"
+      }
+    ],
+    "Others": [
+      {
+        "title": "Candles",
+        "description": "Candles used for a school play. 1 pack = 5,000 won",
+        "image": "images/candles.jpg",
+        "location": "Campus Center",
+        "seller": "kieoro",
+        "listingType": "forSale",
+        "openToOffers": false,
+        "price": 5000,
+        "postedDate": "2024-12-01T10:00:00Z"
+      },
+      {
+        "title": "Battery",
+        "description": "5 packs of C Type batteries.",
+        "image": "images/batteries.jpg",
+        "location": "Dorm 1",
+        "seller": "popos",
+        "listingType": "forSale",
+        "openToOffers": false,
+        "price": 12000,
+        "postedDate": "2024-12-02T13:50:00Z"
+      },
+      {
+        "title": "Christmas Deco Ball",
+        "description": "A beautiful Christmas ball that lights in the dark.",
+        "image": "images/christmasball.jpg",
+        "location": "Cafeteria",
+        "seller": "balytu",
+        "listingType": "forSale",
+        "openToOffers": false,
+        "price": 25000,
+        "postedDate": "2024-12-08T12:00:00Z"
+      }
+    ]
+  }
+  

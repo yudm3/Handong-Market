@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap">
 </head>
+
 <body>
     <header class="header">
         <a href="index.html"><img src="images/logo.svg" alt="textlogo" width="150px"></a>
         <div class="menu">
-            <a href="favorites.html"><img src="images/heart.svg" alt="heart"></a>
-            <span id="login-link-container">
-                <!-- This can show username or login depending on script -->
-            </span>
+            <a href="favorites.html" class="icon-link"><img src="images/heart.svg" alt="heart"></a>
+            <span id="login-link-container"></span>
             <div class="post_btn">
                 <a href="post_item.html">+post</a>
             </div>
@@ -23,29 +25,43 @@
     <main style="text-align:center; margin-top:50px;">
         <h1>Profile</h1>
         <p>Username: <span id="profileUsername"></span></p>
-        <!-- Could add options to change password, etc. -->
-        <button id="logoutBtn" style="padding:10px 20px; border:none; background:#1F4529; color:#fff; border-radius:10px; cursor:pointer;">Logout</button>
+        <p>Registered on: <span id="profileRegisterDate"></span></p>
+
+        <h2>Change Password</h2>
+        <form id="changePasswordForm" style="display:inline-block; text-align:left;">
+            <label for="newPassword"><b>New Password</b></label><br>
+            <input type="password" id="newPassword" name="newPassword" required
+                style="width:100%; margin-bottom:10px;"><br>
+            <button type="submit"
+                style="padding:10px 20px; border:none; background:#1F4529; color:#fff; border-radius:10px; cursor:pointer;">Change
+                Password</button>
+        </form>
+
+        <div style="margin-top:20px;">
+            <button id="logoutBtn"
+                style="padding:10px 20px; border:none; background:#1F4529; color:#fff; border-radius:10px; cursor:pointer;">Logout</button>
+        </div>
     </main>
 
     <footer class="footer">
-      <div class="bottomMenu">
-          <div class="sns">
-              <a href="#insta"><img src="images/instagram.svg" alt="instagram"></a>
-              <a href="#x"><img src="images/x.svg" alt="x"></a>
-              <a href="#mail"><img src="images/mail.svg" alt="mail"></a>
-          </div>
-          <div class="info">
-              <a href="#about">about us</a>
-              <a href="#policy">user policy</a>
-              <a href="#support">support</a>
-          </div>
-          <div>
-              <img src="images/logo.svg" alt="logo" style="max-height:24px;">
-          </div>
-      </div>
-      <p>© 2024 HandongHarvest</p>
-  </footer>
-
+        <div class="bottomMenu">
+            <div class="sns">
+                <a href="#insta"><img src="images/instagram.svg" alt="instagram"></a>
+                <a href="#x"><img src="images/x.svg" alt="x"></a>
+                <a href="#mail"><img src="images/mail.svg" alt="mail"></a>
+            </div>
+            <div class="info">
+                <a href="#about">about us</a>
+                <a href="#policy">user policy</a>
+                <a href="#support">support</a>
+            </div>
+            <div>
+                <img src="images/logo.svg" alt="logo" height="24px">
+            </div>
+        </div>
+        <p>© 2024 HandongHarvest</p>
+    </footer>
     <script src="script.js"></script>
 </body>
+
 </html>

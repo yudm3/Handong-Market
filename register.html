@@ -12,7 +12,7 @@
     <header class="header">
         <a href="index.html"><img src="images/logo.svg" alt="textlogo" width="150px"></a>
         <div class="menu">
-            <a href="favorites.html"><img src="images/heart.svg" alt="heart"></a>
+            <a href="favorites.html" class="icon-link"><img src="images/heart.svg" alt="heart"></a>
             <a href="login.html">login</a>
             <div class="post_btn">
                 <a href="post_item.html">+post</a>
@@ -26,13 +26,16 @@
         </div>
         <form class="login-form" id="registerForm">
             <div class="login-form-container">
+                <label for="email"><b>Email</b></label>
+                <input type="email" placeholder="Enter Handong Email" name="email" id="registerEmail" required>
+                
                 <label for="uname"><b>Username</b></label>
                 <input type="text" placeholder="Enter Username" name="uname" id="registerUsername" required>
 
                 <label for="psw"><b>Password</b></label>
                 <input type="password" placeholder="Enter Password" name="psw" id="registerPassword" required>
 
-                <button type="submit" class="login-form-button">Register</button>
+                <button type="submit" class="login-form-button" style="margin-top:20px;">Register</button>
             </div>
         </form>
     </main>
@@ -50,12 +53,11 @@
                 <a href="#support">support</a>
             </div>
             <div>
-                <img src="images/logo.svg" alt="logo" style="max-height:24px;">
+                <img src="images/logo.svg" alt="logo" height="24px">
             </div>
         </div>
         <p>© 2024 HandongHarvest</p>
     </footer>
-
     <script src="script.js"></script>
 </body>
 </html>
