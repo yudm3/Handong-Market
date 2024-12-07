@@ -430,15 +430,20 @@ footer p {
     .text-block {
       font-size: 6vw;
     }
+
+    .menu {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
   
-    .menu a, .menu img {
-      font-size: 4vw;
-      max-width: 5vw;
+    .menu a {
+        font-size: 4vw;
     }
   
     .post_btn a {
-      font-size: 4vw;
-      padding: 0.5em;
+        font-size: 4vw;
+        padding: 0.5em;
     }
   
     .bottomMenu {

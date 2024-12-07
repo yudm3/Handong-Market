@@ -10,11 +10,9 @@
 </head>
 <body>
     <header class="header">
-        <!-- Home link -->
         <a href="index.html"><img src="images/logo.svg" alt="textlogo" style="max-width:150px;"></a>
         <div class="menu">
             <a href="favorites.html"><img src="images/heart.svg" alt="heart"></a>
-            <!-- Wrap the login link in a container so we can replace it easily -->
             <span id="login-link-container">
                 <a href="login.html" id="loginLink">login</a>
             </span>
@@ -23,8 +21,9 @@
             </div>
         </div>
     </header>
-    
+
     <main>
+        <!-- Your index page content goes here -->
         <div class="handongs-marketplace">
             <p>Handong's Marketplace</p>
         </div><br>
@@ -96,16 +95,6 @@
         <p>© 2024 HandongHarvest</p>
     </footer>
 
-    <script>
-        // JS to check if user is logged in and update the login link
-        document.addEventListener('DOMContentLoaded', function() {
-            const username = localStorage.getItem('loggedInUser');
-            if (username) {
-                const loginLinkContainer = document.getElementById('login-link-container');
-                // Replace the login link with the username linking to a future profile page
-                loginLinkContainer.innerHTML = '<a href="profile.html">'+ username +'</a>';
-            }
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>

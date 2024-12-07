@@ -4,9 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>User Profile</h1>
-    <p>Welcome to your profile page!</p>
+    <header class="header">
+        <a href="index.html"><img src="images/logo.svg" alt="textlogo" width="150px"></a>
+        <div class="menu">
+            <a href="favorites.html"><img src="images/heart.svg" alt="heart"></a>
+            <span id="login-link-container">
+                <!-- This can show username or login depending on script -->
+            </span>
+            <div class="post_btn">
+                <a href="post_item.html">+post</a>
+            </div>
+        </div>
+    </header>
+
+    <main style="text-align:center; margin-top:50px;">
+        <h1>Profile</h1>
+        <p>Username: <span id="profileUsername"></span></p>
+        <!-- Could add options to change password, etc. -->
+        <button id="logoutBtn" style="padding:10px 20px; border:none; background:#1F4529; color:#fff; border-radius:10px; cursor:pointer;">Logout</button>
+    </main>
+
+    <footer class="footer">
+      <div class="bottomMenu">
+          <div class="sns">
+              <a href="#insta"><img src="images/instagram.svg" alt="instagram"></a>
+              <a href="#x"><img src="images/x.svg" alt="x"></a>
+              <a href="#mail"><img src="images/mail.svg" alt="mail"></a>
+          </div>
+          <div class="info">
+              <a href="#about">about us</a>
+              <a href="#policy">user policy</a>
+              <a href="#support">support</a>
+          </div>
+          <div>
+              <img src="images/logo.svg" alt="logo" style="max-height:24px;">
+          </div>
+      </div>
+      <p>© 2024 HandongHarvest</p>
+  </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

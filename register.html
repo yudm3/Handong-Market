@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Register</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap">
@@ -24,17 +24,16 @@
         <div class="login-title">
             <p style="font-weight: bold;">Create Account</p>
         </div>
-        <form class="login-form" id="loginForm" action="action_page.php" method="post">
+        <form class="login-form" id="registerForm">
             <div class="login-form-container">
                 <label for="uname"><b>Username</b></label>
-                <input type="text" placeholder="Enter Username" name="uname" id="loginUsername" required>
+                <input type="text" placeholder="Enter Username" name="uname" id="registerUsername" required>
 
                 <label for="psw"><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="psw" required>
+                <input type="password" placeholder="Enter Password" name="psw" id="registerPassword" required>
 
                 <button type="submit" class="login-form-button">Register</button>
             </div>
-
         </form>
     </main>
 
@@ -51,29 +50,12 @@
                 <a href="#support">support</a>
             </div>
             <div>
-                <img src="images/logo.svg" alt="logo" height="24px">
+                <img src="images/logo.svg" alt="logo" style="max-height:24px;">
             </div>
         </div>
-        <div class="copyright">
-            <p>© 2024 HandongHarvest</p>
-        </div>
+        <p>© 2024 HandongHarvest</p>
     </footer>
 
-    <script>
-        // JS code to handle login
-        document.getElementById('loginForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent the form from submitting traditionally
-
-            const username = document.getElementById('loginUsername').value;
-            const password = document.querySelector('input[name="psw"]').value;
-
-            // Normally you would verify the username/password with a server,
-            // but for this demo, we'll just store the username.
-            localStorage.setItem('loggedInUser', username);
-
-            // Redirect to index.html
-            window.location.href = 'index.html';
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
