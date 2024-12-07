@@ -399,63 +399,62 @@ footer p {
 
 /* Responsive adjustments for mobile screens */
 @media only screen and (max-width: 768px) {
-  body {
-    font-size: 3vw;
+    body {
+      font-size: 3vw;
+    }
+  
+    .header {
+      margin: 5% 5%;
+      font-size: 4vw;
+    }
+  
+    .handongs-marketplace {
+      font-size: 5vw;
+    }
+  
+    .search-container {
+      width: 90%;
+      font-size: 4vw;
+      margin: 10% auto;
+    }
+  
+    .search-container input {
+      font-size: 4vw;
+    }
+  
+    .category {
+      width: 30vw;
+      height: 30vw; /* scale with viewport width */
+    }
+  
+    .text-block {
+      font-size: 6vw;
+    }
+  
+    .menu a, .menu img {
+      font-size: 4vw;
+      max-width: 5vw;
+    }
+  
+    .post_btn a {
+      font-size: 4vw;
+      padding: 0.5em;
+    }
+  
+    .bottomMenu {
+      flex-direction: column;
+      gap: 5vw;
+    }
+  
+    .info {
+      flex-direction: column;
+      gap: 5vw;
+    }
+  
+    footer p {
+      font-size: 3vw;
+    }
   }
-
-  .header {
-    margin: 5% 5%;
-    font-size: 4vw;
-  }
-
-  .handongs-marketplace {
-    font-size: 5vw;
-  }
-
-  .search-container {
-    width: 90%;
-    font-size: 4vw;
-    margin: 10% auto;
-  }
-
-  .search-container input {
-    font-size: 4vw;
-  }
-
-  .category {
-    width: 30vw;
-    max-width: none;
-    font-size: 4vw;
-  }
-
-  .text-block {
-    font-size: 6vw;
-  }
-
-  .menu a, .menu img {
-    font-size: 4vw;
-    max-width: 5vw;
-  }
-
-  .post_btn a {
-    font-size: 4vw;
-    padding: 0.5em;
-  }
-
-  .bottomMenu {
-    flex-direction: column;
-    gap: 5vw;
-  }
-
-  .info {
-    flex-direction: column;
-    gap: 5vw;
-  }
-
-  footer p {
-    font-size: 3vw;
-  }
-}
 
 /* Заголовок страницы любимых товаров */
 .favorites-title {

@@ -24,10 +24,10 @@
         <div class="login-title">
             <p style="font-weight: bold;">Login to Your Account</p>
         </div>
-        <form class="login-form" action="action_page.php" method="post">
+        <form class="login-form" id="loginForm" action="action_page.php" method="post">
             <div class="login-form-container">
                 <label for="uname"><b>Username</b></label>
-                <input type="text" placeholder="Enter Username" name="uname" required>
+                <input type="text" placeholder="Enter Username" name="uname" id="loginUsername" required>
 
                 <label for="psw"><b>Password</b></label>
                 <input type="password" placeholder="Enter Password" name="psw" required>
@@ -35,8 +35,7 @@
                 <div class="remember-me login-label228">
                   <label>
                     <input type="checkbox" class="login-remember-checkbox" checked="checked" name="remember"> Remember me
-                </label>
-                
+                  </label>
                 </div>
 
                 <button type="submit" class="login-form-button">Login</button>
@@ -68,5 +67,22 @@
             <p>© 2024 HandongHarvest</p>
         </div>
     </footer>
+
+    <script>
+        // JS code to handle login
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting traditionally
+
+            const username = document.getElementById('loginUsername').value;
+            const password = document.querySelector('input[name="psw"]').value;
+
+            // Normally you would verify the username/password with a server,
+            // but for this demo, we'll just store the username.
+            localStorage.setItem('loggedInUser', username);
+
+            // Redirect to index.html
+            window.location.href = 'index.html';
+        });
+    </script>
 </body>
 </html>
