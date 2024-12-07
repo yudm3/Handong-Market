@@ -1,216 +1,204 @@
-/* General Styles */
+/* Using your existing color scheme and layout styles */
+/* Add any color variables here if needed */
+
+/* Global Styles */
 body {
+    background-color: #FFFEF5;
+    font-family: Jost, sans-serif;
     margin: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+    line-height: normal;
 }
 
-/* Top Header */
-.top-header {
+.header {
+    font-size: 24px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
+    margin: 28px 160px 0 160px;
 }
 
-.logo {
-    font-size: 1.5em;
-    font-weight: bold;
+.header a {
+    color: #1F4529;
+    text-decoration: none;
 }
 
-.icon-group {
+.menu {
+    position: relative;
     display: flex;
-    gap: 15px;
     align-items: center;
+    gap: 28px;
+    transition: 0.2s ease-out;
 }
 
-.icon-btn {
-    background-color: transparent;
-    border: none;
-    color: white;
-    font-size: 1.5em;
-    cursor: pointer;
-    transition: transform 0.2s ease;
+.menu img {
+    transition: 0.2s ease-out;
 }
 
-.icon-btn:hover {
-    transform: scale(1.1);
+.menu img:hover {
+    transform: scale(1.05);
 }
 
-.auth-btn {
-    background-color: white;
-    color: #4CAF50;
-    border: none;
-    border-radius: 5px;
-    padding: 5px 15px;
-    cursor: pointer;
-    font-size: 1em;
-    transition: 0.3s ease;
+.menu a {
+    transition: 0.2s ease-out;
 }
 
-.auth-btn:hover {
-    background-color: #3e8e41;
-    color: white;
+.menu a:hover {
+    transform: scale(1.05);
 }
 
-/* Secondary Header */
-.secondary-header {
+.post_btn a {
+    width: 120px;
+    border-radius: 100px;
+    background-color: #1F4529;
+    height: 54px;
     display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 25px;
+    box-sizing: border-box;
+    color: #fffef5;
+    transition: 0.2s ease-out;
+}
+
+.post_btn a:hover {
+    background-color: #fffef5;
+    color: #1F4529;
+    border: 4px solid #1F4529;
+}
+
+main {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.handongs-marketplace {
+    width: 184px;
+    position: relative;
+    font-size: 36px;
+    line-height: 120%;
+    font-family: Jost, sans-serif;
+    color: #000;
+    text-align: center;
+    display: inline-block;
+}
+
+.handongs-marketplace p {
+    margin-bottom: 0;
+}
+
+.search-container {
+    background-color: #fefae0;
+    border-radius: 55px;
+    border: 4px solid #1F4529;
+    width: 40%;
+    height: 72px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     justify-content: space-between;
+    padding: 0 30px 0 30px;
+    font-size: 36px;
+    text-align: center;
+    color: #acacac;
+    margin: 186px auto 50px auto;
+}
+
+.search-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    background-color: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 10px 20px;
+    overflow: hidden;
+}
+
+.search-container input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 36px;
+}
+
+.search-container input::placeholder {
+    color: #acacac;
 }
 
 .categories {
-    position: relative;
-    width: 250px; /* Fixed width for category button */
+    text-align: center; /* center all inline-block elements */
+    margin-top: 50px;   /* adjust as needed */
 }
 
-.categories-btn {
-    width: 100%; /* Button occupies full width */
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 15px;
-    cursor: pointer;
-    font-size: 1em;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+.category {
+    display: inline-block;      /* line up categories horizontally */
+    background-color: #fefae0;
+    height: 110px;
+    width: 110px;
+    border-radius: 20px;
+    border: 4px solid #1F4529;
+    margin: 5px;               /* add some spacing between items */
+    vertical-align: top;        /* ensures they align nicely on the top */
+    text-align: center;
+    font-size: 14px;
+}
+
+.category img {
+    margin-top: auto;
+    height: 70%;
+}
+
+.category p {
+    margin-top: 0;
+}
+
+.text-block {
+    font-size: 36px;
+    line-height: 40%;
+    margin-top: 100px;
+}
+
+.text-block .highlight {
+    color: #bc6c25;
+    font-weight: bold;
+}
+
+.footer {
+    margin-top: 288px;
+    display: block;
+    text-align: center;
+}
+
+.bottomMenu {
     display: flex;
-    justify-content: space-between;
+    gap: 136px;
     align-items: center;
+    justify-content: center;
 }
 
-.categories-btn:hover {
-    background-color: #3e8e41;
-}
-
-.categories-list {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    display: none;
-    width: 100%;
-    opacity: 0; /* Initially hidden */
-    transform: scaleY(0); /* Start collapsed */
-    transform-origin: top;
-    animation: dropdown 0.5s ease-out forwards; /* New smooth animation */
-}
-
-@keyframes dropdown {
-    0% {
-        opacity: 0;
-        transform: scaleY(0);
-    }
-    100% {
-        opacity: 1;
-        transform: scaleY(1);
-    }
-}
-
-.categories-btn:focus + .categories-list,
-.categories-btn:hover + .categories-list {
-    display: block;
-}
-
-.categories-list li a {
-    display: block;
-    padding: 10px 15px;
-    color: #333;
-    text-decoration: none;
-    transition: 0.3s ease;
-}
-
-.categories-list li a:hover {
-    background-color: #4CAF50;
-    color: white;
-}
-
-/* Search Bar */
-.search-bar {
+.sns {
     display: flex;
-    flex-grow: 1;
-    margin-left: 20px;
-    gap: 0;
+    gap: 36px;
 }
 
-.search-input {
-    flex-grow: 1;
-    padding: 10px;
-    font-size: 1em;
-    border: 1px solid #ddd;
-    border-right: none;
-    border-radius: 5px 0 0 5px;
-    outline: none;
+.info {
+    display: flex;
+    gap: 55px;
 }
 
-.search-btn {
-    background-color: #4CAF50;
-    color: white;
-    border: 1px solid #ddd;
-    border-left: none;
-    border-radius: 0 5px 5px 0;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 1em;
-    transition: 0.3s ease;
+.info a {
+    color: #000;
+    text-decoration: none;
+    font-size: 24px;
+    transition: 0.2s ease-out;
 }
 
-.search-btn:hover {
-    background-color: #3e8e41;
+.info a:hover {
+    transition: 0.2s ease-out;
+    transform: scale(1.03);
 }
 
-/* Main Content */
-main {
-    flex: 1;
-    text-align: center;
-    padding: 50px 20px;
-}
-
-/* Floating Add Button */
-.add-btn {
-    position: fixed;
-    bottom: 80px;
-    right: 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    font-size: 2em;
-    cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s ease;
-}
-
-.add-btn:hover {
-    background-color: #3e8e41;
-}
-
-/* Footer */
-footer {
-    background-color: #4CAF50;
-    color: white;
-    text-align: center;
-    padding: 0px;
-    position: fixed;
-    bottom: 0px;
-    width: 100%;
-    height: 40px;
+copyright {
+    color: #acacac;
+    font-size: 16px;
 }

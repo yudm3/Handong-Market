@@ -3,54 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HandongHarvest</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Handong Harvest</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap">
 </head>
 <body>
-    <!-- Top Header -->
-    <header class="top-header">
-        <div class="logo">HandongHarvest</div>
-        <div class="icon-group">
-            <button class="icon-btn">🛒</button>
-            <button class="icon-btn">❤️</button>
-            <button class="auth-btn">Log In</button>
-            <button class="auth-btn">Sign Up</button>
+    <header class="header">
+        <!-- Home link -->
+        <a href="index.html"><img src="images/logo.svg" alt="textlogo" width="150px"></a>
+        <div class="menu">
+            <!-- Favorites page link -->
+            <a href="favorites.html"><img src="images/heart.svg" alt="heart"></a>
+            <!-- Login page link -->
+            <a href="login.html">login</a>
+            <!-- Post item page link -->
+            <div class="post_btn">
+                <a href="post_item.html">+post</a>
+            </div>
         </div>
     </header>
-
-    <!-- Secondary Header -->
-    <header class="secondary-header">
-        <div class="categories">
-            <button id="categories-btn" class="categories-btn">
-                All Categories <span id="arrow" class="arrow">⬇</span>
-            </button>
-            <ul id="categories-list" class="categories-list hidden">
-                <li><a href="#">Category 1</a></li>
-                <li><a href="#">Category 2</a></li>
-                <li><a href="#">Category 3</a></li>
-            </ul>
-        </div>
-        <div class="search-bar">
-            <input type="text" class="search-input" placeholder="Search...">
-            <button class="search-btn">Search</button>
-        </div>
-    </header>
-
-    <!-- Main Content -->
+    
     <main>
-        <h1>Welcome to HandongHarvest!</h1>
-        <p>Buy and sell items within your university community.</p>
+        <div class="handongs-marketplace">
+            <p>Handong's Marketplace</p>
+        </div><br>
+        <img src="images/logoV2.svg" alt="logov2">
+        <div class="parent-container">
+            <form id="search-form" class="search-container" action="/search" method="GET">
+                <input type="text" name="q" id="search-input" placeholder="Search" required>
+                <span class="search-icon">
+                    <img src="images/search.svg" alt="Search Icon">
+                </span>
+            </form>
+        </div>
+        <div class="categories">
+            <div class="category">
+                <img src="images/book.svg" alt="book">
+                <p>Books</p>
+            </div>
+            <div class="category">
+                <img src="images/electronics.svg" alt="electronics">
+                <p>Electronics</p>
+            </div>
+            <div class="category">
+                <img src="images/services.svg" alt="services">
+                <p>Services</p>
+            </div>
+            <div class="category">
+                <img src="images/food.svg" alt="food">
+                <p>Food & Coupons</p>
+            </div>
+            <div class="category">
+                <img src="images/clothes.svg" alt="clothes">
+                <p>Clothes</p>
+            </div>
+            <div class="category">
+                <img src="images/lost.svg" alt="eye">
+                <p>Lost & Found</p>
+            </div>
+            <div class="category">
+                <img src="images/free.svg" alt="present">
+                <p>Free</p>
+            </div>
+            <div class="category">
+                <img src="images/more.svg" alt="more">
+                <p>Others</p>
+            </div>
+        </div>
+        <div class="text-block">
+            <p>Buy and Sell</p>
+            <p>with <span class="highlight">Honor</span> Code</p>
+        </div>
     </main>
 
-    <!-- Floating Add Button -->
-    <button class="add-btn">+</button>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 HandongHarvest. All rights reserved.</p>
+    <footer class="footer">
+        <div class="bottomMenu">
+            <div class="sns">
+                <a href="#insta"><img src="images/instagram.svg" alt="instagram"></a>
+                <a href="#x"><img src="images/x.svg" alt="x"></a>
+                <a href="#mail"><img src="images/mail.svg" alt="mail"></a>
+            </div>
+            <div class="info">
+                <a href="#about">about us</a>
+                <a href="#policy">user policy</a>
+                <a href="#support">support</a>
+            </div>
+            <div>
+                <img src="images/logo.svg" alt="logo" height="24px">
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2024 HandongHarvest</p>
+        </div>
     </footer>
-
-    <!-- JavaScript -->
-    <script src="script.js"></script>
 </body>
 </html>
