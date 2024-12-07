@@ -1,43 +1,37 @@
-<!-- login.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Handong Harvest - Login</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Document</title>
 </head>
 <body>
+    <form class="project-form-main" action="action_page.php" method="post">
+        <div class="project-form__img-container">
+            <img src="img_avatar2.png" alt="Avatar" class="project-form__avatar">
+        </div>
 
-  <!-- Header -->
-  <header>
-    <div class="container">
-      <h1>Handong Harvest</h1>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="register.html">Sign Up</a>
-      </nav>
-    </div>
-  </header>
+        <div class="project-form__container">
+          <div>
+            <label for="uname"><b>Username</b></label><br>
+            <input type="text" placeholder="Enter Username" name="uname" required>
+          </div>
+          <div>
+            <label for="psw"><b>Password</b></label><br>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+          </div>
+            <button type="submit" class="project-form__button">Login</button>
+            <label>
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+            </label>
+        </div>
 
-  <!-- Login Form -->
-  <div class="container">
-    <h2>Login</h2>
-    <form action="login.html" method="post">
-      <label for="email">Handong Email:</label>
-      <input type="email" id="email" name="email" placeholder="example@handong.edu" required>
-
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password" required>
-
-      <button type="submit">Login</button>
+        <div class="project-form__container project-form__container--footer">
+            <button type="button" class="project-form__button project-form__button--cancel">Cancel</button>
+            <span class="project-form__psw">Forgot <a href="#">password?</a></span>
+        </div>
     </form>
-    <p>Don't have an account? <a href="register.html">Sign up here</a>.</p>
-  </div>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2024 Handong Harvest</p>
-  </footer>
-
+    <script src="index.js"></script>
 </body>
 </html>

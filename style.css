@@ -198,7 +198,97 @@ main {
     transform: scale(1.03);
 }
 
-copyright {
+.copyright {
     color: #acacac;
     font-size: 16px;
 }
+
+/* Здесь начинает login */
+.project-form-main {
+    border: 2px solid rgba(112, 96, 96, 0.349);
+    border-radius: 25px;
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.project-form__container {
+    width: 30em;
+    max-width: 100%;
+    margin: auto;
+    display: block;
+}
+
+.project-form input[type=text],
+.project-form input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #c0a9a9;
+    box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+.project-form__button {
+    background-color: #000000;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 50px;
+}
+
+/* Add a hover effect for buttons */
+.project-form__button:hover {
+    opacity: 0.8;
+}
+
+/* Extra style for the cancel button (red) */
+.project-form__button--cancel {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #da2f22;
+}
+
+/* Center the avatar image inside this container */
+.project-form__img-container {
+    text-align: center;
+    margin: 24px 0 12px 0;
+}
+
+/* Avatar image */
+.project-form__avatar {
+    width: 40%;
+    border-radius: 50%;
+}
+
+/* Add padding to containers */
+.project-form__container {
+    padding: 16px;
+}
+
+.project-form__container--footer {
+    background-color: #f1f1f1;
+}
+
+/* The "Forgot password" text */
+.project-form__psw {
+    float: right;
+    padding-top: 16px;
+}
+
+@media screen and (max-width: 300px) {
+    .project-form__psw {
+        display: block;
+        float: none;
+    }
+    .project-form__button--cancel {
+        width: 100%;
+    }
+}
+
+/* Здесь заканчивается login */
