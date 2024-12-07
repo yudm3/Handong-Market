@@ -1,37 +1,36 @@
+<!-- login.html -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-    <title>Document</title>
 </head>
 <body>
-    <form class="project-form-main" action="action_page.php" method="post">
-        <div class="project-form__img-container">
-            <img src="img_avatar2.png" alt="Avatar" class="project-form__avatar">
+    <form class="login-form-main" action="action_page.php" method="post">
+        <div class="login-form-img-container">
+            <img src="img_avatar2.png" alt="Avatar" class="login-form-avatar">
         </div>
 
-        <div class="project-form__container">
-          <div>
+        <div class="login-form-container">
             <label for="uname"><b>Username</b></label><br>
             <input type="text" placeholder="Enter Username" name="uname" required>
-          </div>
-          <div>
+
             <label for="psw"><b>Password</b></label><br>
             <input type="password" placeholder="Enter Password" name="psw" required>
-          </div>
-            <button type="submit" class="project-form__button">Login</button>
+
+            <button type="submit" class="login-form-button">Login</button>
             <label>
                 <input type="checkbox" checked="checked" name="remember"> Remember me
             </label>
         </div>
 
-        <div class="project-form__container project-form__container--footer">
-            <button type="button" class="project-form__button project-form__button--cancel">Cancel</button>
-            <span class="project-form__psw">Forgot <a href="#">password?</a></span>
+        <div class="login-form-container-footer">
+            <button type="button" class="login-form-button-cancel">Cancel</button>
+            <span class="login-form-psw">Forgot <a href="#">password?</a></span>
         </div>
     </form>
-    <script src="index.js"></script>
 </body>
 </html>

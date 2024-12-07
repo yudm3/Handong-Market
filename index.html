@@ -1,3 +1,5 @@
+<!-- index.html -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +13,7 @@
 <body>
     <header class="header">
         <!-- Home link -->
-        <a href="index.html"><img src="images/logo.svg" alt="textlogo" width="150px"></a>
+        <a href="index.html"><img src="images/logo.svg" alt="textlogo" style="max-width:150px;"></a>
         <div class="menu">
             <!-- Favorites page link -->
             <a href="favorites.html"><img src="images/heart.svg" alt="heart"></a>
@@ -28,13 +30,14 @@
         <div class="handongs-marketplace">
             <p>Handong's Marketplace</p>
         </div><br>
-        <img src="images/logoV2.svg" alt="logov2">
+        <img src="images/logoV2.svg" alt="logov2" style="max-width:30%;height:auto;">
         <div class="parent-container">
             <form id="search-form" class="search-container" action="/search" method="GET">
                 <input type="text" name="q" id="search-input" placeholder="Search" required>
-                <span class="search-icon">
+                <!-- Make the search icon a submit button -->
+                <button class="search-icon" type="submit">
                     <img src="images/search.svg" alt="Search Icon">
-                </span>
+                </button>
             </form>
         </div>
         <div class="categories">
@@ -90,12 +93,10 @@
                 <a href="#support">support</a>
             </div>
             <div>
-                <img src="images/logo.svg" alt="logo" height="24px">
+                <img src="images/logo.svg" alt="logo" style="max-height:24px;">
             </div>
         </div>
-        <div class="copyright">
-            <p>© 2024 HandongHarvest</p>
-        </div>
+        <p>© 2024 HandongHarvest</p>
     </footer>
 </body>
 </html>

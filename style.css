@@ -1,5 +1,4 @@
-/* Using your existing color scheme and layout styles */
-/* Add any color variables here if needed */
+/* style.css */
 
 /* Global Styles */
 body {
@@ -10,28 +9,32 @@ body {
 }
 
 .header {
-    font-size: 24px;
+    font-size: 2vw; /* Using relative units for responsiveness */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 28px 160px 0 160px;
+    margin: 2% 5%; /* Using percentages for margin */
 }
 
 .header a {
     color: #1F4529;
     text-decoration: none;
+    font-size: 2vw; /* Scale text for responsiveness */
+    white-space: nowrap;
 }
 
 .menu {
     position: relative;
     display: flex;
     align-items: center;
-    gap: 28px;
+    gap: 2vw;
     transition: 0.2s ease-out;
 }
 
 .menu img {
     transition: 0.2s ease-out;
+    max-width: 30px;
+    height: auto;
 }
 
 .menu img:hover {
@@ -40,6 +43,7 @@ body {
 
 .menu a {
     transition: 0.2s ease-out;
+    font-size: 2vw;
 }
 
 .menu a:hover {
@@ -47,40 +51,36 @@ body {
 }
 
 .post_btn a {
-    width: 120px;
     border-radius: 100px;
     background-color: #1F4529;
-    height: 54px;
-    display: flex;
-    flex-direction: row;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 12px 25px;
-    box-sizing: border-box;
+    padding: 0.5em 1em;
     color: #fffef5;
     transition: 0.2s ease-out;
+    font-size: 2vw;
+    text-decoration: none;
+    border: 2px solid #1F4529;
 }
 
 .post_btn a:hover {
     background-color: #fffef5;
     color: #1F4529;
-    border: 4px solid #1F4529;
 }
 
 main {
-    margin-top: 50px;
+    margin-top: 5%;
     text-align: center;
 }
 
 .handongs-marketplace {
-    width: 184px;
-    position: relative;
-    font-size: 36px;
-    line-height: 120%;
-    font-family: Jost, sans-serif;
+    width: auto;
+    font-size: 3vw; /* Scales with viewport width */
+    line-height: 1.2;
     color: #000;
-    text-align: center;
     display: inline-block;
+    text-align: center;
 }
 
 .handongs-marketplace p {
@@ -91,26 +91,15 @@ main {
     background-color: #fefae0;
     border-radius: 55px;
     border: 4px solid #1F4529;
-    width: 40%;
-    height: 72px;
+    width: 40%; /* Will be adjusted for mobile in media query */
+    height: auto;
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 0 30px 0 30px;
-    font-size: 36px;
-    text-align: center;
-    color: #acacac;
-    margin: 186px auto 50px auto;
-}
-
-.search-icon {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
+    padding: 0.5em 1em;
+    font-size: 2vw;
+    margin: 10% auto 5% auto;
+    box-sizing: border-box;
 }
 
 .search-container input {
@@ -118,44 +107,66 @@ main {
     border: none;
     outline: none;
     background: none;
-    font-size: 36px;
+    font-size: 2vw;
+    min-width: 0; /* ensure the input can shrink */
 }
 
 .search-container input::placeholder {
     color: #acacac;
 }
 
+.search-icon {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-icon img {
+    max-width: 24px;
+    height: auto;
+}
+
 .categories {
-    text-align: center; /* center all inline-block elements */
-    margin-top: 50px;   /* adjust as needed */
+    text-align: center;
+    margin-top: 5%;
 }
 
 .category {
-    display: inline-block;      /* line up categories horizontally */
+    display: inline-block;
     background-color: #fefae0;
-    height: 110px;
-    width: 110px;
+    height: auto;
+    width: 20vw; /* Responsive width */
+    max-width: 110px; /* Maximum width for larger screens */
     border-radius: 20px;
     border: 4px solid #1F4529;
-    margin: 5px;               /* add some spacing between items */
-    vertical-align: top;        /* ensures they align nicely on the top */
+    margin: 5px;
+    vertical-align: top;
     text-align: center;
-    font-size: 14px;
+    font-size: 2vw;
+    box-sizing: border-box;
+    padding: 0.5em;
 }
 
 .category img {
-    margin-top: auto;
-    height: 70%;
+    width: 60%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
 
 .category p {
-    margin-top: 0;
+    margin-top: 0.5em;
+    line-height: 1.2;
 }
 
 .text-block {
-    font-size: 36px;
-    line-height: 40%;
-    margin-top: 100px;
+    font-size: 4vw;
+    line-height: 1;
+    margin-top: 10%;
 }
 
 .text-block .highlight {
@@ -164,131 +175,207 @@ main {
 }
 
 .footer {
-    margin-top: 288px;
+    margin-top: 10%;
     display: block;
     text-align: center;
+    font-size: 2vw;
 }
 
 .bottomMenu {
     display: flex;
-    gap: 136px;
+    gap: 5vw;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap; /* allow wrapping on smaller screens */
 }
 
 .sns {
     display: flex;
-    gap: 36px;
+    gap: 3vw;
+}
+
+.sns img {
+    max-width: 24px;
+    height: auto;
 }
 
 .info {
     display: flex;
-    gap: 55px;
+    gap: 3vw;
+    flex-wrap: wrap;
 }
 
 .info a {
     color: #000;
     text-decoration: none;
-    font-size: 24px;
+    font-size: 2vw;
     transition: 0.2s ease-out;
 }
 
 .info a:hover {
-    transition: 0.2s ease-out;
     transform: scale(1.03);
 }
 
-.copyright {
-    color: #acacac;
-    font-size: 16px;
+.info a {
+    white-space: nowrap;
 }
 
-/* Здесь начинает login */
-.project-form-main {
+footer img[alt="logo"] {
+    max-height: 24px;
+    width: auto;
+}
+
+footer p {
+    font-size: 2vw;
+    color: #acacac;
+}
+
+/* Login form styles renamed */
+.login-form-main {
     border: 2px solid rgba(112, 96, 96, 0.349);
     border-radius: 25px;
     width: fit-content;
     height: fit-content;
-    margin: auto;
-    margin-top: 50px;
+    margin: 5% auto;
+    box-sizing: border-box;
+    padding: 1em;
 }
 
-.project-form__container {
-    width: 30em;
-    max-width: 100%;
+.login-form-container {
+    width: 90%;
+    max-width: 300px;
     margin: auto;
     display: block;
-}
-
-.project-form input[type=text],
-.project-form input[type=password] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #c0a9a9;
     box-sizing: border-box;
 }
 
-/* Set a style for all buttons */
-.project-form__button {
+.login-form-container-footer {
+    background-color: #f1f1f1;
+    padding: 1em;
+    box-sizing: border-box;
+}
+
+.login-form-container input[type=text],
+.login-form-container input[type=password] {
+    width: 100%;
+    padding: 0.75em;
+    margin: 0.5em 0;
+    border: 1px solid #c0a9a9;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+.login-form-button {
     background-color: #000000;
     color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
+    padding: 0.75em;
+    margin: 0.5em 0;
     border: none;
     cursor: pointer;
     width: 100%;
     border-radius: 50px;
+    font-size: 1em;
+    box-sizing: border-box;
 }
 
-/* Add a hover effect for buttons */
-.project-form__button:hover {
+.login-form-button:hover {
     opacity: 0.8;
 }
 
-/* Extra style for the cancel button (red) */
-.project-form__button--cancel {
+.login-form-button-cancel {
     width: auto;
-    padding: 10px 18px;
+    padding: 0.5em 1em;
     background-color: #da2f22;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1em;
+    margin: 0.5em 0;
 }
 
-/* Center the avatar image inside this container */
-.project-form__img-container {
+.login-form-img-container {
     text-align: center;
-    margin: 24px 0 12px 0;
+    margin: 1em 0;
 }
 
-/* Avatar image */
-.project-form__avatar {
+.login-form-avatar {
     width: 40%;
     border-radius: 50%;
+    height: auto;
 }
 
-/* Add padding to containers */
-.project-form__container {
-    padding: 16px;
-}
-
-.project-form__container--footer {
-    background-color: #f1f1f1;
-}
-
-/* The "Forgot password" text */
-.project-form__psw {
+.login-form-psw {
     float: right;
     padding-top: 16px;
+    font-size: 0.9em;
 }
 
 @media screen and (max-width: 300px) {
-    .project-form__psw {
+    .login-form-psw {
         display: block;
         float: none;
     }
-    .project-form__button--cancel {
+    .login-form-button-cancel {
         width: 100%;
     }
 }
 
-/* Здесь заканчивается login */
+/* Responsive adjustments for mobile screens */
+@media only screen and (max-width: 768px) {
+  body {
+    font-size: 3vw;
+  }
+
+  .header {
+    margin: 5% 5%;
+    font-size: 4vw;
+  }
+
+  .handongs-marketplace {
+    font-size: 5vw;
+  }
+
+  .search-container {
+    width: 90%;
+    font-size: 4vw;
+    margin: 10% auto;
+  }
+
+  .search-container input {
+    font-size: 4vw;
+  }
+
+  .category {
+    width: 30vw;
+    max-width: none;
+    font-size: 4vw;
+  }
+
+  .text-block {
+    font-size: 6vw;
+  }
+
+  .menu a, .menu img {
+    font-size: 4vw;
+    max-width: 5vw;
+  }
+
+  .post_btn a {
+    font-size: 4vw;
+    padding: 0.5em;
+  }
+
+  .bottomMenu {
+    flex-direction: column;
+    gap: 5vw;
+  }
+
+  .info {
+    flex-direction: column;
+    gap: 5vw;
+  }
+
+  footer p {
+    font-size: 3vw;
+  }
+}
