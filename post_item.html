@@ -1,62 +1,74 @@
-<!-- post_item.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Handong Harvest - Post Item</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to the provided CSS -->
 </head>
 <body>
+    <!-- Header Section -->
+    <header class="header">
+        <a href="/" class="logo">Handong Marketplace</a>
+        <div class="menu">
+            <a href="#">Home</a>
+            <a href="#">Categories</a>
+            <a href="#">Contact</a>
+        </div>
+        <div class="post_btn">
+            <a href="#">Post Item</a>
+        </div>
+    </header>
 
-  <!-- Header -->
-  <header>
-    <div class="container">
-      <h1>Handong Harvest</h1>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="profile.html">Profile</a>
-        <a href="logout.html">Logout</a>
-      </nav>
-    </div>
-  </header>
+    <!-- Main Content Section -->
+    <main>
+        <!-- Product Details Section -->
+        <div class="product-details-container">
+            <h2 class="product-details-title">Product Name</h2>
+            <p class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+            <p class="product-price">$29.99</p>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
 
-  <!-- Post Item Form -->
-  <div class="container">
-    <h2>Post New Item</h2>
-    <form action="post_item.html" method="post" enctype="multipart/form-data">
-      <label for="images">Add pictures (0/10):</label>
-      <input type="file" id="images" name="images" accept="image/*" multiple>
+        <!-- Reviews Section -->
+        <div class="product-reviews">
+            <h3>Customer Reviews</h3>
+            <div class="review-item">
+                <p><strong>John Doe</strong></p>
+                <p>Great product! Highly recommend.</p>
+            </div>
+            <div class="review-item">
+                <p><strong>Jane Smith</strong></p>
+                <p>It works well, but the size is a bit small for my needs.</p>
+            </div>
+            <div class="review-item">
+                <p><strong>Mary Johnson</strong></p>
+                <p>Good value for the price.</p>
+            </div>
 
-      <label for="title">Title:</label>
-      <input type="text" id="title" name="title" required>
+            <!-- Sort Reviews Buttons -->
+            <div>
+                <button class="sort-reviews-btn">Sort by Rating</button>
+                <button class="sort-reviews-btn">Sort by Date</button>
+            </div>
+        </div>
+    </main>
 
-      <label for="listingType">Listing type:</label>
-      <select id="listingType" name="listingType" required>
-        <option value="forSale">For Sale</option>
-        <option value="openToOffers">Open to Offers</option>
-        <option value="free">Free</option>
-        <option value="lostAndFound">Lost & Found</option>
-      </select>
-
-      <label for="description">Description:</label>
-      <textarea id="description" name="description" placeholder="Tell us about your item..." required></textarea>
-
-      <label for="location">Where to meet:</label>
-      <select id="location" name="location" required>
-        <option value="campusCenter">Campus Center</option>
-        <option value="library">Library</option>
-        <option value="dormitories">Dormitories</option>
-        <!-- Add more locations as needed -->
-      </select>
-
-      <button type="submit">Post Item</button>
-    </form>
-  </div>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2024 Handong Harvest</p>
-  </footer>
-
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>&copy; 2024 Handong Marketplace</p>
+        <div class="bottomMenu">
+            <div class="sns">
+                <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+                <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+                <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+            </div>
+            <div class="info">
+                <a href="#">About Us</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
