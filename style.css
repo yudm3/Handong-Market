@@ -781,3 +781,11 @@ footer p {
         width: 20px;
     }
 }
+
+.hover-logo {
+    transition: transform 0.3s ease-in-out;
+}
+
+.hover-logo:hover {
+    transform: scale(1.1); /* Increase size by 10% */
+}
