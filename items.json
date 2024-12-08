@@ -3,7 +3,7 @@
       {
         "title": "Korean 2A",
         "description": "Selling this textbook for Korean 3 HGU class.",
-        "image": "images/book1.jpg",
+        "image": "item-images/book1.jpg",
         "location": "Library Entrance",
         "seller": "dariti",
         "listingType": "forSale",
@@ -14,7 +14,7 @@
       {
         "title": "Bob Cofflin 'The importance of worship'",
         "description": "Selling this book. It is trully great. I would recommend it for everyone.",
-        "image": "images/book2.jpg",
+        "image": "item-images/book2.jpg",
         "location": "Dorm Lobby",
         "seller": "yudima",
         "listingType": "forSale",
@@ -25,7 +25,7 @@
       {
         "title": "Les Misérables",
         "description": "Book by Victor Hugo written in Russain. Great condition!",
-        "image": "images/book3.jpg",
+        "image": "item-images/book3.jpg",
         "location": "Study Room",
         "seller": "vasya06",
         "listingType": "forSale",
@@ -38,7 +38,7 @@
       {
         "title": "Logitech Mouse",
         "description": "Great Logiech Mouse. Selling it for a decent price. Please contact me.",
-        "image": "images/mouse.jpg",
+        "image": "item-images/mouse.jpg",
         "location": "Cafeteria",
         "seller": "yudima",
         "listingType": "forSale",
@@ -49,7 +49,7 @@
       {
         "title": "AirPods 1st generation",
         "description": "Used carefully. Battery ~5 hours.",
-        "image": "images/airpods.jpg",
+        "image": "item-images/airpods.jpg",
         "location": "Dorm Lobby",
         "seller": "leolyab",
         "listingType": "forSale",
@@ -60,7 +60,7 @@
       {
         "title": "Iphone 15 pro 256gb",
         "description": "iPhone 15 Pro 256GB camera, battery 88%. Inquire about price!",
-        "image": "images/iphone.jpg",
+        "image": "item-images/iphone.jpg",
         "location": "Campus Center",
         "seller": "vasya06",
         "listingType": "forSale",
@@ -73,7 +73,7 @@
       {
         "title": "Asics Gel Grey",
         "description": "Size 280mm. Great shoes for everyday use.",
-        "image": "images/shoes.jpg",
+        "image": "item-images/shoes.jpg",
         "location": "Dorm 2",
         "seller": "lealea",
         "listingType": "forSale",
@@ -84,7 +84,7 @@
       {
         "title": "Wide Pants",
         "description": "Wide casual male pants. One-Size. They have a big length, so please take it into consideration when buying.",
-        "image": "images/pants.jpg",
+        "image": "item-images/pants.jpg",
         "location": "Library Entrance",
         "seller": "abcaca",
         "listingType": "forSale",
@@ -95,7 +95,7 @@
       {
         "title": "Glasses fashion ",
         "description": "They are new. No prescription. The shape did not suite me.",
-        "image": "images/glasses.jpg",
+        "image": "item-images/glasses.jpg",
         "location": "Cafeteria",
         "seller": "miaffa",
         "listingType": "forSale",
@@ -108,7 +108,7 @@
       {
         "title": "Manicure + Design",
         "description": "Certificate available. Complex designs cost extra.",
-        "image": "images/nails.jpg",
+        "image": "item-images/nails.jpg",
         "location": "Dorm 4",
         "seller": "naily78",
         "listingType": "forSale",
@@ -119,7 +119,7 @@
       {
         "title": "Cut & Hairstyle services",
         "description": "Pretty hair for special events, also simple cuts.",
-        "image": "images/hair.jpg",
+        "image": "item-images/hair.jpg",
         "location": "Campus Salon",
         "seller": "olihair",
         "listingType": "forSale",
@@ -130,7 +130,7 @@
       {
         "title": "Korean Tutoring",
         "description": "For intermediate learners. Conversation or TOPIK 2 prep.",
-        "image": "images/korean.jpg",
+        "image": "item-images/korean.jpg",
         "location": "Study Room 2",
         "seller": "koroek",
         "listingType": "forSale",
@@ -143,7 +143,7 @@
       {
         "title": "Syrniki",
         "description": "I am selling syrniki, making them fresh from scratch. Delicious! Price for 2 pcs",
-        "image": "images/syr.jpg",
+        "image": "item-images/syr.jpg",
         "location": "Cafeteria",
         "seller": "eirtwq",
         "listingType": "forSale",
@@ -154,7 +154,7 @@
       {
         "title": "Starbucks Card",
         "description": "I got this card as a gift but I do not drink coffee, selling it cheaper than the original!",
-        "image": "images/sbcard.jpg",
+        "image": "item-images/sbcard.jpg",
         "location": "Dorm 1",
         "seller": "hartoe",
         "listingType": "forSale",
@@ -165,7 +165,7 @@
       {
         "title": "Starbucks Coupon",
         "description": "Selling this starbucks coupon. Please buy it quickly and use it well!",
-        "image": "images/sbcoupon.jpg",
+        "image": "item-images/sbcoupon.jpg",
         "location": "Campus Center",
         "seller": "rewtyu",
         "listingType": "forSale",
@@ -178,7 +178,7 @@
       {
         "title": "LOST necklace",
         "description": "Lost this Necklace on December 1st around Cafeteria",
-        "image": "images/necklace.jpg",
+        "image": "item-images/necklace.jpg",
         "location": "Cafeteria",
         "seller": "kolioai",
         "listingType": "lostAndFound",
@@ -189,7 +189,7 @@
       {
         "title": "FOUND UZSpace Water bottle",
         "description": "FOUND Blue UZSpace Water bottle behind the Soccer Field (Hiddink)",
-        "image": "images/waterbottle.jpg",
+        "image": "item-images/waterbottle.jpg",
         "location": "Soccer Field",
         "seller": "lkslils",
         "listingType": "lostAndFound",
@@ -200,7 +200,7 @@
       {
         "title": "FOUND KB Bank Card",
         "description": "FOUND KB Card with the name Yugay Dmitriy on Romantic Field",
-        "image": "images/bankcard.jpg",
+        "image": "item-images/bankcard.jpg",
         "location": "Romantic Field",
         "seller": "golity",
         "listingType": "lostAndFound",
@@ -213,7 +213,7 @@
       {
         "title": "Stickers 6 pcs",
         "description": "Giving away 6 packs of stickers",
-        "image": "images/stickers.jpg",
+        "image": "item-images/stickers.jpg",
         "location": "Dorm 3",
         "seller": "polina",
         "listingType": "free",
@@ -224,7 +224,7 @@
       {
         "title": "3 notebooks",
         "description": "I do not need it. They are new. Please take it if you need it :)",
-        "image": "images/notebooks.jpg",
+        "image": "item-images/notebooks.jpg",
         "location": "Library Entrance",
         "seller": "gory2a",
         "listingType": "free",
@@ -235,7 +235,7 @@
       {
         "title": "Termo Cup",
         "description": "Moving out, don't need this stuff.",
-        "image": "images/cup.jpg",
+        "image": "item-images/cup.jpg",
         "location": "Dorm Lobby",
         "seller": "lina21",
         "listingType": "free",
@@ -248,7 +248,7 @@
       {
         "title": "Markers",
         "description": "Selling these markers. I bought it but used only couple times. Almost new.",
-        "image": "images/markers.jpg",
+        "image": "item-images/markers.jpg",
         "location": "Campus Center",
         "seller": "kieoro",
         "listingType": "forSale",
@@ -259,7 +259,7 @@
       {
         "title": "Coffee Beans",
         "description": "Selling the pack of coffee beans. Blue Bottle Coffee, BRIGHT, Tasting Notes of blueberry, golden raisin, and lemon zest.",
-        "image": "images/beans.jpg",
+        "image": "item-images/beans.jpg",
         "location": "Dorm 1",
         "seller": "popos1",
         "listingType": "forSale",
@@ -270,7 +270,7 @@
       {
         "title": "Mineral Stones",
         "description": "I am selling this beautiful Mineral Stones from Japan. It lights in the dark.",
-        "image": "images/stones.jpg",
+        "image": "item-images/stones.jpg",
         "location": "Cafeteria",
         "seller": "balytu",
         "listingType": "forSale",
