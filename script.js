@@ -136,6 +136,11 @@ document.addEventListener('DOMContentLoaded', function () {
         const changePassForm = document.getElementById('changePasswordForm');
         changePassForm.addEventListener('submit', function (e) {
             e.preventDefault();
+            const curPass = document.getElementById('currentPassword').value;
+            if (curPass !== user.password) {
+                alert('Current password is wrong!');
+                return;
+            }
             const newPass = document.getElementById('newPassword').value.trim();
             user.password = newPass;
             localStorage.setItem('users', JSON.stringify(users));
