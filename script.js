@@ -239,9 +239,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 const location = document.getElementById('postLocation').value.trim();
                 const images = document.getElementById('postImages').files;
 
-                let imagePath = 'images/default.jpg';
+                let imagePath = 'item-images/default.jpg';
                 if (images.length > 0) {
-                    imagePath = 'images/' + images[0].name;
+                    imagePath = 'item-images/' + images[0].name;
                 }
 
                 let priceVal = 0;
@@ -575,38 +575,227 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function handleItemDetailsPage() {
         if (currentPage !== 'item_details.html') return;
+    
         if(!loggedInUser) {
-            window.location.href='login.html';
+            window.location.href = 'login.html';
             return;
         }
     
         const urlParams = new URLSearchParams(window.location.search);
         const itemID = urlParams.get('itemID');
-        if(!itemID) return;
-    
-        const item = getItemByID(itemID);
-        if(!item) {
-            // Item not found
+        if(!itemID) {
+            // No itemID provided
+            displayItemNotFound();
             return;
         }
     
-        const imgContainer = document.getElementById('itemImageContainer');
-        const infoContainer = document.getElementById('itemInfoContainer');
-        if(!imgContainer || !infoContainer) return;
-
-        const priceInfo = (item.listingType === 'forSale') ? (item.price + ' KRW') 
-            : (item.listingType === 'free' || item.listingType === 'lostAndFound') ? '0 KRW' : '';
-
-        imgContainer.innerHTML = `<img src="${item.image}" alt="${item.title}" style="max-width:100%; height:auto;">`;
-        infoContainer.innerHTML = `
-            <h2>${item.title}</h2>
-            <p>${item.description}</p>
-            <p><strong>Location:</strong> ${item.location}</p>
-            <p><strong>Seller:</strong> ${item.seller}</p>
-            ${priceInfo ? `<p><strong>Price:</strong> ${priceInfo}</p>` : ''}
-            <button id="messageSellerBtn">Message Seller</button>
-        `;
+        // Ensure items are loaded (in case user directly opens item_details.html)
+        loadAllItemsIfNeeded().then(() => {
+            const item = getItemByID(itemID);
+            if(!item) {
+                displayItemNotFound();
+                return;
+            }
+    
+            populateItemDetails(item);
+        }).catch(err => {
+            console.error('Error loading items:', err);
+            displayItemNotFound();
+        });
     }
+    
+    // This function ensures that items are loaded into window.allLoadedItems if not already.
+    function loadAllItemsIfNeeded() {
+        return new Promise((resolve, reject) => {
+            if (window.allLoadedItems && window.allLoadedItems.length > 0) {
+                resolve();
+                return;
+            }
+    
+            fetch('./items.json')
+                .then(res => {
+                    if(!res.ok) throw new Error('Network response not ok');
+                    return res.json();
+                })
+                .then(data => {
+                    // Merge posted items
+                    let combined = [];
+                    for (let catKey in data) {
+                        const catItems = data[catKey].map(it => {
+                            if(!it.category) it.category = catKey; // Assign category from the JSON key
+                            return it;
+                        });
+                        combined = combined.concat(catItems);
+                    }
+                    for (let catKey in postedItems) {
+                        let postedCatItems = postedItems[catKey];
+                        // Force postedCatItems to be an array if it's not
+                        if (!Array.isArray(postedCatItems)) {
+                            postedCatItems = [postedCatItems]; 
+                        }
+                    
+                        postedCatItems = postedCatItems.map(it => {
+                            if(!it.category) it.category = catKey;
+                            return it;
+                        });
+                        combined = combined.concat(postedCatItems);
+                    }                    
+                    window.allLoadedItems = combined;
+                    resolve();
+                })
+                .catch(err => {
+                    console.error('Failed to load items', err);
+                    window.allLoadedItems = []; 
+                    resolve(); // resolve with empty array to avoid blocking
+                });
+        });
+    }
+    
+    function getItemByID(itemID) {
+        if(!window.allLoadedItems) return null;
+        return window.allLoadedItems.find(i => {
+            const categoryForID = i.category || 'All';
+            const generatedID = encodeURIComponent(i.title + '_' + categoryForID);
+            return generatedID === itemID;
+        });
+    }
+    
+    function displayItemNotFound() {
+        const container = document.querySelector('.item-details-container');
+        if(container) {
+            container.innerHTML = '<p style="text-align:center; width:100%;">Item not found.</p>';
+        }
+    }
+    
+    function populateItemDetails(item) {
+        const mainImage = document.getElementById('mainImage');
+        const titleEl = document.querySelector('.item-title');
+        const categoryEl = document.querySelector('.item-category span');
+        const locationEl = document.querySelector('.item-location span');
+        const priceEl = document.querySelector('.item-price span');
+        const descEl = document.querySelector('.item-description');
+        const sellerEl = document.querySelector('.item-seller');
+      
+        if(!item.images && item.image) {
+            // If no 'images' array but there is a single 'image', make it an array for scrolling logic.
+            item.images = [item.image];
+        }
+    
+        // Set the first image
+        if (mainImage && item.images && item.images.length > 0) mainImage.src = item.images[0];
+    
+        if (titleEl) titleEl.textContent = item.title || 'No Title';
+        if (categoryEl) categoryEl.textContent = item.category || 'All';
+        if (locationEl) locationEl.textContent = item.location || 'No Location';
+        if (descEl) descEl.innerHTML = `<b>Description:</b> ${item.description || 'No description'}`;
+        if (sellerEl) sellerEl.innerHTML = `<b>Seller:</b> ${item.seller || 'Unknown'}`;
+    
+        if (priceEl) {
+            if(item.listingType === 'forSale') {
+                priceEl.textContent = (item.price || 0) + ' KRW';
+            } else if(item.listingType === 'free' || item.listingType === 'lostAndFound') {
+                priceEl.textContent = '0 KRW';
+            } else {
+                priceEl.textContent = '';
+            }
+        }
+    
+        // Implement image scrolling
+        implementImageScrolling(item.images);
+    }
+    
+    function implementImageScrolling(images) {
+        const prevButton = document.querySelector(".prev-button");
+        const nextButton = document.querySelector(".next-button");
+        const mainImage = document.getElementById("mainImage");
+        
+        if(!images || images.length === 0) return; // No images to scroll
+        let currentImageIndex = 0;
+    
+        function updateImage() {
+            mainImage.src = images[currentImageIndex];
+        }
+    
+        if(prevButton) {
+            prevButton.addEventListener("click", function () {
+                if(images.length <= 1) return; // Only one image, no scroll
+                currentImageIndex = currentImageIndex === 0 ? images.length - 1 : currentImageIndex - 1;
+                updateImage();
+            });
+        }
+    
+        if(nextButton) {
+            nextButton.addEventListener("click", function () {
+                if(images.length <= 1) return; // Only one image, no scroll
+                currentImageIndex = (currentImageIndex + 1) % images.length;
+                updateImage();
+            });
+        }
+    }
+    
+    function handleItemDetailsPage() {
+        if (currentPage !== 'item_details.html') return;
+    
+        if(!loggedInUser) {
+            window.location.href = 'login.html';
+            return;
+        }
+    
+        const urlParams = new URLSearchParams(window.location.search);
+        const itemID = urlParams.get('itemID');
+        if(!itemID) {
+            displayItemNotFound();
+            return;
+        }
+    
+        loadAllItemsIfNeeded().then(() => {
+            const item = getItemByID(itemID);
+            if(!item) {
+                displayItemNotFound();
+                return;
+            }
+            populateItemDetails(item);
+        }).catch(err => {
+            console.error('Error loading items for details:', err);
+            displayItemNotFound();
+        });
+    }    
+    
+    function displayItemNotFound() {
+        const container = document.querySelector('.item-details-container');
+        if(container) {
+            container.innerHTML = '<p style="text-align:center;">Item not found.</p>';
+        }
+    }
+    
+    function populateItemDetails(item) {
+        // Populate fields:
+        const mainImage = document.getElementById('mainImage');
+        const titleEl = document.querySelector('.item-title');
+        const categoryEl = document.querySelector('.item-category span');
+        const locationEl = document.querySelector('.item-location span');
+        const priceContainer = document.querySelector('.item-price span');
+        const descEl = document.querySelector('.item-description');
+        const sellerEl = document.querySelector('.item-seller');
+    
+        if (mainImage) mainImage.src = item.image;
+        if (titleEl) titleEl.textContent = item.title;
+        if (categoryEl) categoryEl.textContent = item.category || 'All';
+        if (locationEl) locationEl.textContent = item.location;
+        if (descEl) descEl.innerHTML = `<b>Description:</b> ${item.description}`;
+        if (sellerEl) sellerEl.innerHTML = `<b>Seller:</b> ${item.seller}`;
+    
+        if (priceContainer && (item.listingType === 'forSale' || item.listingType === 'free' || item.listingType === 'lostAndFound')) {
+            const price = (item.listingType === 'forSale') ? item.price + ' KRW' : '0 KRW';
+            priceContainer.textContent = price;
+        } else if (priceContainer) {
+            priceContainer.textContent = '';
+        }
+    
+        // If you have multiple images in future, you can store them in `item.images` array and update the logic of prev/next.
+        // For now, we use single image or the static images array you had before.
+    }
+    
 
     updateHeaderLoginLink();
     handleRegisterPage();
@@ -638,34 +827,4 @@ document.addEventListener("DOMContentLoaded", function () {
         categorySelect.addEventListener("change", togglePriceVisibility);
         togglePriceVisibility();
     }
-});
-
-
-// items deteils page
-document.addEventListener("DOMContentLoaded", function () {
-    const prevButton = document.querySelector(".prev-button");
-    const nextButton = document.querySelector(".next-button");
-    const mainImage = document.getElementById("mainImage");
-    
-    const images = [
-        "images/item1.jpg",
-        "images/item2.jpg",
-        "images/item3.jpg"
-    ];
-    
-    let currentImageIndex = 0;
-    
-    function updateImage() {
-        mainImage.src = images[currentImageIndex];
-    }
-    
-    prevButton.addEventListener("click", function () {
-        currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
-        updateImage();
-    });
-
-    nextButton.addEventListener("click", function () {
-        currentImageIndex = (currentImageIndex + 1) % images.length;
-        updateImage();
-    });
 });
