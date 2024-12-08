@@ -7,22 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function maskUserIdentifier(identifier) {
         if (!identifier) return '';
-        if (identifier.includes('@')) {
-            // It's an email
-            const [namePart, domainPart] = identifier.split('@');
-            if (namePart.length > 2) {
-                return namePart.substring(0, 2) + '***@' + domainPart;
-            } else {
-                return namePart + '***@' + domainPart;
-            }
-        } else {
-            // It's a username
-            if (identifier.length > 2) {
-                return identifier.substring(0, 2) + '***';
-            } else {
-                return identifier + '***';
-            }
-        }
+        return identifier.substring(0, 2) + '**' + identifier.substring(identifier.length - 2, identifier.length);
     }
 
     function updateHeaderLoginLink() {
@@ -37,11 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     // fallback if somehow no user found
                     identifierToMask = loggedInUser;
                 } else {
-                    // If user is found, we can decide to show email or username
-                    // Let's prefer email since it's guaranteed to be unique.
-                    // If you prefer username when available, then just do:
-                    // identifierToMask = user.email or user.username depending on your choice.
-                    identifierToMask = user.email ? user.email : user.username;
+                    identifierToMask = user.username;
                 }
 
                 const masked = maskUserIdentifier(identifierToMask);
@@ -65,6 +46,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
             if (!(email.endsWith('@handong.ac.kr') || email.endsWith('@handong.edu'))) {
                 alert('Email must be a valid Handong email ending with @handong.ac.kr or @handong.edu');
+                return;
+            }
+
+            if (username.length < 6) {
+                alert('Your username must be at least 6 characters.');
+                return;
+            }
+
+            if (password.length < 6) {
+                alert('Your password must be at least 6 characters.');
                 return;
             }
 
