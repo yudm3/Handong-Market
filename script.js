@@ -123,6 +123,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         document.getElementById('profileUsername').textContent = user.username;
+        document.getElementById('profileEmail').textContent = user.email;
         document.getElementById('profileRegisterDate').textContent = new Date(user.registerDate).toLocaleString();
 
         // Logout
