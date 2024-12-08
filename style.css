@@ -613,3 +613,106 @@ footer p {
     width: 8em;
     height: 8em;
 }
+
+/* Стиль для страницы деталей товара */
+.item-details-page {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.item-details-container {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Секция с изображением товара */
+.item-images {
+    position: relative;
+    width: 50%;
+}
+
+.item-main-image {
+    width: 100%;
+    border-radius: 10px;
+    object-fit: contain;
+}
+
+.image-nav-button {
+    position: absolute;
+    top: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    border-radius: 20%;
+    z-index: 10;
+    transform: translateY(-50%);
+}
+
+.prev-button {
+    left: 10px;
+}
+
+.next-button {
+    right: 10px;
+}
+
+/* Секция с информацией о товаре */
+.item-info {
+    width: 45%;
+    padding-left: 20px;
+}
+
+.item-title {
+    font-size: 28px;
+    font-family: 'Jost', sans-serif;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.item-category,
+.item-location,
+.item-seller {
+    font-family: 'Jost', sans-serif;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.item-price-container {
+    margin-bottom: 15px;
+}
+
+.item-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.item-description {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.contact-seller-btn {
+    padding: 10px 20px;
+    background-color: #1F4529;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.contact-seller-btn:hover {
+    background-color: #2d5c44;
+}

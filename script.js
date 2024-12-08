@@ -639,3 +639,33 @@ document.addEventListener("DOMContentLoaded", function () {
         togglePriceVisibility();
     }
 });
+
+
+// items deteils page
+document.addEventListener("DOMContentLoaded", function () {
+    const prevButton = document.querySelector(".prev-button");
+    const nextButton = document.querySelector(".next-button");
+    const mainImage = document.getElementById("mainImage");
+    
+    const images = [
+        "images/item1.jpg",
+        "images/item2.jpg",
+        "images/item3.jpg"
+    ];
+    
+    let currentImageIndex = 0;
+    
+    function updateImage() {
+        mainImage.src = images[currentImageIndex];
+    }
+    
+    prevButton.addEventListener("click", function () {
+        currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+        updateImage();
+    });
+
+    nextButton.addEventListener("click", function () {
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+        updateImage();
+    });
+});
