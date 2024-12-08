@@ -294,6 +294,7 @@ document.addEventListener('DOMContentLoaded', function () {
         function loadItems() {
             fetch('./items.json')
                 .then(res => {
+                    console.log(`Fetching ${res.url} resulted in status: ${res.status}`);
                     if(!res.ok) throw new Error('Network response was not ok');
                     return res.json();
                 })
@@ -509,6 +510,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         function loadAllItemsForSearch() {
             return fetch('./items.json').then(res => {
+                console.log(`Fetching ${res.url} resulted in status: ${res.status}`);
                 if(!res.ok) throw new Error('Network not ok');
                 return res.json();
             }).then(data => {
@@ -614,6 +616,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
             fetch('./items.json')
                 .then(res => {
+                    console.log(`Fetching ${res.url} resulted in status: ${res.status}`);
                     if(!res.ok) throw new Error('Network response not ok');
                     return res.json();
                 })
