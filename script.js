@@ -1,3 +1,287 @@
+let defaultItemsData = {
+    "Books": [
+        {
+            "title": "Korean 2A",
+            "description": "Selling this textbook for Korean 3 HGU class.",
+            "image": "item-images/book1.jpg",
+            "location": "Library Entrance",
+            "seller": "dariti",
+            "listingType": "forSale",
+            "openToOffers": true,
+            "price": 6000,
+            "postedDate": "2024-12-02T10:15:00Z"
+        },
+        {
+            "title": "Bob Cofflin 'The importance of worship'",
+            "description": "Selling this book. It is trully great. I would recommend it for everyone.",
+            "image": "item-images/book2.jpg",
+            "location": "Dorm Lobby",
+            "seller": "yudima",
+            "listingType": "forSale",
+            "openToOffers": false,
+            "price": 10000,
+            "postedDate": "2024-12-03T14:20:00Z"
+        },
+        {
+            "title": "Les Misérables",
+            "description": "Book by Victor Hugo written in Russain. Great condition!",
+            "image": "item-images/book3.jpg",
+            "location": "Study Room",
+            "seller": "vasya06",
+            "listingType": "forSale",
+            "openToOffers": false,
+            "price": 8000,
+            "postedDate": "2024-12-05T09:00:00Z"
+        }
+    ],
+    "Electronics": [
+        {
+            "title": "Logitech Mouse",
+            "description": "Great Logiech Mouse. Selling it for a decent price. Please contact me.",
+            "image": "item-images/mouse.jpg",
+            "location": "Cafeteria",
+            "seller": "yudima",
+            "listingType": "forSale",
+            "openToOffers": false,
+            "price": 10000,
+            "postedDate": "2024-12-01T11:45:00Z"
+        },
+        {
+            "title": "AirPods 1st generation",
+            "description": "Used carefully. Battery ~5 hours.",
+            "image": "item-images/airpods.jpg",
+            "location": "Dorm Lobby",
+            "seller": "leolyab",
+            "listingType": "forSale",
+            "openToOffers": false,
+            "price": 25000,
+            "postedDate": "2024-12-07T16:10:00Z"
+        },
+        {
+            "title": "Iphone 15 pro 256gb",
+            "description": "iPhone 15 Pro 256GB camera, battery 88%. Inquire about price!",
+            "image": "item-images/iphone.jpg",
+            "location": "Campus Center",
+            "seller": "vasya06",
+            "listingType": "forSale",
+            "openToOffers": true,
+            "price": 1000000,
+            "postedDate": "2024-12-08T20:30:00Z"
+        }
+    ],
+    "Clothes": [
+        {
+            "title": "Asics Gel Grey",
+            "description": "Size 280mm. Great shoes for everyday use.",
+            "image": "item-images/shoes.jpg",
+            "location": "Dorm 2",
+            "seller": "lealea",
+            "listingType": "forSale",
+            "openToOffers": false,
+            "price": 65000,
+            "postedDate": "2024-12-04T08:00:00Z"
+        },
+        {
+            "title": "Wide Pants",
+            "description": "Wide casual male pants. One-Size.",
+            "image": "item-images/pants.jpg",
+            "location": "Library Entrance",
+            "seller": "abcaca",
+            "listingType": "forSale",
+            "openToOffers": false,
+            "price": 30000,
+            "postedDate": "2024-12-05T12:10:00Z"
+        },
+        {
+            "title": "Glasses fashion ",
+            "description": "They are new. No prescription. Shape didn't suit me.",
+            "image": "item-images/glasses.jpg",
+            "location": "Cafeteria",
+            "seller": "miaffa",
+            "listingType": "forSale",
+            "openToOffers": false,
+            "price": 15000,
+            "postedDate": "2024-12-06T14:45:00Z"
+        }
+    ],
+    "Services": [
+        {
+            "title": "Manicure + Design",
+            "description": "Certificate available. Complex designs cost extra.",
+            "image": "item-images/nails.jpg",
+            "location": "Dorm 4",
+            "seller": "naily78",
+            "listingType": "forSale",
+            "openToOffers": false,
+            "price": 25000,
+            "postedDate": "2024-12-02T13:00:00Z"
+        },
+        {
+            "title": "Cut & Hairstyle services",
+            "description": "Pretty hair for special events, also simple cuts.",
+            "image": "item-images/hair.jpg",
+            "location": "Campus Salon",
+            "seller": "olihair",
+            "listingType": "forSale",
+            "openToOffers": false,
+            "price": 20000,
+            "postedDate": "2024-12-03T09:30:00Z"
+        },
+        {
+            "title": "Korean Tutoring",
+            "description": "For intermediate learners, conversation or TOPIK 2 prep.",
+            "image": "item-images/korean.jpg",
+            "location": "Study Room 2",
+            "seller": "koroek",
+            "listingType": "forSale",
+            "openToOffers": false,
+            "price": 8000,
+            "postedDate": "2024-12-06T18:05:00Z"
+        }
+    ],
+    "FoodnCoupons": [
+        {
+            "title": "Syrniki",
+            "description": "Freshly made syrniki! Price for 2 pcs",
+            "image": "item-images/syr.jpg",
+            "location": "Cafeteria",
+            "seller": "eirtwq",
+            "listingType": "forSale",
+            "openToOffers": false,
+            "price": 3000,
+            "postedDate": "2024-12-02T17:20:00Z"
+        },
+        {
+            "title": "Starbucks Card",
+            "description": "Got as a gift, don't drink coffee, selling cheaper.",
+            "image": "item-images/sbcard.jpg",
+            "location": "Dorm 1",
+            "seller": "hartoe",
+            "listingType": "forSale",
+            "openToOffers": false,
+            "price": 8000,
+            "postedDate": "2024-12-07T09:40:00Z"
+        },
+        {
+            "title": "Starbucks Coupon",
+            "description": "Coupon for Starbucks, please buy and use soon!",
+            "image": "item-images/sbcoupon.jpg",
+            "location": "Campus Center",
+            "seller": "rewtyu",
+            "listingType": "forSale",
+            "openToOffers": false,
+            "price": 28000,
+            "postedDate": "2024-12-08T08:55:00Z"
+        }
+    ],
+    "LostnFound": [
+        {
+            "title": "LOST necklace",
+            "description": "Lost Necklace on December 1st near Cafeteria.",
+            "image": "item-images/necklace.jpg",
+            "location": "Cafeteria",
+            "seller": "kolioai",
+            "listingType": "lostAndFound",
+            "openToOffers": false,
+            "price": 0,
+            "postedDate": "2024-12-01T09:00:00Z"
+        },
+        {
+            "title": "FOUND UZSpace Water bottle",
+            "description": "Found Blue UZSpace bottle behind Soccer Field",
+            "image": "item-images/waterbottle.jpg",
+            "location": "Soccer Field",
+            "seller": "lkslils",
+            "listingType": "lostAndFound",
+            "openToOffers": false,
+            "price": 0,
+            "postedDate": "2024-12-05T15:30:00Z"
+        },
+        {
+            "title": "FOUND KB Bank Card",
+            "description": "Found KB Card (Yugay Dmitriy) on Romantic Field",
+            "image": "item-images/bankcard.jpg",
+            "location": "Romantic Field",
+            "seller": "golity",
+            "listingType": "lostAndFound",
+            "openToOffers": false,
+            "price": 0,
+            "postedDate": "2024-12-03T20:10:00Z"
+        }
+    ],
+    "Free": [
+        {
+            "title": "Stickers 6 pcs",
+            "description": "Giving away 6 packs of stickers",
+            "image": "item-images/stickers.jpg",
+            "location": "Dorm 3",
+            "seller": "polina",
+            "listingType": "free",
+            "openToOffers": false,
+            "price": 0,
+            "postedDate": "2024-12-04T11:00:00Z"
+        },
+        {
+            "title": "3 notebooks",
+            "description": "New notebooks, take if you need :)",
+            "image": "item-images/notebooks.jpg",
+            "location": "Library Entrance",
+            "seller": "gory2a",
+            "listingType": "free",
+            "openToOffers": false,
+            "price": 0,
+            "postedDate": "2024-12-06T07:20:00Z"
+        },
+        {
+            "title": "Termo Cup",
+            "description": "Moving out, don't need this cup.",
+            "image": "item-images/cup.jpg",
+            "location": "Dorm Lobby",
+            "seller": "lina21",
+            "listingType": "free",
+            "openToOffers": false,
+            "price": 0,
+            "postedDate": "2024-12-07T21:00:00Z"
+        }
+    ],
+    "Others": [
+        {
+            "title": "Markers",
+            "description": "Almost new markers, used a couple of times.",
+            "image": "item-images/markers.jpg",
+            "location": "Campus Center",
+            "seller": "kieoro",
+            "listingType": "forSale",
+            "openToOffers": false,
+            "price": 5000,
+            "postedDate": "2024-12-01T10:00:00Z"
+        },
+        {
+            "title": "Coffee Beans",
+            "description": "Blue Bottle Coffee beans, tasting notes of blueberry.",
+            "image": "item-images/beans.jpg",
+            "location": "Dorm 1",
+            "seller": "popos1",
+            "listingType": "forSale",
+            "openToOffers": false,
+            "price": 12000,
+            "postedDate": "2024-12-02T13:50:00Z"
+        },
+        {
+            "title": "Mineral Stones",
+            "description": "Beautiful mineral stones from Japan.",
+            "image": "item-images/stones.jpg",
+            "location": "Cafeteria",
+            "seller": "balytu",
+            "listingType": "forSale",
+            "openToOffers": false,
+            "price": 25000,
+            "postedDate": "2024-12-08T12:00:00Z"
+        }
+    ]
+};
+
+
 document.addEventListener('DOMContentLoaded', function () {
     const currentPage = window.location.pathname.split('/').pop();
     let loggedInUser = localStorage.getItem('loggedInUser') || null;
@@ -6,11 +290,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function maskUserIdentifier(identifier) {
         if (!identifier) return '';
-        // Simple masking: first 2 chars + '**' + last 2 chars
         if (identifier.length > 4) {
             return identifier.substring(0, 2) + '**' + identifier.substring(identifier.length - 2);
         } else {
-            return identifier; // If too short to mask properly
+            return identifier;
         }
     }
 
@@ -18,16 +301,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const container = document.getElementById('login-link-container');
         if (container) {
             if (loggedInUser) {
-                // find user by email since we stored loggedInUser as email
                 const user = users.find(u => u.email === loggedInUser);
-                let identifierToMask;
-                if (user) {
-                    // Prefer showing username
-                    identifierToMask = user.username;
-                } else {
-                    // fallback if user not found
-                    identifierToMask = loggedInUser;
-                }
+                let identifierToMask = user ? user.username : loggedInUser;
                 const masked = maskUserIdentifier(identifierToMask);
                 container.innerHTML = '<a href="profile.html">' + masked + '</a>';
             } else {
@@ -47,36 +322,101 @@ document.addEventListener('DOMContentLoaded', function () {
         return userFavs.some(it => it.itemID === itemID);
     }
 
-    function getItemByID(itemID) {
-        if(!window.allLoadedItems) return null;
-        return window.allLoadedItems.find(i => encodeURIComponent(i.title + '_' + (i.category||'All')) === itemID);
-    }
-
     function toggleFavorite(itemID) {
-        if(!loggedInUser) return;
+        if (!loggedInUser) return;
         let favs = JSON.parse(localStorage.getItem('favorites')) || {};
         let userFavs = favs[loggedInUser] || [];
 
         const item = getItemByID(itemID);
-        if(!item) return;
+        if (!item) return;
 
         const index = userFavs.findIndex(it => it.itemID === itemID);
-        if(index >= 0) {
-            // remove favorite
+        if (index >= 0) {
             userFavs.splice(index, 1);
         } else {
-            // add to favorites
-            userFavs.push({itemID: itemID, item: item});
+            userFavs.push({ itemID: itemID, item: item });
         }
 
         favs[loggedInUser] = userFavs;
         localStorage.setItem('favorites', JSON.stringify(favs));
     }
 
-    // Registration page
+    function loadItemsFromLocalStorage() {
+        let defaultItems = JSON.parse(localStorage.getItem('defaultItems'));
+        if(!defaultItems) {
+            localStorage.setItem('defaultItems', JSON.stringify(defaultItemsData));
+            defaultItems = defaultItemsData;
+        }
+
+        let combined = [];
+        for (let catKey in defaultItems) {
+            let catItems = defaultItems[catKey];
+            catItems.forEach(it => {
+                if(!it.category) it.category = catKey;
+            });
+            combined = combined.concat(catItems);
+        }
+
+        for (let catKey in postedItems) {
+            let postedCatItems = postedItems[catKey];
+            if(!Array.isArray(postedCatItems)) postedCatItems = [postedCatItems];
+            postedCatItems.forEach(it => {
+                if(!it.category) it.category = catKey;
+            });
+            combined = combined.concat(postedCatItems);
+        }
+
+        window.allLoadedItems = combined;
+    }
+
+    function getItemByID(itemID) {
+        if (!window.allLoadedItems) return null;
+        return window.allLoadedItems.find(i => {
+            const categoryForID = i.category || 'All';
+            const generatedID = encodeURIComponent(i.title + '_' + categoryForID);
+            return generatedID === itemID;
+        });
+    }
+
+    function displayItemNotFound() {
+        const container = document.querySelector('.item-details-container');
+        if (container) {
+            container.innerHTML = '<p style="text-align:center;">Item not found.</p>';
+        }
+    }
+
+    function populateItemDetails(item) {
+        const mainImage = document.getElementById('mainImage');
+        const titleEl = document.querySelector('.item-title');
+        const categoryEl = document.querySelector('.item-category span');
+        const locationEl = document.querySelector('.item-location span');
+        const priceEl = document.querySelector('.item-price span');
+        const descEl = document.querySelector('.item-description');
+        const sellerEl = document.querySelector('.item-seller');
+    
+        if (mainImage) mainImage.src = item.image;
+        if (titleEl) titleEl.textContent = item.title || 'No Title';
+        if (categoryEl) categoryEl.textContent = item.category || 'All';
+        if (locationEl) locationEl.textContent = item.location || 'No Location';
+        if (descEl) descEl.innerHTML = `<b>Description:</b> ${item.description || 'No description'}`;
+        if (sellerEl) sellerEl.innerHTML = `<b>Seller:</b> ${item.seller || 'Unknown'}`;
+    
+        if (priceEl) {
+            if(item.listingType === 'forSale') {
+                priceEl.textContent = (item.price || 0) + ' KRW';
+            } else if(item.listingType === 'free' || item.listingType === 'lostAndFound') {
+                priceEl.textContent = '0 KRW';
+            } else {
+                priceEl.textContent = '';
+            }
+        }
+    }
+
+    // Handle pages
     function handleRegisterPage() {
         if (currentPage !== 'register.html') return;
         const form = document.getElementById('registerForm');
+        if(!form) return;
         form.addEventListener('submit', function (e) {
             e.preventDefault();
             const email = document.getElementById('registerEmail').value.trim();
@@ -99,7 +439,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             if (users.find(u => u.username === username || u.email === email)) {
-                alert('Username or Email already exists. Choose another one.');
+                alert('Username or Email already exists.');
                 return;
             }
 
@@ -115,10 +455,11 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Login page
     function handleLoginPage() {
         if (currentPage !== 'login.html') return;
         const form = document.getElementById('loginForm');
+        if(!form) return;
+
         form.addEventListener('submit', function (e) {
             e.preventDefault();
             const loginVal = document.getElementById('loginInput').value.trim();
@@ -145,7 +486,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Profile page
     function handleProfilePage() {
         if (currentPage !== 'profile.html') return;
         if (!loggedInUser) {
@@ -164,12 +504,12 @@ document.addEventListener('DOMContentLoaded', function () {
         const profileEmail = document.getElementById('profileEmail');
         const profileRegisterDate = document.getElementById('profileRegisterDate');
 
-        if(profileUsername) profileUsername.textContent = user.username;
-        if(profileEmail) profileEmail.textContent = user.email;
-        if(profileRegisterDate) profileRegisterDate.textContent = new Date(user.registerDate).toLocaleString();
+        if (profileUsername) profileUsername.textContent = user.username;
+        if (profileEmail) profileEmail.textContent = user.email;
+        if (profileRegisterDate) profileRegisterDate.textContent = new Date(user.registerDate).toLocaleString();
 
         const logoutBtn = document.getElementById('logoutBtn');
-        if(logoutBtn) {
+        if (logoutBtn) {
             logoutBtn.addEventListener('click', function () {
                 localStorage.removeItem('loggedInUser');
                 window.location.href = 'index.html';
@@ -177,19 +517,19 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         const changePassForm = document.getElementById('changePasswordForm');
-        if(changePassForm) {
+        if (changePassForm) {
             changePassForm.addEventListener('submit', function (e) {
                 e.preventDefault();
                 const curPass = document.getElementById('currentPassword').value;
                 const newPass = document.getElementById('newPassword').value.trim();
                 const confirmPass = document.getElementById('confirmPassword').value.trim();
-                
+
                 if (curPass !== user.password) {
                     alert('Current password is wrong!');
                     return;
                 }
-                if(newPass !== confirmPass) {
-                    alert('New password and confirm password do not match.');
+                if (newPass !== confirmPass) {
+                    alert('Passwords do not match.');
                     return;
                 }
 
@@ -201,7 +541,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Post item page
     function handlePostItemPage() {
         if (currentPage !== 'post_item.html') return;
         if (!loggedInUser) {
@@ -210,14 +549,14 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         const form = document.getElementById('postItemForm');
-        if(!form) return;
+        if (!form) return;
 
         const listingTypes = form.querySelectorAll('input[name="listingType"]');
         const priceInputContainer = document.getElementById('priceInputContainer');
         const priceInput = document.getElementById('postPrice');
         const openToOffersCheckbox = document.getElementById('openToOffers');
 
-        if(listingTypes) {
+        if (listingTypes) {
             listingTypes.forEach(radio => {
                 radio.addEventListener('change', function () {
                     if (this.value === 'forSale') {
@@ -229,53 +568,52 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }
 
-        if(form) {
-            form.addEventListener('submit', function (e) {
-                e.preventDefault();
-                const title = document.getElementById('postTitle').value.trim();
-                const category = document.getElementById('postCategory').value;
-                const listingType = form.querySelector('input[name="listingType"]:checked') ? form.querySelector('input[name="listingType"]:checked').value : '';
-                const description = document.getElementById('postDescription').value.trim();
-                const location = document.getElementById('postLocation').value.trim();
-                const images = document.getElementById('postImages').files;
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const title = document.getElementById('postTitle').value.trim();
+            const category = document.getElementById('postCategory').value;
+            const listingType = form.querySelector('input[name="listingType"]:checked') ? form.querySelector('input[name="listingType"]:checked').value : '';
+            const description = document.getElementById('postDescription').value.trim();
+            const location = document.getElementById('postLocation').value.trim();
+            const images = document.getElementById('postImages').files;
 
-                let imagePath = 'item-images/default.jpg';
-                if (images.length > 0) {
-                    imagePath = 'item-images/' + images[0].name;
-                }
+            let imagePath = 'item-images/default.jpg';
+            if (images.length > 0) {
+                imagePath = 'item-images/' + images[0].name;
+            }
 
-                let priceVal = 0;
-                let offers = false;
-                if (listingType === 'forSale') {
-                    priceVal = parseInt(priceInput.value) || 0;
-                    offers = openToOffersCheckbox.checked;
-                }
+            let priceVal = 0;
+            let offers = false;
+            if (listingType === 'forSale') {
+                priceVal = parseInt(priceInput.value) || 0;
+                offers = openToOffersCheckbox.checked;
+            }
 
-                if (!postedItems[category]) postedItems[category] = [];
+            if (!postedItems[category]) postedItems[category] = [];
 
-                const newItem = {
-                    title: title,
-                    description: description,
-                    image: imagePath,
-                    location: location,
-                    seller: loggedInUser,
-                    listingType: listingType,
-                    openToOffers: offers,
-                    price: priceVal,
-                    postedDate: new Date().toISOString()
-                };
+            const newItem = {
+                title: title,
+                description: description,
+                image: imagePath,
+                location: location,
+                seller: loggedInUser,
+                listingType: listingType,
+                openToOffers: offers,
+                price: priceVal,
+                postedDate: new Date().toISOString()
+            };
 
-                postedItems[category].push(newItem);
-                localStorage.setItem('postedItems', JSON.stringify(postedItems));
+            postedItems[category].push(newItem);
+            localStorage.setItem('postedItems', JSON.stringify(postedItems));
 
-                alert('Item posted successfully!');
-                form.reset();
-                priceInputContainer.style.display = 'none';
-            });
-        }
+            alert('Item posted successfully!');
+            form.reset();
+            priceInputContainer.style.display = 'none';
+            // After posting, reload items into window.allLoadedItems
+            loadItemsFromLocalStorage();
+        });
     }
 
-    // Handle category page
     function handleCategoryPage() {
         if (currentPage !== 'category.html') return;
 
@@ -287,59 +625,25 @@ document.addEventListener('DOMContentLoaded', function () {
         const sortSelect = document.getElementById('sortSelect');
         const applyFiltersBtn = document.getElementById('applyFiltersBtn');
 
-        if(categorySelect) categorySelect.value = category;
-
-        let allData = {}; 
-
-        function loadItems() {
-            fetch('./items.json')
-                .then(res => {
-                    console.log(`Fetching ${res.url} resulted in status: ${res.status}`);
-                    if(!res.ok) throw new Error('Network response was not ok');
-                    return res.json();
-                })
-                .then(data => {
-                    // data loaded
-                    allData = data;
-                    displayItems();
-                })
-                .catch(err => {
-                    console.error('Failed to load items.json:', err);
-                    allData = {}; // fallback empty
-                    displayItems();
-                });
-        }
+        if (categorySelect) categorySelect.value = category;
 
         function getAllItems() {
-            let combined = [];
-            if (category && allData[category]) {
-                combined = combined.concat(allData[category]);
-            } else if (!category) {
-                // no category means show all
-                for (let catKey in allData) {
-                    combined = combined.concat(allData[catKey]);
-                }
+            // window.allLoadedItems is already set by loadItemsFromLocalStorage()
+            let items = window.allLoadedItems || [];
+            if (category) {
+                items = items.filter(it => it.category === category);
             }
-
-            if (category && postedItems[category]) {
-                combined = combined.concat(postedItems[category]);
-            } else if (!category) {
-                for (let catKey in postedItems) {
-                    combined = combined.concat(postedItems[catKey]);
-                }
-            }
-
-            return combined;
+            return items;
         }
 
         function attachCategoryItemEventListeners() {
             const heartButtons = document.querySelectorAll('.heart-btn');
             const buyButtons = document.querySelectorAll('.buy-btn');
-        
+
             heartButtons.forEach(btn => {
                 btn.addEventListener('click', (e) => {
                     const itemID = e.currentTarget.getAttribute('data-itemid');
-                    if(!loggedInUser) {
+                    if (!loggedInUser) {
                         window.location.href = 'login.html';
                         return;
                     }
@@ -348,11 +652,11 @@ document.addEventListener('DOMContentLoaded', function () {
                     e.currentTarget.querySelector('img').src = `images/${isFav ? 'heartLiked.svg' : 'heartUnliked.svg'}`;
                 });
             });
-        
+
             buyButtons.forEach(btn => {
                 btn.addEventListener('click', (e) => {
                     const itemID = e.currentTarget.getAttribute('data-itemid');
-                    if(!loggedInUser) {
+                    if (!loggedInUser) {
                         window.location.href = 'login.html';
                         return;
                     }
@@ -363,12 +667,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         function displayItems() {
             const items = getAllItems();
-
-            // store items in global for getItemByID
-            window.allLoadedItems = items.map(it => {
-                it.category = category ? category : 'All';
-                return it;
-            });
 
             const sortValue = sortSelect ? sortSelect.value : 'time_desc';
             if (sortValue === 'time_desc') {
@@ -388,14 +686,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
             let htmlStr = '';
             items.forEach(item => {
-                const categoryForID = category ? category : 'All';
+                const categoryForID = item.category || 'All';
                 const itemID = encodeURIComponent(item.title + '_' + categoryForID);
-                const priceInfo = (item.listingType === 'forSale') ? (item.price + ' KRW') 
+                const priceInfo = (item.listingType === 'forSale') ? (item.price + ' KRW')
                     : (item.listingType === 'free' || item.listingType === 'lostAndFound') ? '0 KRW' : '';
-            
-                const isFavorited = isItemFavorited(itemID);
-                const heartIcon = isFavorited ? 'heartLiked.svg' : 'heartUnliked.svg';
-            
+
+                const isFav = isItemFavorited(itemID);
+                const heartIcon = isFav ? 'heartLiked.svg' : 'heartUnliked.svg';
+
                 htmlStr += `
                     <div class="item-card" data-itemid="${itemID}">
                         <img src="${item.image}" alt="${item.title}">
@@ -404,7 +702,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         <p><strong>Location:</strong> ${item.location}</p>
                         <p><strong>Seller:</strong> ${item.seller}</p>
                         ${priceInfo ? `<p><strong>Price:</strong> ${priceInfo}</p>` : ``}
-            
+
                         <div class="item-actions">
                             <button class="heart-btn" data-itemid="${itemID}">
                                 <img src="images/${heartIcon}" alt="heart" width="24">
@@ -418,14 +716,14 @@ document.addEventListener('DOMContentLoaded', function () {
             attachCategoryItemEventListeners();
         }
 
-        if(applyFiltersBtn) {
+        if (applyFiltersBtn) {
             applyFiltersBtn.addEventListener('click', function () {
                 category = categorySelect ? categorySelect.value : '';
                 displayItems();
             });
         }
 
-        loadItems();
+        displayItems();
     }
 
     function handleFavoritesPage() {
@@ -434,23 +732,23 @@ document.addEventListener('DOMContentLoaded', function () {
             window.location.href = 'login.html';
             return;
         }
-    
+
         const favContainer = document.getElementById('favoritesContainer');
         let favs = JSON.parse(localStorage.getItem('favorites')) || {};
         let userFavs = favs[loggedInUser] || [];
-    
-        if(userFavs.length === 0) {
+
+        if (userFavs.length === 0) {
             favContainer.innerHTML = "<p>You don't have liked items</p>";
             return;
         }
-    
+
         let htmlStr = '';
         userFavs.forEach(f => {
             const item = f.item;
             const itemID = f.itemID;
-            const priceInfo = (item.listingType === 'forSale') ? (item.price + ' KRW') 
-              : (item.listingType === 'free' || item.listingType === 'lostAndFound') ? '0 KRW' : '';
-    
+            const priceInfo = (item.listingType === 'forSale') ? (item.price + ' KRW')
+                : (item.listingType === 'free' || item.listingType === 'lostAndFound') ? '0 KRW' : '';
+
             htmlStr += `
                 <div class="favorite-item" data-itemid="${itemID}">
                     <img src="${item.image}" alt="${item.title}" style="max-width:100%; height:auto;">
@@ -468,31 +766,31 @@ document.addEventListener('DOMContentLoaded', function () {
                 </div>
             `;
         });
-    
+
         favContainer.innerHTML = htmlStr;
-    
+
         const heartButtons = favContainer.querySelectorAll('.heart-btn');
         const buyButtons = favContainer.querySelectorAll('.buy-btn');
-    
+
         heartButtons.forEach(btn => {
             btn.addEventListener('click', e => {
                 const itemID = e.currentTarget.getAttribute('data-itemid');
-                if(!loggedInUser) {
+                if (!loggedInUser) {
                     window.location.href = 'login.html';
                     return;
                 }
                 toggleFavorite(itemID);
                 e.currentTarget.closest('.favorite-item').remove();
-                if(favContainer.children.length === 0) {
+                if (favContainer.children.length === 0) {
                     favContainer.innerHTML = "<p>You don't have liked items</p>";
                 }
             });
         });
-    
+
         buyButtons.forEach(btn => {
             btn.addEventListener('click', e => {
                 const itemID = e.currentTarget.getAttribute('data-itemid');
-                if(!loggedInUser) {
+                if (!loggedInUser) {
                     window.location.href = 'login.html';
                     return;
                 }
@@ -503,52 +801,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function handleSearchFromIndex() {
         if (currentPage !== 'index.html') return;
+
         const searchForm = document.getElementById('search-form');
         const searchInput = document.getElementById('search-input');
         const searchResults = document.getElementById('searchResults');
-        let allDataCache = null;
 
-        function loadAllItemsForSearch() {
-            return fetch('./items.json').then(res => {
-                console.log(`Fetching ${res.url} resulted in status: ${res.status}`);
-                if(!res.ok) throw new Error('Network not ok');
-                return res.json();
-            }).then(data => {
-                // Merge posted items
-                for (let catKey in postedItems) {
-                    if (!data[catKey]) data[catKey] = [];
-                    data[catKey] = data[catKey].concat(postedItems[catKey]);
-                }
-                return data;
-            }).catch(err => {
-                console.error('Error loading items for search:', err);
-                return {};
-            });
-        }
+        if (!searchForm) return;
+        searchForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const query = searchInput.value.trim().toLowerCase();
+            if (!query) return;
 
-        if(searchForm) {
-            searchForm.addEventListener('submit', function (e) {
-                e.preventDefault();
-                const query = searchInput.value.trim().toLowerCase();
-                if (!query) return;
-
-                if (!allDataCache) {
-                    loadAllItemsForSearch().then(data => {
-                        allDataCache = data;
-                        showSearchResults(query);
-                    });
-                } else {
-                    showSearchResults(query);
-                }
-            });
-        }
-
-        function showSearchResults(query) {
-            let allItems = [];
-            for (let cat in allDataCache) {
-                allItems = allItems.concat(allDataCache[cat]);
-            }
-
+            let allItems = window.allLoadedItems || [];
             let filtered = allItems.filter(item => item.title.toLowerCase().includes(query));
             if (filtered.length === 0) {
                 searchResults.innerHTML = '<p>No results found.</p>';
@@ -557,7 +821,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             let htmlStr = '<div style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center;">';
             filtered.forEach(item => {
-                const priceInfo = (item.listingType === 'forSale') ? (item.price + ' KRW') 
+                const priceInfo = (item.listingType === 'forSale') ? (item.price + ' KRW')
                                 : (item.listingType === 'free' || item.listingType === 'lostAndFound') ? '0 KRW' : '';
                 htmlStr += `
                   <div class="item-card">
@@ -572,239 +836,39 @@ document.addEventListener('DOMContentLoaded', function () {
             });
             htmlStr += '</div>';
             searchResults.innerHTML = htmlStr;
-        }
+        });
     }
 
     function handleItemDetailsPage() {
-        if (currentPage !== 'item_details.html') return;
-    
-        if(!loggedInUser) {
+        if (window.location.pathname.split('/').pop() !== 'item_details.html') return;
+
+        if (!loggedInUser) {
             window.location.href = 'login.html';
             return;
         }
-    
+
         const urlParams = new URLSearchParams(window.location.search);
         const itemID = urlParams.get('itemID');
-        if(!itemID) {
-            // No itemID provided
+        if (!itemID) {
             displayItemNotFound();
             return;
         }
-    
-        // Ensure items are loaded (in case user directly opens item_details.html)
-        loadAllItemsIfNeeded().then(() => {
-            const item = getItemByID(itemID);
-            if(!item) {
-                displayItemNotFound();
-                return;
-            }
-    
-            populateItemDetails(item);
-        }).catch(err => {
-            console.error('Error loading items:', err);
-            displayItemNotFound();
-        });
-    }
-    
-    // This function ensures that items are loaded into window.allLoadedItems if not already.
-    function loadAllItemsIfNeeded() {
-        return new Promise((resolve, reject) => {
-            if (window.allLoadedItems && window.allLoadedItems.length > 0) {
-                resolve();
-                return;
-            }
-    
-            fetch('./items.json')
-                .then(res => {
-                    console.log(`Fetching ${res.url} resulted in status: ${res.status}`);
-                    if(!res.ok) throw new Error('Network response not ok');
-                    return res.json();
-                })
-                .then(data => {
-                    // Merge posted items
-                    let combined = [];
-                    for (let catKey in data) {
-                        const catItems = data[catKey].map(it => {
-                            if(!it.category) it.category = catKey; // Assign category from the JSON key
-                            return it;
-                        });
-                        combined = combined.concat(catItems);
-                    }
-                    for (let catKey in postedItems) {
-                        let postedCatItems = postedItems[catKey];
-                        // Force postedCatItems to be an array if it's not
-                        if (!Array.isArray(postedCatItems)) {
-                            postedCatItems = [postedCatItems]; 
-                        }
-                    
-                        postedCatItems = postedCatItems.map(it => {
-                            if(!it.category) it.category = catKey;
-                            return it;
-                        });
-                        combined = combined.concat(postedCatItems);
-                    }                    
-                    window.allLoadedItems = combined;
-                    resolve();
-                })
-                .catch(err => {
-                    console.error('Failed to load items', err);
-                    window.allLoadedItems = []; 
-                    resolve(); // resolve with empty array to avoid blocking
-                });
-        });
-    }
-    
-    function getItemByID(itemID) {
-        if(!window.allLoadedItems) return null;
-        return window.allLoadedItems.find(i => {
-            const categoryForID = i.category || 'All';
-            const generatedID = encodeURIComponent(i.title + '_' + categoryForID);
-            return generatedID === itemID;
-        });
-    }
-    
-    function displayItemNotFound() {
-        const container = document.querySelector('.item-details-container');
-        if(container) {
-            container.innerHTML = '<p style="text-align:center; width:100%;">Item not found.</p>';
-        }
-    }
-    
-    function populateItemDetails(item) {
-        const mainImage = document.getElementById('mainImage');
-        const titleEl = document.querySelector('.item-title');
-        const categoryEl = document.querySelector('.item-category span');
-        const locationEl = document.querySelector('.item-location span');
-        const priceEl = document.querySelector('.item-price span');
-        const descEl = document.querySelector('.item-description');
-        const sellerEl = document.querySelector('.item-seller');
-      
-        if(!item.images && item.image) {
-            // If no 'images' array but there is a single 'image', make it an array for scrolling logic.
-            item.images = [item.image];
-        }
-    
-        // Set the first image
-        if (mainImage && item.images && item.images.length > 0) mainImage.src = item.images[0];
-    
-        if (titleEl) titleEl.textContent = item.title || 'No Title';
-        if (categoryEl) categoryEl.textContent = item.category || 'All';
-        if (locationEl) locationEl.textContent = item.location || 'No Location';
-        if (descEl) descEl.innerHTML = `<b>Description:</b> ${item.description || 'No description'}`;
-        if (sellerEl) sellerEl.innerHTML = `<b>Seller:</b> ${item.seller || 'Unknown'}`;
-    
-        if (priceEl) {
-            if(item.listingType === 'forSale') {
-                priceEl.textContent = (item.price || 0) + ' KRW';
-            } else if(item.listingType === 'free' || item.listingType === 'lostAndFound') {
-                priceEl.textContent = '0 KRW';
-            } else {
-                priceEl.textContent = '';
-            }
-        }
-    
-        // Implement image scrolling
-        implementImageScrolling(item.images);
-    }
-    
-    function implementImageScrolling(images) {
-        const prevButton = document.querySelector(".prev-button");
-        const nextButton = document.querySelector(".next-button");
-        const mainImage = document.getElementById("mainImage");
-        
-        if(!images || images.length === 0) return; // No images to scroll
-        let currentImageIndex = 0;
-    
-        function updateImage() {
-            mainImage.src = images[currentImageIndex];
-        }
-    
-        if(prevButton) {
-            prevButton.addEventListener("click", function () {
-                if(images.length <= 1) return; // Only one image, no scroll
-                currentImageIndex = currentImageIndex === 0 ? images.length - 1 : currentImageIndex - 1;
-                updateImage();
-            });
-        }
-    
-        if(nextButton) {
-            nextButton.addEventListener("click", function () {
-                if(images.length <= 1) return; // Only one image, no scroll
-                currentImageIndex = (currentImageIndex + 1) % images.length;
-                updateImage();
-            });
-        }
-    }
-    
-    function handleItemDetailsPage() {
-        if (currentPage !== 'item_details.html') return;
-    
-        if(!loggedInUser) {
-            window.location.href = 'login.html';
-            return;
-        }
-    
-        const urlParams = new URLSearchParams(window.location.search);
-        const itemID = urlParams.get('itemID');
-        if(!itemID) {
+
+        const item = getItemByID(itemID);
+        if (!item) {
             displayItemNotFound();
             return;
         }
-    
-        loadAllItemsIfNeeded().then(() => {
-            const item = getItemByID(itemID);
-            if(!item) {
-                displayItemNotFound();
-                return;
-            }
-            populateItemDetails(item);
-        }).catch(err => {
-            console.error('Error loading items for details:', err);
-            displayItemNotFound();
-        });
-    }    
-    
-    function displayItemNotFound() {
-        const container = document.querySelector('.item-details-container');
-        if(container) {
-            container.innerHTML = '<p style="text-align:center;">Item not found.</p>';
-        }
+
+        populateItemDetails(item);
     }
-    
-    function populateItemDetails(item) {
-        // Populate fields:
-        const mainImage = document.getElementById('mainImage');
-        const titleEl = document.querySelector('.item-title');
-        const categoryEl = document.querySelector('.item-category span');
-        const locationEl = document.querySelector('.item-location span');
-        const priceContainer = document.querySelector('.item-price span');
-        const descEl = document.querySelector('.item-description');
-        const sellerEl = document.querySelector('.item-seller');
-    
-        if (mainImage) mainImage.src = item.image;
-        if (titleEl) titleEl.textContent = item.title;
-        if (categoryEl) categoryEl.textContent = item.category || 'All';
-        if (locationEl) locationEl.textContent = item.location;
-        if (descEl) descEl.innerHTML = `<b>Description:</b> ${item.description}`;
-        if (sellerEl) sellerEl.innerHTML = `<b>Seller:</b> ${item.seller}`;
-    
-        if (priceContainer && (item.listingType === 'forSale' || item.listingType === 'free' || item.listingType === 'lostAndFound')) {
-            const price = (item.listingType === 'forSale') ? item.price + ' KRW' : '0 KRW';
-            priceContainer.textContent = price;
-        } else if (priceContainer) {
-            priceContainer.textContent = '';
-        }
-    
-        // If you have multiple images in future, you can store them in `item.images` array and update the logic of prev/next.
-        // For now, we use single image or the static images array you had before.
-    }
-    
 
     updateHeaderLoginLink();
     handleRegisterPage();
     handleLoginPage();
     handleProfilePage();
     handlePostItemPage();
+    loadItemsFromLocalStorage();
     handleCategoryPage();
     handleFavoritesPage();
     handleSearchFromIndex();
@@ -817,7 +881,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const priceContainer = document.getElementById("priceContainer");
 
     function togglePriceVisibility() {
-        if(!categorySelect || !priceContainer) return;
+        if (!categorySelect || !priceContainer) return;
         const selectedCategory = categorySelect.value;
         if (selectedCategory === "Free" || selectedCategory === "LostnFound") {
             priceContainer.classList.add("hidden");
@@ -826,7 +890,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    if(categorySelect) {
+    if (categorySelect) {
         categorySelect.addEventListener("change", togglePriceVisibility);
         togglePriceVisibility();
     }
