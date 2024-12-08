@@ -1,27 +1,24 @@
-<!-- item_details.html -->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
-  <title>Handong Harvest - Item Details</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Item Details</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap">
 </head>
 
 <body>
-
-  <!-- Header -->
-  <header>
-    <div class="container">
-      <h1>Handong Harvest</h1>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="favorites.html">Favorites</a>
-        <a href="profile.html">Profile</a>
-        <a href="logout.html">Logout</a>
-      </nav>
+  <header class="header">
+    <a href="index.html"><img src="images/logo.svg" alt="textlogo" width="150px"></a>
+    <div class="menu">
+      <a href="favorites.html" class="icon-link"><img src="images/heart.svg" alt="heart"></a>
+      <a href="login.html">login</a>
+      <div class="post_btn">
+        <a href="post_item.html">+post</a>
+      </div>
     </div>
   </header>
 
@@ -38,15 +35,25 @@
   </div>
 
   <!-- Footer -->
-  <footer>
-    <p>&copy; 2024 Handong Harvest</p>
+  <footer class="footer">
+    <div class="bottomMenu">
+      <div class="sns">
+        <a href="#insta"><img src="images/instagram.svg" alt="instagram"></a>
+        <a href="#x"><img src="images/x.svg" alt="x"></a>
+        <a href="#mail"><img src="images/mail.svg" alt="mail"></a>
+      </div>
+      <div class="info">
+        <a href="about.html">about us</a>
+        <a href="policy.html">user policy</a>
+        <a href="faq.html">FAQ</a>
+        <a href="honorcode.html">honor code</a>
+      </div>
+      <div>
+        <img src="images/logo.svg" alt="logo" height="24px">
+      </div>
+    </div>
+    <p>© 2024 HandongHarvest</p>
   </footer>
-
-  <script>
-    function contactSeller() {
-      alert('Messaging feature coming soon!');
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
-
 </html>
