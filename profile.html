@@ -22,24 +22,41 @@
         </div>
     </header>
 
-    <main style="text-align:center; margin-top:50px;">
-        <h1>Profile</h1>
-        <p>Username: <span id="profileUsername"></span></p>
-        <p>Registered on: <span id="profileRegisterDate"></span></p>
+    <main>
+        <h1 class="favorites-title">Profile</h1>
+        <!-- User Info Section -->
+        <div class="profile-section profile-info">
+            <h2 class="section-title">User Information</h2>
+            <p class="profile-detail">Username: <span id="profileUsername">JohnDoe</span></p>
+            <p class="profile-detail">Registered on: <span id="profileRegisterDate">2024-01-01</span></p>
+            <button id="logoutBtn" class="btn btn-logout">Logout</button>
+        </div>
 
-        <h2>Change Password</h2>
-        <form id="changePasswordForm" style="display:inline-block; text-align:left;">
-            <label for="newPassword"><b>New Password</b></label><br>
-            <input type="password" id="newPassword" name="newPassword" required
-                style="width:100%; margin-bottom:10px;"><br>
-            <button type="submit"
-                style="padding:10px 20px; border:none; background:#1F4529; color:#fff; border-radius:10px; cursor:pointer;">Change
-                Password</button>
-        </form>
+        <!-- My Posts Section -->
+        <div class="profile-section profile-posts">
+            <h2 class="section-title">My Posts</h2>
+            <div class="profile-container">
+                <div class="profile-item">Post 1</div>
+                <div class="profile-item">Post 2</div>
+                <div class="profile-item">Post 3</div>
+            </div>
+        </div>
 
-        <div style="margin-top:20px;">
-            <button id="logoutBtn"
-                style="padding:10px 20px; border:none; background:#1F4529; color:#fff; border-radius:10px; cursor:pointer;">Logout</button>
+        <!-- Change Password Section -->
+        <div class="profile-section profile-password">
+            <h2 class="section-title">Change Password</h2>
+            <form id="changePasswordForm" class="password-form">
+                <label for="currentPassword" class="profile-label">Current Password</label>
+                <input type="password" id="currentPassword" name="currentPassword" required class="profile-input">
+                
+                <label for="newPassword" class="profile-label">New Password</label>
+                <input type="password" id="newPassword" name="newPassword" required class="profile-input">
+                
+                <label for="confirmPassword" class="profile-label">Confirm New Password</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required class="profile-input">
+                
+                <button type="submit" class="btn btn-submit">Change Password</button>
+            </form>
         </div>
     </main>
 

@@ -6,7 +6,7 @@ body {
     font-family: Jost, sans-serif;
     margin: 0;
     line-height: normal;
-    cursor: url('Ellipse 4.svg'), auto;
+    cursor: url('cursor.svg'), auto;
 }
 
 .header {
@@ -360,6 +360,11 @@ footer p {
     border-radius:5px;
 }
 
+.hr-profile {
+    border: 0.15em solid #1F4529;
+}
+
+
 /* Favorites page */
 .favorites-title {
     margin-top: 50px;
@@ -462,4 +467,79 @@ footer p {
     .login-form-button {
         font-size:4vw;
     }
+}
+
+/* Унифицированный стиль для всех секций профиля */
+.profile-section {
+    background-color: #fffef5;
+    border: 0.2em solid #1F4529;
+    border-radius: 1em;
+    box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.1);
+    margin: 2em auto;
+    padding: 2em;
+    width: 90%;
+    max-width: 40em;
+    box-sizing: border-box;
+}
+
+.profile-section h2 {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+}
+
+.profile-section p {
+    margin: 1em 0;
+}
+
+.profile-section button, .profile-section a {
+    background-color: #1F4529;
+    color: #fffef5;
+    padding: 0.7em 1.5em;
+    border: none;
+    border-radius: 1em;
+    font-size: 1em;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.profile-section button:hover, .profile-section a:hover {
+    background-color: #14401F;
+}
+
+/* Стили для формы */
+.profile-input {
+    width: 100%;
+    padding: 0.7em;
+    margin-bottom: 1em;
+    border: 0.1em solid #c0a9a9;
+    border-radius: 0.5em;
+    box-sizing: border-box;
+}
+
+.profile-label {
+    display: block;
+    margin-bottom: 0.5em;
+    text-align: left;
+    font-size: 1em;
+}
+
+/* Унификация списков */
+.profile-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1em;
+}
+
+.profile-item {
+    background-color: #fefae0;
+    border: 0.1em solid #1F4529;
+    border-radius: 0.5em;
+    padding: 1em;
+    font-size: 1em;
+    box-shadow: 0 0.2em 0.5em rgba(0, 0, 0, 0.1);
+    width: 8em;
+    height: 8em;
 }
