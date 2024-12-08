@@ -1,78 +1,78 @@
 {
     "Books": [
       {
-        "title": "Introduction to Marketing: Theory and Practice",
-        "description": "By Adrian Palmer. The book used in the marketing classes. Good condition.",
+        "title": "Korean 2A",
+        "description": "Selling this textbook for Korean 3 HGU class.",
         "image": "images/book1.jpg",
         "location": "Library Entrance",
         "seller": "dariti",
         "listingType": "forSale",
-        "openToOffers": false,
-        "price": 8000,
+        "openToOffers": true,
+        "price": 6000,
         "postedDate": "2024-12-02T10:15:00Z"
       },
       {
-        "title": "Organizational Behaviour",
-        "description": "Managing People in Dynamic Organizations by Paul E. Smith et al. Bought new and used carefully, great condition.",
+        "title": "Bob Cofflin 'The importance of worship'",
+        "description": "Selling this book. It is trully great. I would recommend it for everyone.",
         "image": "images/book2.jpg",
         "location": "Dorm Lobby",
         "seller": "yudima",
         "listingType": "forSale",
         "openToOffers": false,
-        "price": 20000,
+        "price": 10000,
         "postedDate": "2024-12-03T14:20:00Z"
       },
       {
-        "title": "Psychology : Core Concepts",
-        "description": "By Robert L. Johnson, Philip G. Zimbardo and Vivian McCann (2016, Ringbound). NEW!",
+        "title": "Les Misérables",
+        "description": "Book by Victor Hugo written in Russain. Great condition!",
         "image": "images/book3.jpg",
         "location": "Study Room",
         "seller": "vasya06",
         "listingType": "forSale",
         "openToOffers": false,
-        "price": 38000,
+        "price": 8000,
         "postedDate": "2024-12-05T09:00:00Z"
       }
     ],
     "Electronics": [
       {
-        "title": "CANON SURE SHOT JOY",
-        "description": "The original vintage canon camera. Unused for a long time. Battery replaced, works well.",
-        "image": "images/camera.jpg",
+        "title": "Logitech Mouse",
+        "description": "Great Logiech Mouse. Selling it for a decent price. Please contact me.",
+        "image": "images/mouse.jpg",
         "location": "Cafeteria",
         "seller": "yudima",
         "listingType": "forSale",
         "openToOffers": false,
-        "price": 60000,
+        "price": 10000,
         "postedDate": "2024-12-01T11:45:00Z"
       },
       {
-        "title": "AirPods 2nd generation",
-        "description": "Used for a year, carefully. Battery ~5 hours.",
+        "title": "AirPods 1st generation",
+        "description": "Used carefully. Battery ~5 hours.",
         "image": "images/airpods.jpg",
         "location": "Dorm Lobby",
         "seller": "leolyab",
         "listingType": "forSale",
         "openToOffers": false,
-        "price": 55000,
+        "price": 25000,
         "postedDate": "2024-12-07T16:10:00Z"
       },
       {
-        "title": "Iphone 14 pro 128gb",
-        "description": "iPhone 14 Pro 256GB camera and LCD clean, battery 84%. Inquire about price!",
+        "title": "Iphone 15 pro 256gb",
+        "description": "iPhone 15 Pro 256GB camera, battery 88%. Inquire about price!",
         "image": "images/iphone.jpg",
         "location": "Campus Center",
         "seller": "vasya06",
         "listingType": "forSale",
         "openToOffers": true,
-        "price": 650000,
+        "price": 1000000,
         "postedDate": "2024-12-08T20:30:00Z"
       }
     ],
     "Clothes": [
       {
-        "title": "Rebook Club C Ground UK - Red",
-        "description": "Size 250mm. Tried once, too big.",
+        "title": "Asics Gel Grey",
+        "description": "Size 280mm. Great shoes for everyday use.",
         "image": "images/shoes.jpg",
         "location": "Dorm 2",
         "seller": "lealea",
@@ -82,25 +82,25 @@
         "postedDate": "2024-12-04T08:00:00Z"
       },
       {
-        "title": "Vest",
-        "description": "Checkered sweater vest",
-        "image": "images/vest.jpg",
+        "title": "Wide Pants",
+        "description": "Wide casual male pants. One-Size. They have a big length, so please take it into consideration when buying.",
+        "image": "images/pants.jpg",
         "location": "Library Entrance",
         "seller": "abcaca",
         "listingType": "forSale",
         "openToOffers": false,
-        "price": 3000,
+        "price": 30000,
         "postedDate": "2024-12-05T12:10:00Z"
       },
       {
-        "title": "Sunglasses Miu Miu Regard",
-        "description": "New with tag, shape didn't suit me.",
-        "image": "images/sunglasses.jpg",
+        "title": "Glasses fashion ",
+        "description": "They are new. No prescription. The shape did not suite me.",
+        "image": "images/glasses.jpg",
         "location": "Cafeteria",
         "seller": "miaffa",
         "listingType": "forSale",
         "openToOffers": false,
-        "price": 120000,
+        "price": 15000,
         "postedDate": "2024-12-06T14:45:00Z"
       }
     ],
@@ -110,7 +110,7 @@
         "description": "Certificate available. Complex designs cost extra.",
         "image": "images/nails.jpg",
         "location": "Dorm 4",
-        "seller": "naily",
+        "seller": "naily78",
         "listingType": "forSale",
         "openToOffers": false,
         "price": 25000,
@@ -141,44 +141,44 @@
     ],
     "FoodnCoupons": [
       {
-        "title": "Rice (12pc)",
-        "description": "Selling 12 pc of ottogi cooked rice.",
-        "image": "images/rice.jpg",
+        "title": "Syrniki",
+        "description": "I am selling syrniki, making them fresh from scratch. Delicious! Price for 2 pcs",
+        "image": "images/syr.jpg",
         "location": "Cafeteria",
-        "seller": "eirt",
+        "seller": "eirtwq",
         "listingType": "forSale",
         "openToOffers": false,
-        "price": 11000,
+        "price": 3000,
         "postedDate": "2024-12-02T17:20:00Z"
       },
       {
-        "title": "BBC Chicken Coupon",
-        "description": "I don't eat chicken, selling cheaper than original.",
-        "image": "images/chickencoupon.jpg",
+        "title": "Starbucks Card",
+        "description": "I got this card as a gift but I do not drink coffee, selling it cheaper than the original!",
+        "image": "images/sbcard.jpg",
         "location": "Dorm 1",
         "seller": "hartoe",
         "listingType": "forSale",
         "openToOffers": false,
-        "price": 18000,
+        "price": 8000,
         "postedDate": "2024-12-07T09:40:00Z"
       },
       {
         "title": "Starbucks Coupon",
-        "description": "Expires January. Use soon!",
-        "image": "images/starbuckscoupon.jpg",
+        "description": "Selling this starbucks coupon. Please buy it quickly and use it well!",
+        "image": "images/sbcoupon.jpg",
         "location": "Campus Center",
         "seller": "rewtyu",
         "listingType": "forSale",
         "openToOffers": false,
-        "price": 20000,
+        "price": 28000,
         "postedDate": "2024-12-08T08:55:00Z"
       }
     ],
     "LostnFound": [
       {
-        "title": "LOST Bracelet with heart",
-        "description": "Lost on December 1st around Cafeteria",
-        "image": "images/bracelet.jpg",
+        "title": "LOST necklace",
+        "description": "Lost this Necklace on December 1st around Cafeteria",
+        "image": "images/necklace.jpg",
         "location": "Cafeteria",
         "seller": "kolioai",
         "listingType": "lostAndFound",
@@ -187,8 +187,8 @@
         "postedDate": "2024-12-01T09:00:00Z"
       },
       {
-        "title": "FOUND Hydro Flusk Water bottle",
-        "description": "Found behind the Soccer Field (Hiddink)",
+        "title": "FOUND UZSpace Water bottle",
+        "description": "FOUND Blue UZSpace Water bottle behind the Soccer Field (Hiddink)",
         "image": "images/waterbottle.jpg",
         "location": "Soccer Field",
         "seller": "lkslils",
@@ -211,9 +211,9 @@
     ],
     "Free": [
       {
-        "title": "Plates 6pcs",
-        "description": "Giving away 6 plates",
-        "image": "images/plates.jpg",
+        "title": "Stickers 6 pcs",
+        "description": "Giving away 6 packs of stickers",
+        "image": "images/stickers.jpg",
         "location": "Dorm 3",
         "seller": "polina",
         "listingType": "free",
@@ -222,22 +222,22 @@
         "postedDate": "2024-12-04T11:00:00Z"
       },
       {
-        "title": "Stand with shelves",
-        "description": "Don't need it anymore, take if you need.",
-        "image": "images/shelves.jpg",
+        "title": "3 notebooks",
+        "description": "I do not need it. They are new. Please take it if you need it :)",
+        "image": "images/notebooks.jpg",
         "location": "Library Entrance",
-        "seller": "gorya",
+        "seller": "gory2a",
         "listingType": "free",
         "openToOffers": false,
         "price": 0,
         "postedDate": "2024-12-06T07:20:00Z"
       },
       {
-        "title": "Bag",
-        "description": "Moving out, don't need this bag. Comfortable and spacious.",
-        "image": "images/bag.jpg",
+        "title": "Termo Cup",
+        "description": "Moving out, don't need this stuff.",
+        "image": "images/cup.jpg",
         "location": "Dorm Lobby",
-        "seller": "lina",
+        "seller": "lina21",
         "listingType": "free",
         "openToOffers": false,
         "price": 0,
@@ -246,9 +246,9 @@
     ],
     "Others": [
       {
-        "title": "Candles",
-        "description": "Candles used for a school play. 1 pack = 5,000 won",
-        "image": "images/candles.jpg",
+        "title": "Markers",
+        "description": "Selling these markers. I bought it but used only couple times. Almost new.",
+        "image": "images/markers.jpg",
         "location": "Campus Center",
         "seller": "kieoro",
         "listingType": "forSale",
@@ -257,20 +257,20 @@
         "postedDate": "2024-12-01T10:00:00Z"
       },
       {
-        "title": "Battery",
-        "description": "5 packs of C Type batteries.",
-        "image": "images/batteries.jpg",
+        "title": "Coffee Beans",
+        "description": "Selling the pack of coffee beans. Blue Bottle Coffee, BRIGHT, Tasting Notes of blueberry, golden raisin, and lemon zest.",
+        "image": "images/beans.jpg",
         "location": "Dorm 1",
-        "seller": "popos",
+        "seller": "popos1",
         "listingType": "forSale",
         "openToOffers": false,
         "price": 12000,
         "postedDate": "2024-12-02T13:50:00Z"
       },
       {
-        "title": "Christmas Deco Ball",
-        "description": "A beautiful Christmas ball that lights in the dark.",
-        "image": "images/christmasball.jpg",
+        "title": "Mineral Stones",
+        "description": "I am selling this beautiful Mineral Stones from Japan. It lights in the dark.",
+        "image": "images/stones.jpg",
         "location": "Cafeteria",
         "seller": "balytu",
         "listingType": "forSale",
@@ -280,4 +280,3 @@
       }
     ]
   }
-  
