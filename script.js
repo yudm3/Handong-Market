@@ -399,3 +399,22 @@ document.addEventListener('DOMContentLoaded', function () {
     handleFavoritesPage();
     handleSearchFromIndex();
 });
+
+//post page
+document.addEventListener("DOMContentLoaded", function () {
+    const categorySelect = document.getElementById("postCategory");
+    const priceContainer = document.getElementById("priceContainer");
+
+    function togglePriceVisibility() {
+        const selectedCategory = categorySelect.value;
+        if (selectedCategory === "Free" || selectedCategory === "LostnFound") {
+            priceContainer.classList.add("hidden");
+        } else {
+            priceContainer.classList.remove("hidden");
+        }
+    }
+
+    categorySelect.addEventListener("change", togglePriceVisibility);
+
+    togglePriceVisibility();
+});

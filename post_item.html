@@ -22,18 +22,18 @@
         </div>
     </header>
 
-    <main style="display:flex; justify-content:center; margin-top:50px;">
+    <main class="post-item-page">
         <form id="postItemForm" class="post-item-form">
-            <h2>Post New Item</h2>
+            <h2 class="post-item-title">Post New Item</h2>
 
             <label><b>Add pictures (0/10):</b></label>
-            <input type="file" id="postImages" name="images" accept="image/*" multiple style="margin-bottom:15px;">
+            <input type="file" id="postImages" name="images" accept="image/*" multiple class="post-item-input">
 
             <label for="postTitle"><b>Title:</b></label>
-            <input type="text" id="postTitle" name="title" required style="margin-bottom:15px; width:100%;">
+            <input type="text" id="postTitle" name="title" required class="post-item-input">
 
             <label><b>Category:</b></label>
-            <select id="postCategory" style="margin-bottom:15px; width:100%;">
+            <select id="postCategory" name="category" class="post-item-input">
                 <option value="Books">Books</option>
                 <option value="Electronics">Electronics</option>
                 <option value="Services">Services</option>
@@ -44,29 +44,20 @@
                 <option value="Others">Others</option>
             </select>
 
-            <label><b>Listing type:</b></label>
-            <div class="listing-type" style="margin-bottom:15px;">
-                <label><input type="radio" name="listingType" value="forSale" required> For Sale</label>
-                <span id="priceInputContainer" style="display:none; margin-left:10px;">
-                    Price: <input type="number" id="postPrice" min="0" style="width:80px;">
-                    <label style="margin-left:10px;"><input type="checkbox" id="openToOffers"> Open to offers</label>
-                </span>
-                <br>
-                <label><input type="radio" name="listingType" value="free" required> Free</label><br>
-                <label><input type="radio" name="listingType" value="lostAndFound" required> Lost & Found</label>
+            <!-- Новый блок для цены -->
+            <div id="priceContainer" class="price-container post-item-input">
+                <label for="postPrice"><b>Price:</b></label>
+                <input type="number" id="postPrice" name="price" min="0" placeholder="Enter price" class="post-item-input">
+                <label><input type="checkbox" id="openToOffers"> Open to offers</label>
             </div>
 
             <label for="postDescription"><b>Description:</b></label>
-            <textarea id="postDescription" name="description" rows="5" required
-                style="margin-bottom:15px; width:100%; box-sizing:border-box;"></textarea>
+            <textarea id="postDescription" name="description" rows="5" required class="post-item-textarea"></textarea>
 
             <label for="postLocation"><b>Where to meet (Location in Handong):</b></label>
-            <input type="text" id="postLocation" name="location" required
-                style="margin-bottom:20px; width:100%; box-sizing:border-box;">
+            <input type="text" id="postLocation" name="location" required class="post-item-input">
 
-            <button type="submit"
-                style="padding:10px 20px; border:none; background:#1F4529; color:#fff; border-radius:10px; cursor:pointer;">Post
-                Item</button>
+            <button type="submit" class="post-item-btn">Post Item</button>
         </form>
     </main>
 

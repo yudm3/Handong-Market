@@ -65,6 +65,76 @@ body {
     }
 }
 
+/* Post Item Form */
+/* Новый стиль для страницы с постом */
+.post-item-page {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.post-item-form {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.post-item-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+label {
+    font-family: 'Jost', sans-serif;
+    font-weight: bold;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.post-item-input, .post-item-textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.post-item-textarea {
+    resize: vertical;
+}
+
+.post-item-btn {
+    padding: 10px 20px;
+    background-color: #1F4529;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.post-item-btn:hover {
+    background-color: #2d5c44;
+}
+
+/* Стиль для блока с ценой */
+.price-container {
+    display: block;
+}
+
+/* Скрытие блока с ценой по умолчанию */
+.price-container.hidden {
+    display: none;
+}
+
+
 .handongs-marketplace {
     width: auto;
     font-size: 3vw; 
