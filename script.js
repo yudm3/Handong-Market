@@ -1,292 +1,291 @@
-let defaultItemsData = {
-    "Books": [
-        {
-            "title": "Korean 2A",
-            "description": "Selling this textbook for Korean 3 HGU class.",
-            "image": "item-images/book1.jpg",
-            "location": "Library Entrance",
-            "seller": "dariti",
-            "listingType": "forSale",
-            "openToOffers": true,
-            "price": 6000,
-            "postedDate": "2024-12-02T10:15:00Z"
-        },
-        {
-            "title": "Bob Cofflin 'The importance of worship'",
-            "description": "Selling this book. It is trully great. I would recommend it for everyone.",
-            "image": "item-images/book2.jpg",
-            "location": "Dorm Lobby",
-            "seller": "yudima",
-            "listingType": "forSale",
-            "openToOffers": false,
-            "price": 10000,
-            "postedDate": "2024-12-03T14:20:00Z"
-        },
-        {
-            "title": "Les Misérables",
-            "description": "Book by Victor Hugo written in Russain. Great condition!",
-            "image": "item-images/book3.jpg",
-            "location": "Study Room",
-            "seller": "vasya06",
-            "listingType": "forSale",
-            "openToOffers": false,
-            "price": 8000,
-            "postedDate": "2024-12-05T09:00:00Z"
-        }
-    ],
-    "Electronics": [
-        {
-            "title": "Logitech Mouse",
-            "description": "Great Logiech Mouse. Selling it for a decent price. Please contact me.",
-            "image": "item-images/mouse.jpg",
-            "location": "Cafeteria",
-            "seller": "yudima",
-            "listingType": "forSale",
-            "openToOffers": false,
-            "price": 10000,
-            "postedDate": "2024-12-01T11:45:00Z"
-        },
-        {
-            "title": "AirPods 1st generation",
-            "description": "Used carefully. Battery ~5 hours.",
-            "image": "item-images/airpods.jpg",
-            "location": "Dorm Lobby",
-            "seller": "leolyab",
-            "listingType": "forSale",
-            "openToOffers": false,
-            "price": 25000,
-            "postedDate": "2024-12-07T16:10:00Z"
-        },
-        {
-            "title": "Iphone 15 pro 256gb",
-            "description": "iPhone 15 Pro 256GB camera, battery 88%. Inquire about price!",
-            "image": "item-images/iphone.jpg",
-            "location": "Campus Center",
-            "seller": "vasya06",
-            "listingType": "forSale",
-            "openToOffers": true,
-            "price": 1000000,
-            "postedDate": "2024-12-08T20:30:00Z"
-        }
-    ],
-    "Clothes": [
-        {
-            "title": "Asics Gel Grey",
-            "description": "Size 280mm. Great shoes for everyday use.",
-            "image": "item-images/shoes.jpg",
-            "location": "Dorm 2",
-            "seller": "lealea",
-            "listingType": "forSale",
-            "openToOffers": false,
-            "price": 65000,
-            "postedDate": "2024-12-04T08:00:00Z"
-        },
-        {
-            "title": "Wide Pants",
-            "description": "Wide casual male pants. One-Size.",
-            "image": "item-images/pants.jpg",
-            "location": "Library Entrance",
-            "seller": "abcaca",
-            "listingType": "forSale",
-            "openToOffers": false,
-            "price": 30000,
-            "postedDate": "2024-12-05T12:10:00Z"
-        },
-        {
-            "title": "Glasses fashion ",
-            "description": "They are new. No prescription. Shape didn't suit me.",
-            "image": "item-images/glasses.jpg",
-            "location": "Cafeteria",
-            "seller": "miaffa",
-            "listingType": "forSale",
-            "openToOffers": false,
-            "price": 15000,
-            "postedDate": "2024-12-06T14:45:00Z"
-        }
-    ],
-    "Services": [
-        {
-            "title": "Manicure + Design",
-            "description": "Certificate available. Complex designs cost extra.",
-            "image": "item-images/nails.jpg",
-            "location": "Dorm 4",
-            "seller": "naily78",
-            "listingType": "forSale",
-            "openToOffers": false,
-            "price": 25000,
-            "postedDate": "2024-12-02T13:00:00Z"
-        },
-        {
-            "title": "Cut & Hairstyle services",
-            "description": "Pretty hair for special events, also simple cuts.",
-            "image": "item-images/hair.jpg",
-            "location": "Campus Salon",
-            "seller": "olihair",
-            "listingType": "forSale",
-            "openToOffers": false,
-            "price": 20000,
-            "postedDate": "2024-12-03T09:30:00Z"
-        },
-        {
-            "title": "Korean Tutoring",
-            "description": "For intermediate learners, conversation or TOPIK 2 prep.",
-            "image": "item-images/korean.jpg",
-            "location": "Study Room 2",
-            "seller": "koroek",
-            "listingType": "forSale",
-            "openToOffers": false,
-            "price": 8000,
-            "postedDate": "2024-12-06T18:05:00Z"
-        }
-    ],
-    "FoodnCoupons": [
-        {
-            "title": "Syrniki",
-            "description": "Freshly made syrniki! Price for 2 pcs",
-            "image": "item-images/syr.jpg",
-            "location": "Cafeteria",
-            "seller": "eirtwq",
-            "listingType": "forSale",
-            "openToOffers": false,
-            "price": 3000,
-            "postedDate": "2024-12-02T17:20:00Z"
-        },
-        {
-            "title": "Starbucks Card",
-            "description": "Got as a gift, don't drink coffee, selling cheaper.",
-            "image": "item-images/sbcard.jpg",
-            "location": "Dorm 1",
-            "seller": "hartoe",
-            "listingType": "forSale",
-            "openToOffers": false,
-            "price": 8000,
-            "postedDate": "2024-12-07T09:40:00Z"
-        },
-        {
-            "title": "Starbucks Coupon",
-            "description": "Coupon for Starbucks, please buy and use soon!",
-            "image": "item-images/sbcoupon.jpg",
-            "location": "Campus Center",
-            "seller": "rewtyu",
-            "listingType": "forSale",
-            "openToOffers": false,
-            "price": 28000,
-            "postedDate": "2024-12-08T08:55:00Z"
-        }
-    ],
-    "LostnFound": [
-        {
-            "title": "LOST necklace",
-            "description": "Lost Necklace on December 1st near Cafeteria.",
-            "image": "item-images/necklace.jpg",
-            "location": "Cafeteria",
-            "seller": "kolioai",
-            "listingType": "lostAndFound",
-            "openToOffers": false,
-            "price": 0,
-            "postedDate": "2024-12-01T09:00:00Z"
-        },
-        {
-            "title": "FOUND UZSpace Water bottle",
-            "description": "Found Blue UZSpace bottle behind Soccer Field",
-            "image": "item-images/waterbottle.jpg",
-            "location": "Soccer Field",
-            "seller": "lkslils",
-            "listingType": "lostAndFound",
-            "openToOffers": false,
-            "price": 0,
-            "postedDate": "2024-12-05T15:30:00Z"
-        },
-        {
-            "title": "FOUND KB Bank Card",
-            "description": "Found KB Card (Yugay Dmitriy) on Romantic Field",
-            "image": "item-images/bankcard.jpg",
-            "location": "Romantic Field",
-            "seller": "golity",
-            "listingType": "lostAndFound",
-            "openToOffers": false,
-            "price": 0,
-            "postedDate": "2024-12-03T20:10:00Z"
-        }
-    ],
-    "Free": [
-        {
-            "title": "Stickers 6 pcs",
-            "description": "Giving away 6 packs of stickers",
-            "image": "item-images/stickers.jpg",
-            "location": "Dorm 3",
-            "seller": "polina",
-            "listingType": "free",
-            "openToOffers": false,
-            "price": 0,
-            "postedDate": "2024-12-04T11:00:00Z"
-        },
-        {
-            "title": "3 notebooks",
-            "description": "New notebooks, take if you need :)",
-            "image": "item-images/notebooks.jpg",
-            "location": "Library Entrance",
-            "seller": "gory2a",
-            "listingType": "free",
-            "openToOffers": false,
-            "price": 0,
-            "postedDate": "2024-12-06T07:20:00Z"
-        },
-        {
-            "title": "Termo Cup",
-            "description": "Moving out, don't need this cup.",
-            "image": "item-images/cup.jpg",
-            "location": "Dorm Lobby",
-            "seller": "lina21",
-            "listingType": "free",
-            "openToOffers": false,
-            "price": 0,
-            "postedDate": "2024-12-07T21:00:00Z"
-        }
-    ],
-    "Others": [
-        {
-            "title": "Markers",
-            "description": "Almost new markers, used a couple of times.",
-            "image": "item-images/markers.jpg",
-            "location": "Campus Center",
-            "seller": "kieoro",
-            "listingType": "forSale",
-            "openToOffers": false,
-            "price": 5000,
-            "postedDate": "2024-12-01T10:00:00Z"
-        },
-        {
-            "title": "Coffee Beans",
-            "description": "Blue Bottle Coffee beans, tasting notes of blueberry.",
-            "image": "item-images/beans.jpg",
-            "location": "Dorm 1",
-            "seller": "popos1",
-            "listingType": "forSale",
-            "openToOffers": false,
-            "price": 12000,
-            "postedDate": "2024-12-02T13:50:00Z"
-        },
-        {
-            "title": "Mineral Stones",
-            "description": "Beautiful mineral stones from Japan.",
-            "image": "item-images/stones.jpg",
-            "location": "Cafeteria",
-            "seller": "balytu",
-            "listingType": "forSale",
-            "openToOffers": false,
-            "price": 25000,
-            "postedDate": "2024-12-08T12:00:00Z"
-        }
-    ]
-};
-
-
 document.addEventListener('DOMContentLoaded', function () {
     const currentPage = window.location.pathname.split('/').pop();
     let loggedInUser = localStorage.getItem('loggedInUser') || null;
     let users = JSON.parse(localStorage.getItem('users')) || [];
     let postedItems = JSON.parse(localStorage.getItem('postedItems')) || {};
+
+    let defaultItemsData = {
+        "Books": [
+            {
+                "title": "Korean 2A",
+                "description": "Selling this textbook for Korean 3 HGU class.",
+                "image": "item-images/book1.jpg",
+                "location": "Library Entrance",
+                "seller": "dariti",
+                "listingType": "forSale",
+                "openToOffers": true,
+                "price": 6000,
+                "postedDate": "2024-12-02T10:15:00Z"
+            },
+            {
+                "title": "Bob Cofflin 'The importance of worship'",
+                "description": "Selling this book. It is trully great. I would recommend it for everyone.",
+                "image": "item-images/book2.jpg",
+                "location": "Dorm Lobby",
+                "seller": "yudima",
+                "listingType": "forSale",
+                "openToOffers": false,
+                "price": 10000,
+                "postedDate": "2024-12-03T14:20:00Z"
+            },
+            {
+                "title": "Les Misérables",
+                "description": "Book by Victor Hugo written in Russain. Great condition!",
+                "image": "item-images/book3.jpg",
+                "location": "Study Room",
+                "seller": "vasya06",
+                "listingType": "forSale",
+                "openToOffers": false,
+                "price": 8000,
+                "postedDate": "2024-12-05T09:00:00Z"
+            }
+        ],
+        "Electronics": [
+            {
+                "title": "Logitech Mouse",
+                "description": "Great Logiech Mouse. Selling it for a decent price. Please contact me.",
+                "image": "item-images/mouse.jpg",
+                "location": "Cafeteria",
+                "seller": "yudima",
+                "listingType": "forSale",
+                "openToOffers": false,
+                "price": 10000,
+                "postedDate": "2024-12-01T11:45:00Z"
+            },
+            {
+                "title": "AirPods 1st generation",
+                "description": "Used carefully. Battery ~5 hours.",
+                "image": "item-images/airpods.jpg",
+                "location": "Dorm Lobby",
+                "seller": "leolyab",
+                "listingType": "forSale",
+                "openToOffers": false,
+                "price": 25000,
+                "postedDate": "2024-12-07T16:10:00Z"
+            },
+            {
+                "title": "Iphone 15 pro 256gb",
+                "description": "iPhone 15 Pro 256GB camera, battery 88%. Inquire about price!",
+                "image": "item-images/iphone.jpg",
+                "location": "Campus Center",
+                "seller": "vasya06",
+                "listingType": "forSale",
+                "openToOffers": true,
+                "price": 1000000,
+                "postedDate": "2024-12-08T20:30:00Z"
+            }
+        ],
+        "Clothes": [
+            {
+                "title": "Asics Gel Grey",
+                "description": "Size 280mm. Great shoes for everyday use.",
+                "image": "item-images/shoes.jpg",
+                "location": "Dorm 2",
+                "seller": "lealea",
+                "listingType": "forSale",
+                "openToOffers": false,
+                "price": 65000,
+                "postedDate": "2024-12-04T08:00:00Z"
+            },
+            {
+                "title": "Wide Pants",
+                "description": "Wide casual male pants. One-Size.",
+                "image": "item-images/pants.jpg",
+                "location": "Library Entrance",
+                "seller": "abcaca",
+                "listingType": "forSale",
+                "openToOffers": false,
+                "price": 30000,
+                "postedDate": "2024-12-05T12:10:00Z"
+            },
+            {
+                "title": "Glasses fashion ",
+                "description": "They are new. No prescription.",
+                "image": "item-images/glasses.jpg",
+                "location": "Cafeteria",
+                "seller": "miaffa",
+                "listingType": "forSale",
+                "openToOffers": false,
+                "price": 15000,
+                "postedDate": "2024-12-06T14:45:00Z"
+            }
+        ],
+        "Services": [
+            {
+                "title": "Manicure + Design",
+                "description": "Certificate available. Complex designs cost extra.",
+                "image": "item-images/nails.jpg",
+                "location": "Dorm 4",
+                "seller": "naily78",
+                "listingType": "forSale",
+                "openToOffers": false,
+                "price": 25000,
+                "postedDate": "2024-12-02T13:00:00Z"
+            },
+            {
+                "title": "Cut & Hairstyle services",
+                "description": "Pretty hair for special events, also simple cuts.",
+                "image": "item-images/hair.jpg",
+                "location": "Campus Salon",
+                "seller": "olihair",
+                "listingType": "forSale",
+                "openToOffers": false,
+                "price": 20000,
+                "postedDate": "2024-12-03T09:30:00Z"
+            },
+            {
+                "title": "Korean Tutoring",
+                "description": "For intermediate learners, conversation or TOPIK 2 prep.",
+                "image": "item-images/korean.jpg",
+                "location": "Study Room 2",
+                "seller": "koroek",
+                "listingType": "forSale",
+                "openToOffers": false,
+                "price": 8000,
+                "postedDate": "2024-12-06T18:05:00Z"
+            }
+        ],
+        "FoodnCoupons": [
+            {
+                "title": "Syrniki",
+                "description": "Freshly made syrniki! Price for 2 pcs",
+                "image": "item-images/syr.jpg",
+                "location": "Cafeteria",
+                "seller": "eirtwq",
+                "listingType": "forSale",
+                "openToOffers": false,
+                "price": 3000,
+                "postedDate": "2024-12-02T17:20:00Z"
+            },
+            {
+                "title": "Starbucks Card",
+                "description": "Got this card as a gift, selling cheaper.",
+                "image": "item-images/sbcard.jpg",
+                "location": "Dorm 1",
+                "seller": "hartoe",
+                "listingType": "forSale",
+                "openToOffers": false,
+                "price": 8000,
+                "postedDate": "2024-12-07T09:40:00Z"
+            },
+            {
+                "title": "Starbucks Coupon",
+                "description": "Please buy and use soon!",
+                "image": "item-images/sbcoupon.jpg",
+                "location": "Campus Center",
+                "seller": "rewtyu",
+                "listingType": "forSale",
+                "openToOffers": false,
+                "price": 28000,
+                "postedDate": "2024-12-08T08:55:00Z"
+            }
+        ],
+        "LostnFound": [
+            {
+                "title": "LOST necklace",
+                "description": "Lost Necklace near Cafeteria.",
+                "image": "item-images/necklace.jpg",
+                "location": "Cafeteria",
+                "seller": "kolioai",
+                "listingType": "lostAndFound",
+                "openToOffers": false,
+                "price": 0,
+                "postedDate": "2024-12-01T09:00:00Z"
+            },
+            {
+                "title": "FOUND UZSpace Water bottle",
+                "description": "Found bottle behind Soccer Field",
+                "image": "item-images/waterbottle.jpg",
+                "location": "Soccer Field",
+                "seller": "lkslils",
+                "listingType": "lostAndFound",
+                "openToOffers": false,
+                "price": 0,
+                "postedDate": "2024-12-05T15:30:00Z"
+            },
+            {
+                "title": "FOUND KB Bank Card",
+                "description": "Found KB Card (Yugay Dmitriy) on Romantic Field",
+                "image": "item-images/bankcard.jpg",
+                "location": "Romantic Field",
+                "seller": "golity",
+                "listingType": "lostAndFound",
+                "openToOffers": false,
+                "price": 0,
+                "postedDate": "2024-12-03T20:10:00Z"
+            }
+        ],
+        "Free": [
+            {
+                "title": "Stickers 6 pcs",
+                "description": "Giving away 6 packs of stickers",
+                "image": "item-images/stickers.jpg",
+                "location": "Dorm 3",
+                "seller": "polina",
+                "listingType": "free",
+                "openToOffers": false,
+                "price": 0,
+                "postedDate": "2024-12-04T11:00:00Z"
+            },
+            {
+                "title": "3 notebooks",
+                "description": "New notebooks, take if needed :)",
+                "image": "item-images/notebooks.jpg",
+                "location": "Library Entrance",
+                "seller": "gory2a",
+                "listingType": "free",
+                "openToOffers": false,
+                "price": 0,
+                "postedDate": "2024-12-06T07:20:00Z"
+            },
+            {
+                "title": "Termo Cup",
+                "description": "Moving out, don't need this cup.",
+                "image": "item-images/cup.jpg",
+                "location": "Dorm Lobby",
+                "seller": "lina21",
+                "listingType": "free",
+                "openToOffers": false,
+                "price": 0,
+                "postedDate": "2024-12-07T21:00:00Z"
+            }
+        ],
+        "Others": [
+            {
+                "title": "Markers",
+                "description": "Almost new markers, used couple times.",
+                "image": "item-images/markers.jpg",
+                "location": "Campus Center",
+                "seller": "kieoro",
+                "listingType": "forSale",
+                "openToOffers": false,
+                "price": 5000,
+                "postedDate": "2024-12-01T10:00:00Z"
+            },
+            {
+                "title": "Coffee Beans",
+                "description": "Blue Bottle Coffee beans, bright taste.",
+                "image": "item-images/beans.jpg",
+                "location": "Dorm 1",
+                "seller": "popos1",
+                "listingType": "forSale",
+                "openToOffers": false,
+                "price": 12000,
+                "postedDate": "2024-12-02T13:50:00Z"
+            },
+            {
+                "title": "Mineral Stones",
+                "description": "Beautiful mineral stones from Japan.",
+                "image": "item-images/stones.jpg",
+                "location": "Cafeteria",
+                "seller": "balytu",
+                "listingType": "forSale",
+                "openToOffers": false,
+                "price": 25000,
+                "postedDate": "2024-12-08T12:00:00Z"
+            }
+        ]
+    };
 
     function maskUserIdentifier(identifier) {
         if (!identifier) return '';
@@ -341,41 +340,76 @@ document.addEventListener('DOMContentLoaded', function () {
         localStorage.setItem('favorites', JSON.stringify(favs));
     }
 
+    function getNextItemID() {
+        let nextID = parseInt(localStorage.getItem('nextItemID'), 10);
+        if (isNaN(nextID)) {
+            nextID = 1;
+        }
+        return nextID;
+    }
+
+    function setNextItemID(id) {
+        localStorage.setItem('nextItemID', id.toString());
+    }
+
+    function assignIDsToDefaultItems(defaultItems) {
+        let currentID = 1;
+        for (let catKey in defaultItems) {
+            defaultItems[catKey].forEach(it => {
+                if (!it.itemID) {
+                    it.itemID = currentID;
+                    currentID++;
+                } else {
+                    if (it.itemID >= currentID) currentID = it.itemID + 1;
+                }
+            });
+        }
+        let storedNext = parseInt(localStorage.getItem('nextItemID'), 10);
+        if (isNaN(storedNext) || storedNext < currentID) {
+            setNextItemID(currentID);
+        }
+    }
+
     function loadItemsFromLocalStorage() {
         let defaultItems = JSON.parse(localStorage.getItem('defaultItems'));
-        if(!defaultItems) {
+        if (!defaultItems) {
             localStorage.setItem('defaultItems', JSON.stringify(defaultItemsData));
-            defaultItems = defaultItemsData;
+            defaultItems = JSON.parse(localStorage.getItem('defaultItems'));
         }
+
+        assignIDsToDefaultItems(defaultItems);
 
         let combined = [];
         for (let catKey in defaultItems) {
             let catItems = defaultItems[catKey];
             catItems.forEach(it => {
-                if(!it.category) it.category = catKey;
+                if (!it.category) it.category = catKey;
             });
             combined = combined.concat(catItems);
         }
 
         for (let catKey in postedItems) {
             let postedCatItems = postedItems[catKey];
-            if(!Array.isArray(postedCatItems)) postedCatItems = [postedCatItems];
+            if (!Array.isArray(postedCatItems)) postedCatItems = [postedCatItems];
             postedCatItems.forEach(it => {
-                if(!it.category) it.category = catKey;
+                if (!it.category) it.category = catKey;
+                if (!it.itemID) {
+                    let nextID = getNextItemID();
+                    it.itemID = nextID;
+                    setNextItemID(nextID + 1);
+                }
             });
             combined = combined.concat(postedCatItems);
         }
 
         window.allLoadedItems = combined;
+        localStorage.setItem('defaultItems', JSON.stringify(defaultItems));
     }
 
     function getItemByID(itemID) {
         if (!window.allLoadedItems) return null;
-        return window.allLoadedItems.find(i => {
-            const categoryForID = i.category || 'All';
-            const generatedID = encodeURIComponent(i.title + '_' + categoryForID);
-            return generatedID === itemID;
-        });
+        itemID = parseInt(itemID, 10);
+        return window.allLoadedItems.find(i => i.itemID === itemID);
     }
 
     function displayItemNotFound() {
@@ -393,18 +427,18 @@ document.addEventListener('DOMContentLoaded', function () {
         const priceEl = document.querySelector('.item-price span');
         const descEl = document.querySelector('.item-description');
         const sellerEl = document.querySelector('.item-seller');
-    
+
         if (mainImage) mainImage.src = item.image;
         if (titleEl) titleEl.textContent = item.title || 'No Title';
         if (categoryEl) categoryEl.textContent = item.category || 'All';
         if (locationEl) locationEl.textContent = item.location || 'No Location';
         if (descEl) descEl.innerHTML = `<b>Description:</b> ${item.description || 'No description'}`;
         if (sellerEl) sellerEl.innerHTML = `<b>Seller:</b> ${item.seller || 'Unknown'}`;
-    
+
         if (priceEl) {
-            if(item.listingType === 'forSale') {
+            if (item.listingType === 'forSale') {
                 priceEl.textContent = (item.price || 0) + ' KRW';
-            } else if(item.listingType === 'free' || item.listingType === 'lostAndFound') {
+            } else if (item.listingType === 'free' || item.listingType === 'lostAndFound') {
                 priceEl.textContent = '0 KRW';
             } else {
                 priceEl.textContent = '';
@@ -412,11 +446,10 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Handle pages
     function handleRegisterPage() {
         if (currentPage !== 'register.html') return;
         const form = document.getElementById('registerForm');
-        if(!form) return;
+        if (!form) return;
         form.addEventListener('submit', function (e) {
             e.preventDefault();
             const email = document.getElementById('registerEmail').value.trim();
@@ -458,7 +491,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function handleLoginPage() {
         if (currentPage !== 'login.html') return;
         const form = document.getElementById('loginForm');
-        if(!form) return;
+        if (!form) return;
 
         form.addEventListener('submit', function (e) {
             e.preventDefault();
@@ -548,38 +581,38 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
+        const user = users.find(u => u.email === loggedInUser);
+        const sellerUsername = user ? user.username : 'Unknown';
+
         const form = document.getElementById('postItemForm');
         if (!form) return;
 
-        const listingTypes = form.querySelectorAll('input[name="listingType"]');
-        const priceInputContainer = document.getElementById('priceInputContainer');
         const priceInput = document.getElementById('postPrice');
         const openToOffersCheckbox = document.getElementById('openToOffers');
-
-        if (listingTypes) {
-            listingTypes.forEach(radio => {
-                radio.addEventListener('change', function () {
-                    if (this.value === 'forSale') {
-                        priceInputContainer.style.display = 'inline-block';
-                    } else {
-                        priceInputContainer.style.display = 'none';
-                    }
-                });
-            });
-        }
 
         form.addEventListener('submit', function (e) {
             e.preventDefault();
             const title = document.getElementById('postTitle').value.trim();
             const category = document.getElementById('postCategory').value;
-            const listingType = form.querySelector('input[name="listingType"]:checked') ? form.querySelector('input[name="listingType"]:checked').value : '';
+            let listingType;
+            if (category === "Free") {
+                listingType = "free";
+            } else if (category === "LostnFound") {
+                listingType = "lostAndFound";
+            } else {
+                listingType = "forSale";
+            }
+
             const description = document.getElementById('postDescription').value.trim();
             const location = document.getElementById('postLocation').value.trim();
             const images = document.getElementById('postImages').files;
 
             let imagePath = 'item-images/default.jpg';
             if (images.length > 0) {
-                imagePath = 'item-images/' + images[0].name;
+                const imageName = images[0].name.trim();
+                if (imageName) {
+                    imagePath = 'item-images/' + imageName;
+                }
             }
 
             let priceVal = 0;
@@ -587,30 +620,39 @@ document.addEventListener('DOMContentLoaded', function () {
             if (listingType === 'forSale') {
                 priceVal = parseInt(priceInput.value) || 0;
                 offers = openToOffersCheckbox.checked;
+            } else {
+                // for free or lostAndFound, price = 0, offers = false
+                priceVal = 0;
+                offers = false;
             }
 
-            if (!postedItems[category]) postedItems[category] = [];
+            if (!postedItems[category]) {
+                postedItems[category] = [];
+            }
 
+            // let nextID = getNextItemID();
+            let nextID = Math.floor(Math.random() * 1000000);
             const newItem = {
+                itemID: nextID,
                 title: title,
                 description: description,
                 image: imagePath,
                 location: location,
-                seller: loggedInUser,
+                seller: sellerUsername,
                 listingType: listingType,
                 openToOffers: offers,
                 price: priceVal,
-                postedDate: new Date().toISOString()
+                postedDate: new Date().toISOString(),
+                category: category
             };
 
             postedItems[category].push(newItem);
             localStorage.setItem('postedItems', JSON.stringify(postedItems));
-
+            console.log(localStorage.getItem('postedItems'));
             alert('Item posted successfully!');
-            form.reset();
-            priceInputContainer.style.display = 'none';
-            // After posting, reload items into window.allLoadedItems
-            loadItemsFromLocalStorage();
+            // We could call loadItemsFromLocalStorage(), but let's just redirect to see changes on next load:
+            // loadItemsFromLocalStorage();
+            // window.location.href = 'index.html';
         });
     }
 
@@ -628,7 +670,6 @@ document.addEventListener('DOMContentLoaded', function () {
         if (categorySelect) categorySelect.value = category;
 
         function getAllItems() {
-            // window.allLoadedItems is already set by loadItemsFromLocalStorage()
             let items = window.allLoadedItems || [];
             if (category) {
                 items = items.filter(it => it.category === category);
@@ -642,7 +683,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             heartButtons.forEach(btn => {
                 btn.addEventListener('click', (e) => {
-                    const itemID = e.currentTarget.getAttribute('data-itemid');
+                    const itemID = parseInt(e.currentTarget.getAttribute('data-itemid'), 10);
                     if (!loggedInUser) {
                         window.location.href = 'login.html';
                         return;
@@ -655,7 +696,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             buyButtons.forEach(btn => {
                 btn.addEventListener('click', (e) => {
-                    const itemID = e.currentTarget.getAttribute('data-itemid');
+                    const itemID = parseInt(e.currentTarget.getAttribute('data-itemid'), 10);
                     if (!loggedInUser) {
                         window.location.href = 'login.html';
                         return;
@@ -686,16 +727,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
             let htmlStr = '';
             items.forEach(item => {
-                const categoryForID = item.category || 'All';
-                const itemID = encodeURIComponent(item.title + '_' + categoryForID);
                 const priceInfo = (item.listingType === 'forSale') ? (item.price + ' KRW')
                     : (item.listingType === 'free' || item.listingType === 'lostAndFound') ? '0 KRW' : '';
-
-                const isFav = isItemFavorited(itemID);
+                const isFav = isItemFavorited(item.itemID);
                 const heartIcon = isFav ? 'heartLiked.svg' : 'heartUnliked.svg';
 
                 htmlStr += `
-                    <div class="item-card" data-itemid="${itemID}">
+                    <div class="item-card" data-itemid="${item.itemID}">
                         <img src="${item.image}" alt="${item.title}">
                         <h3>${item.title}</h3>
                         <p>${item.description}</p>
@@ -704,10 +742,10 @@ document.addEventListener('DOMContentLoaded', function () {
                         ${priceInfo ? `<p><strong>Price:</strong> ${priceInfo}</p>` : ``}
 
                         <div class="item-actions">
-                            <button class="heart-btn" data-itemid="${itemID}">
+                            <button class="heart-btn" data-itemid="${item.itemID}">
                                 <img src="images/${heartIcon}" alt="heart" width="24">
                             </button>
-                            <button class="buy-btn" data-itemid="${itemID}">Buy</button>
+                            <button class="buy-btn" data-itemid="${item.itemID}">Buy</button>
                         </div>
                     </div>
                 `;
@@ -745,7 +783,7 @@ document.addEventListener('DOMContentLoaded', function () {
         let htmlStr = '';
         userFavs.forEach(f => {
             const item = f.item;
-            const itemID = f.itemID;
+            const itemID = item.itemID;
             const priceInfo = (item.listingType === 'forSale') ? (item.price + ' KRW')
                 : (item.listingType === 'free' || item.listingType === 'lostAndFound') ? '0 KRW' : '';
 
@@ -774,7 +812,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         heartButtons.forEach(btn => {
             btn.addEventListener('click', e => {
-                const itemID = e.currentTarget.getAttribute('data-itemid');
+                const itemID = parseInt(e.currentTarget.getAttribute('data-itemid'), 10);
                 if (!loggedInUser) {
                     window.location.href = 'login.html';
                     return;
@@ -789,7 +827,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         buyButtons.forEach(btn => {
             btn.addEventListener('click', e => {
-                const itemID = e.currentTarget.getAttribute('data-itemid');
+                const itemID = parseInt(e.currentTarget.getAttribute('data-itemid'), 10);
                 if (!loggedInUser) {
                     window.location.href = 'login.html';
                     return;
@@ -822,25 +860,40 @@ document.addEventListener('DOMContentLoaded', function () {
             let htmlStr = '<div style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center;">';
             filtered.forEach(item => {
                 const priceInfo = (item.listingType === 'forSale') ? (item.price + ' KRW')
-                                : (item.listingType === 'free' || item.listingType === 'lostAndFound') ? '0 KRW' : '';
+                    : (item.listingType === 'free' || item.listingType === 'lostAndFound') ? '0 KRW' : '';
                 htmlStr += `
-                  <div class="item-card">
-                      <img src="${item.image}" alt="${item.title}">
-                      <h3>${item.title}</h3>
-                      <p>${item.description}</p>
-                      <p><strong>Location:</strong> ${item.location}</p>
-                      <p><strong>Seller:</strong> ${item.seller}</p>
-                      ${priceInfo ? `<p><strong>Price:</strong> ${priceInfo}</p>` : ``}
-                  </div>
+                <div class="item-card">
+                    <img src="${item.image}" alt="${item.title}">
+                        <h3>${item.title}</h3>
+                        <p>${item.description}</p>
+                        <p><strong>Location:</strong> ${item.location}</p>
+                        <p><strong>Seller:</strong> ${item.seller}</p>
+                        ${priceInfo ? `<p><strong>Price:</strong> ${priceInfo}</p>` : ``}
+                        <div class="item-actions">
+                            <button class="buy-btn" data-itemid="${item.itemID}">View</button>
+                        </div>
+                    </div>
                 `;
             });
             htmlStr += '</div>';
             searchResults.innerHTML = htmlStr;
+
+            const viewButtons = searchResults.querySelectorAll('.buy-btn');
+            viewButtons.forEach(btn => {
+                btn.addEventListener('click', e => {
+                    const itemID = parseInt(e.currentTarget.getAttribute('data-itemid'), 10);
+                    if (!loggedInUser) {
+                        window.location.href = 'login.html';
+                        return;
+                    }
+                    window.location.href = `item_details.html?itemID=${itemID}`;
+                });
+            });
         });
     }
 
     function handleItemDetailsPage() {
-        if (window.location.pathname.split('/').pop() !== 'item_details.html') return;
+        if (currentPage !== 'item_details.html') return;
 
         if (!loggedInUser) {
             window.location.href = 'login.html';
@@ -854,13 +907,20 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        const item = getItemByID(itemID);
+        const item = getItemByID(parseInt(itemID, 10));
         if (!item) {
             displayItemNotFound();
             return;
         }
 
         populateItemDetails(item);
+
+        const contactSellerButton = document.getElementById('contactSellerBtn');
+        if (contactSellerButton) {
+            contactSellerButton.addEventListener('click', function () {
+                alert('This feature will be implemented soon. Stay tuned!');
+            });
+        }
     }
 
     updateHeaderLoginLink();
