@@ -30,10 +30,28 @@ body {
     font-size: 2vw;
     display: inline-flex;
     align-items: center;
+    transition: transform 0.3s ease
+}
+
+.menu a:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
 }
 
 .icon-link img {
     vertical-align: middle;
+    transition: transform 0.3s ease; /* Smooth transition for icons */
+}
+
+.icon-link img:hover {
+    transform: scale(1.2); /* Slight zoom effect on hover */
+}
+
+#login-link-container {
+    transition: transform 0.3s ease; /* Smooth transition for icons */
+}
+
+#login-link-container:hover {
+    transform: scale(1.15);
 }
 
 /* Post button */
@@ -45,10 +63,15 @@ body {
     justify-content: center;
     padding: 0.5em 1em;
     color: #fffef5;
-    transition: 0.2s ease-out;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Updated hover transition */
     border: 2px solid #1F4529;
     white-space: nowrap;
     font-size:2vw;
+}
+
+.post_btn a:hover {
+    background-color: #14521C; /* Darker green for hover */
+    transform: scale(1.1); /* Slight zoom effect */
 }
 
 .post_btn a .desktop-label { display: inline; }
@@ -200,6 +223,13 @@ label {
     overflow: hidden;
     vertical-align: middle;
     text-align: center;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.category:hover {
+    box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.15) inset,
+                -10px -10px 10px white inset;
+    transform: scale(1.02);
 }
 
 .category a {
@@ -788,4 +818,26 @@ footer p {
 
 .hover-logo:hover {
     transform: scale(1.1); /* Increase size by 10% */
+}
+
+/* Registration hover style */
+#goToRegister {
+    text-decoration: none;
+    color: #47663B; 
+    transition: text-decoration 0.2s ease-in-out;
+    font-weight: bolder;
+}
+
+#goToRegister:hover {
+    text-decoration: underline;
+}
+
+/* Categories hover shadow */
+body {
+    background-color: #f9f9f9;
+}
+
+.element:hover {
+    box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.1) inset,
+    -10px -10px 10px white inset;
 }
