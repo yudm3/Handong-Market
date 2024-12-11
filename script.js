@@ -451,7 +451,7 @@ document.addEventListener('DOMContentLoaded', function () {
     //--- Category Page ---//
     function handleCategoryPage() {
         console.log("handleCategoryPage called");
-        if (currentPage !== 'category.html') return;
+        if (!currentPage.startsWith('category')) return;
         console.log("On category page");
 
         const urlParams = new URLSearchParams(window.location.search);
