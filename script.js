@@ -1,28 +1,38 @@
 document.addEventListener('readystatechange', () => console.log('ready state change: ' + document.readyState));
 
 document.addEventListener('DOMContentLoaded', function () {
-    console.log("DOMContentLoaded!");
+    console.log("DOMContentLoaded event fired!");
 
     const currentPage = window.location.pathname.split('/').pop();
+    console.log("Current page detected:", currentPage);
+
     let loggedInUser = localStorage.getItem('loggedInUser') || null;
+    console.log("loggedInUser from localStorage:", loggedInUser);
+
     let users = JSON.parse(localStorage.getItem('users')) || [];
+    console.log("users from localStorage:", users);
+
     let postedItems = JSON.parse(localStorage.getItem('postedItems')) || {};
+    console.log("postedItems from localStorage:", postedItems);
+
     let allLoadedItems = [];
 
     //***************************************************************
     // Fetch items from items.json and then merge with postedItems
     //***************************************************************
     function fetchAndLoadItems() {
+        console.log("Fetching items.json...");
         return fetch('items.json')
             .then(response => {
+                console.log("items.json fetch response status:", response.status);
                 if (!response.ok) {
                     throw new Error('Network response was not ok ' + response.status);
                 }
                 return response.json();
             })
             .then(data => {
-                // data is in {Category: [items]} format
-                // Convert to a single combined array and assign itemIDs if missing
+                console.log("items.json data fetched:", data);
+                console.log("Merging fetched data with postedItems...");
                 let combined = [];
                 for (let catKey in data) {
                     data[catKey].forEach(it => {
@@ -31,22 +41,25 @@ document.addEventListener('DOMContentLoaded', function () {
                     });
                 }
 
-                // Now merge postedItems
+                console.log("Data after loading items.json:", combined);
+                console.log("Now merging postedItems into combined array...");
                 for (let catKey in postedItems) {
                     let postedCatItems = postedItems[catKey];
                     if (!Array.isArray(postedCatItems)) postedCatItems = [postedCatItems];
                     postedCatItems.forEach(it => {
                         if (!it.category) it.category = catKey;
-                        // If no itemID assigned, assign a random unique ID
                         if (!it.itemID) {
+                            // assign random ID for posted item
                             it.itemID = Math.floor(Math.random() * 1000000);
                         }
                     });
                     combined = combined.concat(postedCatItems);
                 }
 
+                console.log("Final combined items after merging postedItems:", combined);
                 allLoadedItems = combined;
-                window.allLoadedItems = allLoadedItems; // so other functions can access it
+                window.allLoadedItems = allLoadedItems; 
+                return allLoadedItems;
             })
             .catch(error => console.error('Error loading items.json:', error));
     }
@@ -65,10 +78,12 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function updateHeaderLoginLink() {
+        console.log("Updating header login link...");
         const container = document.getElementById('login-link-container');
         if (container) {
             if (loggedInUser) {
                 const user = users.find(u => u.email === loggedInUser);
+                console.log("User found for login link:", user);
                 let identifierToMask = user ? user.username : loggedInUser;
                 const masked = maskUserIdentifier(identifierToMask);
                 container.innerHTML = '<a href="profile.html">' + masked + '</a>';
@@ -79,12 +94,12 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function getUserFavorites() {
+        console.log("Getting user favorites...");
         let favs = JSON.parse(localStorage.getItem('favorites')) || {};
         return favs[loggedInUser] || [];
     }
 
     function isItemFavorited(itemID) {
-        if (!loggedInUser) return false;
         const userFavs = getUserFavorites();
         return userFavs.some(it => it.itemID === itemID);
     }
@@ -96,6 +111,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function toggleFavorite(itemID) {
+        console.log("Toggling favorite for itemID:", itemID);
         if (!loggedInUser) return;
         let favs = JSON.parse(localStorage.getItem('favorites')) || {};
         let userFavs = favs[loggedInUser] || [];
@@ -105,16 +121,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const index = userFavs.findIndex(it => it.itemID === itemID);
         if (index >= 0) {
+            console.log("Item was favorited, removing it...");
             userFavs.splice(index, 1);
         } else {
+            console.log("Item not in favorites, adding it...");
             userFavs.push({ itemID: itemID, item: item });
         }
 
         favs[loggedInUser] = userFavs;
         localStorage.setItem('favorites', JSON.stringify(favs));
+        console.log("Updated favorites:", favs);
     }
 
     function displayItemNotFound() {
+        console.log("Item not found, displaying message...");
         const container = document.querySelector('.item-details-container');
         if (container) {
             container.innerHTML = '<p style="text-align:center;">Item not found.</p>';
@@ -122,6 +142,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function populateItemDetails(item) {
+        console.log("Populating item details for:", item);
         const mainImage = document.getElementById('mainImage');
         const titleEl = document.querySelector('.item-title');
         const categoryEl = document.querySelector('.item-category span');
@@ -150,22 +171,26 @@ document.addEventListener('DOMContentLoaded', function () {
         const contactSellerButton = document.getElementById('contactSellerBtn');
         if (contactSellerButton) {
             contactSellerButton.addEventListener('click', function () {
+                console.log("Contact Seller button clicked");
                 alert('This feature will be implemented soon. Stay tuned!');
             });
         }
     }
 
     //***************************************************************
-    // Page handling sections
+    // Page Handlers
     //***************************************************************
 
     //--- Register Page ---//
     function handleRegisterPage() {
+        console.log("handleRegisterPage called");
         if (currentPage !== 'register.html') return;
+        console.log("On register page");
         const form = document.getElementById('registerForm');
         if (!form) return;
         form.addEventListener('submit', function (e) {
             e.preventDefault();
+            console.log("Register form submitted");
             const email = document.getElementById('registerEmail').value.trim();
             const username = document.getElementById('registerUsername').value.trim();
             const password = document.getElementById('registerPassword').value.trim();
@@ -197,6 +222,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 registerDate: new Date().toISOString()
             });
             localStorage.setItem('users', JSON.stringify(users));
+            console.log("New user registered:", users);
             alert('Registration successful! Please login.');
             window.location.href = 'login.html';
         });
@@ -204,22 +230,26 @@ document.addEventListener('DOMContentLoaded', function () {
 
     //--- Login Page ---//
     function handleLoginPage() {
+        console.log("handleLoginPage called");
         if (currentPage !== 'login.html') return;
+        console.log("On login page");
         const form = document.getElementById('loginForm');
         if (!form) return;
 
         form.addEventListener('submit', function (e) {
             e.preventDefault();
+            console.log("Login form submitted");
             const loginVal = document.getElementById('loginInput').value.trim();
             const password = document.getElementById('loginPassword').value.trim();
 
             const user = users.find(u =>
                 ((u.username === loginVal || u.email === loginVal) && u.password === password)
             );
-
+            console.log("Login attempt:", loginVal, password, "User found:", user);
             if (user) {
                 localStorage.setItem('loggedInUser', user.email);
                 loggedInUser = user.email;
+                console.log("User logged in:", user.email);
                 window.location.href = 'index.html';
             } else {
                 alert('Invalid username/password or user does not exist.');
@@ -229,6 +259,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const goToRegister = document.getElementById('goToRegister');
         if (goToRegister) {
             goToRegister.addEventListener('click', function () {
+                console.log("Go to register clicked");
                 window.location.href = 'register.html';
             });
         }
@@ -236,14 +267,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
     //--- Profile Page ---//
     function handleProfilePage() {
+        console.log("handleProfilePage called");
         if (currentPage !== 'profile.html') return;
+        console.log("On profile page");
         if (!loggedInUser) {
+            console.log("No loggedInUser, redirecting to login");
             window.location.href = 'login.html';
             return;
         }
 
         const user = users.find(u => u.email === loggedInUser);
+        console.log("Profile user:", user);
         if (!user) {
+            console.log("User not found, removing loggedInUser and redirecting");
             localStorage.removeItem('loggedInUser');
             window.location.href = 'login.html';
             return;
@@ -260,6 +296,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const logoutBtn = document.getElementById('logoutBtn');
         if (logoutBtn) {
             logoutBtn.addEventListener('click', function () {
+                console.log("Logout clicked");
                 localStorage.removeItem('loggedInUser');
                 window.location.href = 'index.html';
             });
@@ -269,6 +306,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (changePassForm) {
             changePassForm.addEventListener('submit', function (e) {
                 e.preventDefault();
+                console.log("Change password form submitted");
                 const curPass = document.getElementById('currentPassword').value;
                 const newPass = document.getElementById('newPassword').value.trim();
                 const confirmPass = document.getElementById('confirmPassword').value.trim();
@@ -284,6 +322,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 user.password = newPass;
                 localStorage.setItem('users', JSON.stringify(users));
+                console.log("Password changed for user:", user);
                 alert('Password changed successfully!');
                 window.location.href = 'index.html';
             });
@@ -292,14 +331,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
     //--- Post Item Page ---//
     function handlePostItemPage() {
+        console.log("handlePostItemPage called");
         if (currentPage !== 'post_item.html') return;
+        console.log("On post_item page");
         if (!loggedInUser) {
+            console.log("No loggedInUser, redirecting to login");
             window.location.href = 'login.html';
             return;
         }
 
         const user = users.find(u => u.email === loggedInUser);
         const sellerUsername = user ? user.username : 'Unknown';
+        console.log("Seller username for posted items:", sellerUsername);
 
         const form = document.getElementById('postItemForm');
         if (!form) return;
@@ -309,8 +352,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
         form.addEventListener('submit', function (e) {
             e.preventDefault();
+            console.log("Post item form submitted");
             const title = document.getElementById('postTitle').value.trim();
             const category = document.getElementById('postCategory').value;
+            console.log("Selected category:", category);
             let listingType;
             if (category === "Free") {
                 listingType = "free";
@@ -361,9 +406,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 category: category
             };
 
+            console.log("Newly created item:", newItem);
             postedItems[category].push(newItem);
             localStorage.setItem('postedItems', JSON.stringify(postedItems));
-            console.log(localStorage.getItem('postedItems'));
+            console.log("Updated postedItems in localStorage:", postedItems);
             alert('Item posted successfully!');
             window.location.href = 'index.html';
         });
@@ -371,10 +417,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     //--- Category Page ---//
     function handleCategoryPage() {
+        console.log("handleCategoryPage called");
         if (currentPage !== 'category.html') return;
+        console.log("On category page");
 
         const urlParams = new URLSearchParams(window.location.search);
         let category = urlParams.get('cat') || '';
+        console.log("Category selected from URL:", category);
 
         const itemsContainer = document.getElementById('categoryItems');
         const categorySelect = document.getElementById('categorySelect');
@@ -384,7 +433,8 @@ document.addEventListener('DOMContentLoaded', function () {
         if (categorySelect) categorySelect.value = category;
 
         function getAllItems() {
-            console.log(window.allLoadedItems);
+            console.log("Fetching all items for category page");
+            console.log("allLoadedItems currently:", window.allLoadedItems);
             let items = window.allLoadedItems || [];
             if (category) {
                 items = items.filter(it => it.category === category);
@@ -393,13 +443,16 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         function attachCategoryItemEventListeners() {
+            console.log("Attaching event listeners to category items");
             const heartButtons = document.querySelectorAll('.heart-btn');
             const buyButtons = document.querySelectorAll('.buy-btn');
 
             heartButtons.forEach(btn => {
                 btn.addEventListener('click', (e) => {
+                    console.log("Heart button clicked for item:", e.currentTarget.getAttribute('data-itemid'));
                     const itemID = parseInt(e.currentTarget.getAttribute('data-itemid'), 10);
                     if (!loggedInUser) {
+                        console.log("User not logged in, redirecting to login");
                         window.location.href = 'login.html';
                         return;
                     }
@@ -411,8 +464,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
             buyButtons.forEach(btn => {
                 btn.addEventListener('click', (e) => {
+                    console.log("Buy button clicked for item:", e.currentTarget.getAttribute('data-itemid'));
                     const itemID = parseInt(e.currentTarget.getAttribute('data-itemid'), 10);
                     if (!loggedInUser) {
+                        console.log("User not logged in, redirecting to login");
                         window.location.href = 'login.html';
                         return;
                     }
@@ -422,11 +477,12 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         function displayItems() {
+            console.log("displayItems called on category page");
             const items = getAllItems();
-            console.log("displayItems");
-            console.log(items);
+            console.log("Items found for category:", category, items);
 
             const sortValue = sortSelect ? sortSelect.value : 'time_desc';
+            console.log("Sorting items by:", sortValue);
             if (sortValue === 'time_desc') {
                 items.sort((a, b) => new Date(b.postedDate) - new Date(a.postedDate));
             } else if (sortValue === 'time_asc') {
@@ -438,6 +494,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             if (items.length === 0) {
+                console.log("No items found for this category/filter");
                 itemsContainer.innerHTML = '<p style="text-align:center;">No items found.</p>';
                 return;
             }
@@ -473,6 +530,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (applyFiltersBtn) {
             applyFiltersBtn.addEventListener('click', function () {
+                console.log("Apply filters clicked");
                 category = categorySelect ? categorySelect.value : '';
                 displayItems();
             });
@@ -483,8 +541,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     //--- Favorites Page ---//
     function handleFavoritesPage() {
+        console.log("handleFavoritesPage called");
         if (currentPage !== 'favorites.html') return;
+        console.log("On favorites page");
         if (!loggedInUser) {
+            console.log("No loggedInUser on favorites page, redirecting to login");
             window.location.href = 'login.html';
             return;
         }
@@ -492,6 +553,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const favContainer = document.getElementById('favoritesContainer');
         let favs = JSON.parse(localStorage.getItem('favorites')) || {};
         let userFavs = favs[loggedInUser] || [];
+        console.log("User favorites:", userFavs);
 
         if (userFavs.length === 0) {
             favContainer.innerHTML = "<p>You don't have liked items</p>";
@@ -531,7 +593,9 @@ document.addEventListener('DOMContentLoaded', function () {
         heartButtons.forEach(btn => {
             btn.addEventListener('click', e => {
                 const itemID = parseInt(e.currentTarget.getAttribute('data-itemid'), 10);
+                console.log("Unfavorite clicked for item:", itemID);
                 if (!loggedInUser) {
+                    console.log("Not logged in, redirecting to login");
                     window.location.href = 'login.html';
                     return;
                 }
@@ -546,7 +610,9 @@ document.addEventListener('DOMContentLoaded', function () {
         buyButtons.forEach(btn => {
             btn.addEventListener('click', e => {
                 const itemID = parseInt(e.currentTarget.getAttribute('data-itemid'), 10);
+                console.log("Buy clicked on favorites page for item:", itemID);
                 if (!loggedInUser) {
+                    console.log("Not logged in, redirecting");
                     window.location.href = 'login.html';
                     return;
                 }
@@ -557,8 +623,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     //--- Index (Search) Page ---//
     function handleSearchFromIndex() {
+        console.log("handleSearchFromIndex called");
         if (currentPage !== 'index.html') return;
-
+        console.log("On index page (search)");
         const searchForm = document.getElementById('search-form');
         const searchInput = document.getElementById('search-input');
         const searchResults = document.getElementById('searchResults');
@@ -566,16 +633,20 @@ document.addEventListener('DOMContentLoaded', function () {
         if (!searchForm) return;
         searchForm.addEventListener('submit', function (e) {
             e.preventDefault();
+            console.log("Search form submitted");
             const query = searchInput.value.trim().toLowerCase();
             if (!query) return;
 
             let allItems = window.allLoadedItems || [];
+            console.log("Searching for query:", query, "in items:", allItems);
             let filtered = allItems.filter(item => item.title.toLowerCase().includes(query));
             if (filtered.length === 0) {
+                console.log("No results found for search query:", query);
                 searchResults.innerHTML = '<p>No results found.</p>';
                 return;
             }
 
+            console.log("Search results found:", filtered);
             let htmlStr = '<div style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center;">';
             filtered.forEach(item => {
                 const priceInfo = (item.listingType === 'forSale') ? (item.price + ' KRW')
@@ -601,7 +672,9 @@ document.addEventListener('DOMContentLoaded', function () {
             viewButtons.forEach(btn => {
                 btn.addEventListener('click', e => {
                     const itemID = parseInt(e.currentTarget.getAttribute('data-itemid'), 10);
+                    console.log("View clicked on search result for item:", itemID);
                     if (!loggedInUser) {
+                        console.log("Not logged in, redirecting");
                         window.location.href = 'login.html';
                         return;
                     }
@@ -613,21 +686,26 @@ document.addEventListener('DOMContentLoaded', function () {
 
     //--- Item Details Page ---//
     function handleItemDetailsPage() {
+        console.log("handleItemDetailsPage called");
         if (currentPage !== 'item_details.html') return;
+        console.log("On item_details page");
 
         if (!loggedInUser) {
+            console.log("Not logged in, redirecting to login");
             window.location.href = 'login.html';
             return;
         }
 
         const urlParams = new URLSearchParams(window.location.search);
         const itemID = urlParams.get('itemID');
+        console.log("ItemID from URL:", itemID);
         if (!itemID) {
             displayItemNotFound();
             return;
         }
 
         const item = getItemByID(parseInt(itemID, 10));
+        console.log("Item found by ID:", item);
         if (!item) {
             displayItemNotFound();
             return;
@@ -639,7 +717,9 @@ document.addEventListener('DOMContentLoaded', function () {
     //***************************************************************
     // Initialization: Fetch items and then run page handlers
     //***************************************************************
+    console.log("Starting fetchAndLoadItems...");
     fetchAndLoadItems().then(() => {
+        console.log("Items fetched and loaded. Running page handlers now.");
         updateHeaderLoginLink();
         handleRegisterPage();
         handleLoginPage();
@@ -649,17 +729,25 @@ document.addEventListener('DOMContentLoaded', function () {
         handleFavoritesPage();
         handleSearchFromIndex();
         handleItemDetailsPage();
+    }).catch(err => {
+        console.error("Error in fetchAndLoadItems:", err);
     });
 });
 
 
 document.addEventListener("DOMContentLoaded", function () {
+    console.log("Second DOMContentLoaded fired - for price container logic");
     const categorySelect = document.getElementById("postCategory");
     const priceContainer = document.getElementById("priceContainer");
 
     function togglePriceVisibility() {
-        if (!categorySelect || !priceContainer) return;
+        console.log("togglePriceVisibility called");
+        if (!categorySelect || !priceContainer) {
+            console.log("categorySelect or priceContainer not found");
+            return;
+        }
         const selectedCategory = categorySelect.value;
+        console.log("Selected category for price visibility:", selectedCategory);
         if (selectedCategory === "Free" || selectedCategory === "LostnFound") {
             priceContainer.classList.add("hidden");
         } else {
