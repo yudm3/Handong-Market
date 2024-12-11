@@ -671,6 +671,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (categorySelect) categorySelect.value = category;
 
         function getAllItems() {
+            console.log(window.allLoadedItems);
             let items = window.allLoadedItems || [];
             if (category) {
                 items = items.filter(it => it.category === category);
@@ -709,6 +710,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
         function displayItems() {
             const items = getAllItems();
+            console.log("displayItems");
+            console.log(items);
+
 
             const sortValue = sortSelect ? sortSelect.value : 'time_desc';
             if (sortValue === 'time_desc') {
