@@ -507,7 +507,7 @@ footer p {
     position:relative;
     padding:10px;
     box-sizing:border-box;
-    justify-content:flex-start;
+    justify-content:space-between;
     min-height:300px;
 }
 

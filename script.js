@@ -400,6 +400,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const priceInput = document.getElementById('postPrice');
         const openToOffersCheckbox = document.getElementById('openToOffers');
+        const postImagesInput = document.getElementById('postImages');
 
         form.addEventListener('submit', function (e) {
             e.preventDefault();
@@ -416,46 +417,57 @@ document.addEventListener('DOMContentLoaded', function () {
 
             const description = document.getElementById('postDescription').value.trim();
             const location = document.getElementById('postLocation').value.trim();
-            const images = document.getElementById('postImages').files;
+            const images = postImagesInput.files;
 
-            let imagePath = 'item-images/default.png';
+            // If user selected an image, read it as Base64
             if (images.length > 0) {
-                const imageName = images[0].name.trim();
-                if (imageName) {
-                    imagePath = 'item-images/' + imageName;
+                const file = images[0];
+                const reader = new FileReader();
+    
+                reader.onload = function(e) {
+                    const base64Image = e.target.result; // base64 string of the image
+    
+                    finalizePostItem(base64Image);
+                };
+    
+                reader.readAsDataURL(file);
+            } else {
+                // No image selected, use a default placeholder or handle it gracefully
+                finalizePostItem(null);
+            }
+    
+            function finalizePostItem(imageData) {
+                let priceVal = 0;
+                let offers = false;
+                if (listingType === 'forSale') {
+                    priceVal = parseInt(priceInput.value) || 0;
+                    offers = openToOffersCheckbox.checked;
                 }
+    
+                if (!postedItems[category]) {
+                    postedItems[category] = [];
+                }
+    
+                let nextID = Math.floor(Math.random() * 1000000);
+                const newItem = {
+                    itemID: nextID,
+                    title: title,
+                    description: description,
+                    image: imageData || 'item-images/default.png', // store the base64 or empty string
+                    location: location,
+                    seller: sellerUsername,
+                    listingType: listingType,
+                    openToOffers: offers,
+                    price: priceVal,
+                    postedDate: new Date().toISOString(),
+                    category: category
+                };
+    
+                postedItems[category].push(newItem);
+                localStorage.setItem('postedItems', JSON.stringify(postedItems));
+                alert('Item posted successfully!');
+                window.location.href = 'index.html';
             }
-
-            let priceVal = 0;
-            let offers = false;
-            if (listingType === 'forSale') {
-                priceVal = parseInt(priceInput.value) || 0;
-                offers = openToOffersCheckbox.checked;
-            }
-
-            if (!postedItems[category]) {
-                postedItems[category] = [];
-            }
-
-            let nextID = Math.floor(Math.random() * 1000000);
-            const newItem = {
-                itemID: nextID,
-                title: title,
-                description: description,
-                image: imagePath,
-                location: location,
-                seller: sellerUsername,
-                listingType: listingType,
-                openToOffers: offers,
-                price: priceVal,
-                postedDate: new Date().toISOString(),
-                category: category
-            };
-
-            postedItems[category].push(newItem);
-            localStorage.setItem('postedItems', JSON.stringify(postedItems));
-            alert('Item posted successfully!');
-            window.location.href = 'index.html';
         });
     }
 
