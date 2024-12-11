@@ -1,5 +1,7 @@
 document.addEventListener('readystatechange', () => console.log('ready state change: ' + document.readyState));
 document.addEventListener('DOMContentLoaded', function () {
+    console.log("DOMContentLoaded!");
+
     const currentPage = window.location.pathname.split('/').pop();
     let loggedInUser = localStorage.getItem('loggedInUser') || null;
     let users = JSON.parse(localStorage.getItem('users')) || [];
