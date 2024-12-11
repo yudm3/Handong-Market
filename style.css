@@ -1,6 +1,6 @@
-/* style.css */
-
-/* Global Styles */
+/* -------------------------------------------------------- */
+/*                      Global Styles                       */
+/* -------------------------------------------------------- */
 body {
     background-color: #FFFEF5;
     font-family: Jost, sans-serif;
@@ -9,19 +9,22 @@ body {
     cursor: url('images/cursor.svg'), auto;
 }
 
+/* -------------------------------------------------------- */
+/*                      Header & Navigation                 */
+/* -------------------------------------------------------- */
 .header {
     font-size: 2vw; 
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 2% 5%; 
+    margin: 2% 5%;
 }
 
 .menu {
     display: flex;
     align-items: center;
     gap: 2vw;
-    flex-wrap: nowrap; /* keep horizontal */
+    flex-wrap: nowrap;
 }
 
 .menu a {
@@ -30,24 +33,24 @@ body {
     font-size: 2vw;
     display: inline-flex;
     align-items: center;
-    transition: transform 0.3s ease
+    transition: transform 0.3s ease;
 }
 
 .menu a:hover {
-    transform: scale(1.05); /* Slight zoom on hover */
+    transform: scale(1.05);
 }
 
 .icon-link img {
     vertical-align: middle;
-    transition: transform 0.3s ease; /* Smooth transition for icons */
+    transition: transform 0.3s ease;
 }
 
 .icon-link img:hover {
-    transform: scale(1.2); /* Slight zoom effect on hover */
+    transform: scale(1.2);
 }
 
 #login-link-container {
-    transition: transform 0.3s ease; /* Smooth transition for icons */
+    transition: transform 0.3s ease;
 }
 
 #login-link-container:hover {
@@ -57,9 +60,11 @@ body {
 .hover-logo {
     max-width: max(30%, 300px);
     height: auto;
-} 
+}
 
-/* Post button */
+/* -------------------------------------------------------- */
+/*                         Post Button                      */
+/* -------------------------------------------------------- */
 .post_btn a {
     border-radius: 100px;
     background-color: #1F4529;
@@ -68,30 +73,38 @@ body {
     justify-content: center;
     padding: 0.5em 1em;
     color: #fffef5;
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Updated hover transition */
+    transition: background-color 0.3s ease, transform 0.3s ease;
     border: 2px solid #1F4529;
     white-space: nowrap;
     font-size:2vw;
 }
 
 .post_btn a:hover {
-    background-color: #14521C; /* Darker green for hover */
-    transform: scale(1.1); /* Slight zoom effect */
+    background-color: #14521C;
+    transform: scale(1.1);
 }
 
 .post_btn a .desktop-label { display: inline; }
 .post_btn a .mobile-label { display: none; }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 768px) {
     .post_btn a .desktop-label {
         display: none;
     }
     .post_btn a .mobile-label {
         display: inline;
     }
+    .post_btn a {
+        font-size:3vw;
+    }
+    .menu {
+        gap: 3vw;
+    }
 }
 
-/* Post Item Form */
+/* -------------------------------------------------------- */
+/*                      Post Item Form                      */
+/* -------------------------------------------------------- */
 .post-item-page {
     display: flex;
     justify-content: center;
@@ -121,7 +134,8 @@ label {
     display: block;
 }
 
-.post-item-input, .post-item-textarea {
+.post-item-input,
+.post-item-textarea {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
@@ -149,16 +163,17 @@ label {
     background-color: #2d5c44;
 }
 
-/* Price container */
 .price-container {
     display: block;
 }
 
-/* Hide price container if needed */
 .price-container.hidden {
     display: none;
 }
 
+/* -------------------------------------------------------- */
+/*                    Search / Categories                   */
+/* -------------------------------------------------------- */
 .handongs-marketplace {
     width: auto;
     font-size: 3vw; 
@@ -275,6 +290,9 @@ label {
     font-weight: bold;
 }
 
+/* -------------------------------------------------------- */
+/*                          Footer                          */
+/* -------------------------------------------------------- */
 .footer {
     margin-top: 10%;
     display: block;
@@ -328,7 +346,9 @@ footer p {
     color: #acacac;
 }
 
-/* Login / Register Forms */
+/* -------------------------------------------------------- */
+/*                     Login/Register Forms                 */
+/* -------------------------------------------------------- */
 .login-title p {
     font-size: 2em;
     text-align: center;
@@ -392,17 +412,9 @@ footer p {
     text-decoration: none;
 }
 
-/* post-item form */
-.post-item-form {
-    background-color: #fefae0;
-    border: 2px solid #1F4529;
-    border-radius: 15px;
-    padding: 20px;
-    width: 90%;
-    max-width: 500px;
-    box-sizing: border-box;
-}
-
+/* -------------------------------------------------------- */
+/*                  Post Item Additional Styles             */
+/* -------------------------------------------------------- */
 .post-item-form h2 {
     text-align:center;
     margin-bottom:20px;
@@ -438,24 +450,166 @@ footer p {
     font-weight:normal;
 }
 
-/* Item cards for category page */
+/* -------------------------------------------------------- */
+/*          Category Page & Favorites Page Items            */
+/* -------------------------------------------------------- */
+/* Unified style for item layout in category and favorites */
+
+/* Category item card structure */
 .item-card {
     background:#fffef5;
     border:2px solid #1F4529;
     border-radius:10px;
-    padding:10px;
     width:200px;
     box-sizing:border-box;
     text-align:center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 300px;
+    padding:10px;
+    position: relative;
 }
 
-.item-card img {
-    max-width:100%;
+.item-card-image img {
+    width:100%;
     height:auto;
+    object-fit:cover; /* ensure nice fitting */
+}
+
+.item-card-image {
+    width:100%;
+    border-bottom:1px solid #1F4529;
     margin-bottom:10px;
 }
 
-/* Profile page form adjustments */
+.item-card-info {
+    padding:10px;
+    text-align:left;
+    font-size:14px;
+    width:100%;
+    box-sizing:border-box;
+    flex:1 0 auto;
+}
+
+/* Favorites item card structure */
+.favorite-item {
+    width:240px;
+    background-color: #fffef5;
+    border:2px solid #1F4529;
+    border-radius: 15px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    overflow:hidden;
+    text-align:center;
+    font-family:Jost,sans-serif;
+    position:relative;
+    padding:10px;
+    box-sizing:border-box;
+    justify-content:flex-start;
+    min-height:300px;
+}
+
+.favorite-item-image img {
+    width:100%;
+    height:auto;
+    object-fit:cover;
+}
+
+.favorite-item-image {
+    width:100%;
+    border-bottom:1px solid #1F4529;
+    margin-bottom:10px;
+}
+
+.favorite-item-info {
+    padding:10px;
+    text-align:left;
+    font-size:14px;
+    width:100%;
+    box-sizing:border-box;
+    flex:1 0 auto;
+}
+
+/* Actions (heart & buy) shared */
+.item-actions, .favorite-item-actions {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:0.5em;
+    width:100%;
+    padding:10px;
+    border-top:1px solid #1F4529;
+    box-sizing:border-box;
+    background-color:#fefae07e;
+    bottom:0;
+}
+
+.heart-btn,
+.buy-btn {
+    border:none;
+    background-color:transparent;
+    cursor:pointer;
+    font-family:Jost,sans-serif;
+}
+
+.heart-btn {
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:0;
+    line-height:0;
+    width:24px;
+    height:24px;
+}
+
+.heart-btn img {
+    display:block;
+    max-width:1.5em;
+    height:auto;
+}
+
+.heart-btn img:hover {
+    transform: scale(1.1);
+}
+
+.buy-btn {
+    background-color:#1F4529;
+    color:#fff;
+    padding:5px 15px;
+    border-radius:5px;
+    transition:background-color 0.3s;
+    font-size:0.875em;
+    width: 80%;
+}
+
+.buy-btn:hover {
+    background-color:#47663B;
+}
+
+#delete-btn {
+    justify-content:center;
+}
+
+/* Two items per row on smaller screens for category items */
+@media only screen and (max-width: 768px) {
+    .item-card {
+        width: calc(50% - 30px);
+    }
+    .item-card-image img,
+    .favorite-item-image img {
+        max-height:150px; /* prevent images from getting too large on mobile */
+    }
+
+    .favorite-item {
+        width: calc(50% - 30px); /* also show two items per row for favorites if desired */
+    }
+}
+
+/* -------------------------------------------------------- */
+/*                 Profile Page Adjustments                 */
+/* -------------------------------------------------------- */
 #changePasswordForm input[type="password"] {
     border:1px solid #c0a9a9;
     border-radius:5px;
@@ -465,7 +619,6 @@ footer p {
     border: 0.15em solid #1F4529;
 }
 
-/* Profile Sections */
 .profile-section {
     background-color: #fffef5;
     border: 0.2em solid #1F4529;
@@ -538,7 +691,9 @@ footer p {
     height: 8em;
 }
 
-/* Item details page */
+/* -------------------------------------------------------- */
+/*                   Item Details Page                      */
+/* -------------------------------------------------------- */
 .item-details-page {
     display: flex;
     justify-content: center;
@@ -548,28 +703,37 @@ footer p {
 .item-details-container {
     display: flex;
     max-width: 1200px;
-    width: 100%;
+    width: 90%;
     justify-content: space-between;
     padding: 20px;
     background-color: #f9f9f9;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    height: 60vh; /* Added height: 60% of viewport height */
+    align-items: center; /* Vertically center contents */
 }
 
 .item-images {
     position: relative;
     width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* Fill parent height */
 }
 
 .item-main-image {
-    width: 100%;
+    width: auto;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Ensures image scales within container */
     border-radius: 10px;
-    object-fit: contain;
 }
 
 .item-info {
     width: 45%;
     padding-left: 20px;
+    overflow: auto; /* If content overflows, scroll */
 }
 
 .item-title {
@@ -617,57 +781,9 @@ footer p {
     background-color: #2d5c44;
 }
 
-.item-actions {
-    display: flex;
-    align-items: center;
-    gap: 0.5em;
-}
-
-.heart-btn {
-    display: inline-block;
-    padding: 0;
-    border: none;
-    background: none;
-    cursor: pointer;
-    line-height: 0;
-}
-
-.heart-btn img {
-    margin-top: 0.6em;
-    display: block;
-    max-width: 1.5em;
-    height: auto;
-}
-
-.buy-btn {
-    padding: 0.3em 0.7em;
-    background-color: #14401F;
-    color: white;
-    border: none;
-    border-radius: 0.55em;
-    cursor: pointer;
-    font-size: 0.875em;
-}
-
-.buy-btn:hover {
-    background-color: #14401F;
-}
-
-.applyFiltersBtn{
-    padding: 0.3em 0.9em;
-    background-color: #14401F;
-    color: white;
-    border: none;
-    border-radius: 0.55em;
-    cursor: pointer;
-    font-size: 0.875em;
-}
-
-.applyFiltersBtn:hover{
-    background-color: #14401F;
-}
-
-/* Favorites Page */
+/* -------------------------------------------------------- */
+/*                    Favorites Page                        */
+/* -------------------------------------------------------- */
 .favorites-title {
     margin-top: 50px;
     font-size: 36px;
@@ -690,106 +806,28 @@ footer p {
     text-align: center;
 }
 
-.favorite-item {
-    width: 240px;
-    background-color: #fffef5;
-    border: 2px solid #1F4529;
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow: hidden;
-    text-align: center;
-    font-family: Jost, sans-serif;
-    position: relative;
-    padding: 10px;
+/* We already defined .favorite-item above for consistency */
+
+/* Adjust mobile for favorites as well */
+@media only screen and (max-width: 768px) {
+    .favorite-item {
+        width: calc(50% - 30px);
+    }
+    .favorite-item-image img {
+        max-height:150px;
+    }
 }
 
-.favorite-item-image {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-bottom: 1px solid #1F4529;
-}
-
-.favorite-item-info {
-    padding: 10px;
-    text-align: left;
-    font-size: 14px;
-    width: 100%;
-}
-
-.item-title {
-    font-size: 18px;
-    color: #1F4529;
-    margin-bottom: 10px;
-}
-
-.item-description {
-    color: #333;
-    font-size: 14px;
-    margin-bottom: 10px;
-}
-
-.item-location,
-.item-seller,
-.item-price {
-    color: #555;
-    font-size: 12px;
-}
-
-.favorite-item-actions {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #fefae0;
-    width: 100%;
-    padding: 10px;
-    position: absolute;
-    bottom: 0;
-    border-top: 1px solid #1F4529;
-}
-
-.heart-btn,
-.buy-btn {
-    border: none;
-    background-color: transparent;
-    font-size: 16px;
-    cursor: pointer;
-    font-family: Jost, sans-serif;
-}
-
-.heart-btn {
-    margin-bottom: 5px;
-}
-
-.buy-btn {
-    background-color: #1F4529;
-    color: #fff;
-    padding: 5px 15px;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-.buy-btn:hover {
-    background-color: #47663B;
-}
-
-/* Responsive Design */
+/* -------------------------------------------------------- */
+/*                    Responsive Adjustments                */
+/* -------------------------------------------------------- */
 @media only screen and (max-width: 768px) {
     .favorites-container {
         width: 95%;
     }
 
-    .favorite-item {
-        width: 100%;
-    }
-
-    .favorite-item-image {
-        height: 200px;
-    }
-
-    .favorite-item-info {
+    .favorite-item-info,
+    .item-card-info {
         font-size: 12px;
     }
 
@@ -820,21 +858,44 @@ footer p {
         padding: 0.5em 1em;
         font-size: 4vw;
     }
-    
+
     .search-container input {
         font-size: 4.5vw;
     }
+
+    .footer-logo {
+        display: none;
+    }
+
+    .info a {
+        font-size: 3vw;
+    }
+
+    .handongs-marketplace {
+        line-height: 0;
+        font-size: 5vw;
+    }
+
+    .top-logo {
+        width: 25vw;
+    }
+
+    #login-link-container a {
+        font-size: 4vw;
+    }
 }
 
+/* -------------------------------------------------------- */
+/*                        Hover Effects                     */
+/* -------------------------------------------------------- */
 .hover-logo {
     transition: transform 0.3s ease-in-out;
 }
 
 .hover-logo:hover {
-    transform: scale(1.1); /* Increase size by 10% */
+    transform: scale(1.1);
 }
 
-/* Registration hover style */
 #goToRegister {
     text-decoration: none;
     color: #47663B; 
@@ -846,7 +907,6 @@ footer p {
     text-decoration: underline;
 }
 
-/* Categories hover shadow */
 body {
     background-color: #f9f9f9;
 }
