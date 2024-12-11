@@ -652,7 +652,7 @@ document.addEventListener('DOMContentLoaded', function () {
             alert('Item posted successfully!');
             // We could call loadItemsFromLocalStorage(), but let's just redirect to see changes on next load:
             // loadItemsFromLocalStorage();
-            // window.location.href = 'index.html';
+            window.location.href = 'index.html';
         });
     }
 
