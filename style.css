@@ -54,6 +54,11 @@ body {
     transform: scale(1.15);
 }
 
+.hover-logo {
+    max-width: max(30%, 300px);
+    height: auto;
+} 
+
 /* Post button */
 .post_btn a {
     border-radius: 100px;
@@ -809,6 +814,15 @@ footer p {
 
     .heart-btn img {
         width: 20px;
+    }
+
+    .search-container {
+        padding: 0.5em 1em;
+        font-size: 4vw;
+    }
+    
+    .search-container input {
+        font-size: 4.5vw;
     }
 }
 

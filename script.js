@@ -1,3 +1,4 @@
+document.addEventListener('readystatechange', () => console.log('ready state change: ' + document.readyState));
 document.addEventListener('DOMContentLoaded', function () {
     const currentPage = window.location.pathname.split('/').pop();
     let loggedInUser = localStorage.getItem('loggedInUser') || null;
@@ -607,7 +608,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const location = document.getElementById('postLocation').value.trim();
             const images = document.getElementById('postImages').files;
 
-            let imagePath = 'item-images/default.jpg';
+            let imagePath = 'item-images/default.png';
             if (images.length > 0) {
                 const imageName = images[0].name.trim();
                 if (imageName) {
