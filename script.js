@@ -1,4 +1,4 @@
-document.addEventListener('readystatechange', () => console.log('ready state change: ' + document.readyState));
+document.addEventListener('readystatechange', () => console.log('ready state change:', document.readyState));
 
 document.addEventListener('DOMContentLoaded', function () {
     console.log("DOMContentLoaded event fired!");
@@ -67,7 +67,6 @@ document.addEventListener('DOMContentLoaded', function () {
     //***************************************************************
     // Helper functions for user, favorites, and item operations
     //***************************************************************
-
     function maskUserIdentifier(identifier) {
         if (!identifier) return '';
         if (identifier.length > 4) {
@@ -90,6 +89,8 @@ document.addEventListener('DOMContentLoaded', function () {
             } else {
                 container.innerHTML = '<a href="login.html" id="loginLink">login</a>';
             }
+        } else {
+            console.log("No login-link-container found in DOM.");
         }
     }
 
@@ -105,9 +106,14 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function getItemByID(itemID) {
-        if (!window.allLoadedItems) return null;
+        if (!window.allLoadedItems) {
+            console.log("getItemByID called but allLoadedItems is not defined yet.");
+            return null;
+        }
         itemID = parseInt(itemID, 10);
-        return window.allLoadedItems.find(i => i.itemID === itemID);
+        const foundItem = window.allLoadedItems.find(i => i.itemID === itemID);
+        console.log("getItemByID:", itemID, "Found item:", foundItem);
+        return foundItem;
     }
 
     function toggleFavorite(itemID) {
@@ -117,7 +123,10 @@ document.addEventListener('DOMContentLoaded', function () {
         let userFavs = favs[loggedInUser] || [];
 
         const item = getItemByID(itemID);
-        if (!item) return;
+        if (!item) {
+            console.log("Item not found for toggling favorite:", itemID);
+            return;
+        }
 
         const index = userFavs.findIndex(it => it.itemID === itemID);
         if (index >= 0) {
@@ -138,6 +147,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const container = document.querySelector('.item-details-container');
         if (container) {
             container.innerHTML = '<p style="text-align:center;">Item not found.</p>';
+        } else {
+            console.log("No .item-details-container found in DOM.");
         }
     }
 
@@ -151,12 +162,14 @@ document.addEventListener('DOMContentLoaded', function () {
         const descEl = document.querySelector('.item-description');
         const sellerEl = document.querySelector('.item-seller');
 
-        if (mainImage) mainImage.src = item.image;
-        if (titleEl) titleEl.textContent = item.title || 'No Title';
-        if (categoryEl) categoryEl.textContent = item.category || 'All';
-        if (locationEl) locationEl.textContent = item.location || 'No Location';
+        if (mainImage) mainImage.src = item.image; else console.log("mainImage element not found");
+        if (titleEl) titleEl.textContent = item.title || 'No Title'; else console.log(".item-title element not found");
+        if (categoryEl) categoryEl.textContent = item.category || 'All'; else console.log(".item-category span not found");
+        if (locationEl) locationEl.textContent = item.location || 'No Location'; else console.log(".item-location span not found");
         if (descEl) descEl.innerHTML = `<b>Description:</b> ${item.description || 'No description'}`;
+        else console.log(".item-description not found");
         if (sellerEl) sellerEl.innerHTML = `<b>Seller:</b> ${item.seller || 'Unknown'}`;
+        else console.log(".item-seller not found");
 
         if (priceEl) {
             if (item.listingType === 'forSale') {
@@ -166,6 +179,8 @@ document.addEventListener('DOMContentLoaded', function () {
             } else {
                 priceEl.textContent = '';
             }
+        } else {
+            console.log(".item-price span not found");
         }
 
         const contactSellerButton = document.getElementById('contactSellerBtn');
@@ -174,6 +189,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 console.log("Contact Seller button clicked");
                 alert('This feature will be implemented soon. Stay tuned!');
             });
+        } else {
+            console.log("#contactSellerBtn not found in DOM.");
         }
     }
 
@@ -187,7 +204,10 @@ document.addEventListener('DOMContentLoaded', function () {
         if (currentPage !== 'register.html') return;
         console.log("On register page");
         const form = document.getElementById('registerForm');
-        if (!form) return;
+        if (!form) {
+            console.log("No registerForm found");
+            return;
+        }
         form.addEventListener('submit', function (e) {
             e.preventDefault();
             console.log("Register form submitted");
@@ -234,7 +254,10 @@ document.addEventListener('DOMContentLoaded', function () {
         if (currentPage !== 'login.html') return;
         console.log("On login page");
         const form = document.getElementById('loginForm');
-        if (!form) return;
+        if (!form) {
+            console.log("No loginForm found");
+            return;
+        }
 
         form.addEventListener('submit', function (e) {
             e.preventDefault();
@@ -262,6 +285,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 console.log("Go to register clicked");
                 window.location.href = 'register.html';
             });
+        } else {
+            console.log("No goToRegister link found");
         }
     }
 
@@ -289,9 +314,10 @@ document.addEventListener('DOMContentLoaded', function () {
         const profileEmail = document.getElementById('profileEmail');
         const profileRegisterDate = document.getElementById('profileRegisterDate');
 
-        if (profileUsername) profileUsername.textContent = user.username;
-        if (profileEmail) profileEmail.textContent = user.email;
+        if (profileUsername) profileUsername.textContent = user.username; else console.log("#profileUsername not found");
+        if (profileEmail) profileEmail.textContent = user.email; else console.log("#profileEmail not found");
         if (profileRegisterDate) profileRegisterDate.textContent = new Date(user.registerDate).toLocaleString();
+        else console.log("#profileRegisterDate not found");
 
         const logoutBtn = document.getElementById('logoutBtn');
         if (logoutBtn) {
@@ -300,6 +326,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 localStorage.removeItem('loggedInUser');
                 window.location.href = 'index.html';
             });
+        } else {
+            console.log("#logoutBtn not found");
         }
 
         const changePassForm = document.getElementById('changePasswordForm');
@@ -326,6 +354,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 alert('Password changed successfully!');
                 window.location.href = 'index.html';
             });
+        } else {
+            console.log("#changePasswordForm not found");
         }
     }
 
@@ -345,7 +375,10 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log("Seller username for posted items:", sellerUsername);
 
         const form = document.getElementById('postItemForm');
-        if (!form) return;
+        if (!form) {
+            console.log("No postItemForm found");
+            return;
+        }
 
         const priceInput = document.getElementById('postPrice');
         const openToOffersCheckbox = document.getElementById('openToOffers');
@@ -426,9 +459,13 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log("Category selected from URL:", category);
 
         const itemsContainer = document.getElementById('categoryItems');
+        console.log("itemsContainer:", itemsContainer);
         const categorySelect = document.getElementById('categorySelect');
+        console.log("categorySelect:", categorySelect);
         const sortSelect = document.getElementById('sortSelect');
+        console.log("sortSelect:", sortSelect);
         const applyFiltersBtn = document.getElementById('applyFiltersBtn');
+        console.log("applyFiltersBtn:", applyFiltersBtn);
 
         if (categorySelect) categorySelect.value = category;
 
@@ -436,9 +473,11 @@ document.addEventListener('DOMContentLoaded', function () {
             console.log("Fetching all items for category page");
             console.log("allLoadedItems currently:", window.allLoadedItems);
             let items = window.allLoadedItems || [];
+            console.log("Items before filtering by category:", items);
             if (category) {
                 items = items.filter(it => it.category === category);
             }
+            console.log("Items after filtering by category:", items);
             return items;
         }
 
@@ -446,6 +485,9 @@ document.addEventListener('DOMContentLoaded', function () {
             console.log("Attaching event listeners to category items");
             const heartButtons = document.querySelectorAll('.heart-btn');
             const buyButtons = document.querySelectorAll('.buy-btn');
+
+            console.log("Found heart buttons:", heartButtons.length);
+            console.log("Found buy buttons:", buyButtons.length);
 
             heartButtons.forEach(btn => {
                 btn.addEventListener('click', (e) => {
@@ -481,6 +523,17 @@ document.addEventListener('DOMContentLoaded', function () {
             const items = getAllItems();
             console.log("Items found for category:", category, items);
 
+            if (!itemsContainer) {
+                console.log("No #categoryItems container found. Cannot display items.");
+                return;
+            }
+
+            if (items.length === 0) {
+                console.log("No items found for this category/filter");
+                itemsContainer.innerHTML = '<p style="text-align:center;">No items found.</p>';
+                return;
+            }
+
             const sortValue = sortSelect ? sortSelect.value : 'time_desc';
             console.log("Sorting items by:", sortValue);
             if (sortValue === 'time_desc') {
@@ -493,11 +546,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 items.sort((a, b) => b.price - a.price);
             }
 
-            if (items.length === 0) {
-                console.log("No items found for this category/filter");
-                itemsContainer.innerHTML = '<p style="text-align:center;">No items found.</p>';
-                return;
-            }
+            console.log("Items after sorting:", items);
 
             let htmlStr = '';
             items.forEach(item => {
@@ -514,7 +563,6 @@ document.addEventListener('DOMContentLoaded', function () {
                         <p><strong>Location:</strong> ${item.location}</p>
                         <p><strong>Seller:</strong> ${item.seller}</p>
                         ${priceInfo ? `<p><strong>Price:</strong> ${priceInfo}</p>` : ``}
-
                         <div class="item-actions">
                             <button class="heart-btn" data-itemid="${item.itemID}">
                                 <img src="images/${heartIcon}" alt="heart" width="24">
@@ -531,11 +579,16 @@ document.addEventListener('DOMContentLoaded', function () {
         if (applyFiltersBtn) {
             applyFiltersBtn.addEventListener('click', function () {
                 console.log("Apply filters clicked");
-                category = categorySelect ? categorySelect.value : '';
+                const newCategory = categorySelect ? categorySelect.value : '';
+                console.log("New category selected from dropdown:", newCategory);
+                category = newCategory;
                 displayItems();
             });
+        } else {
+            console.log("No applyFiltersBtn found");
         }
 
+        console.log("Calling displayItems for the first time on category page...");
         displayItems();
     }
 
@@ -630,7 +683,10 @@ document.addEventListener('DOMContentLoaded', function () {
         const searchInput = document.getElementById('search-input');
         const searchResults = document.getElementById('searchResults');
 
-        if (!searchForm) return;
+        if (!searchForm) {
+            console.log("No searchForm found on index page");
+            return;
+        }
         searchForm.addEventListener('submit', function (e) {
             e.preventDefault();
             console.log("Search form submitted");
@@ -669,6 +725,7 @@ document.addEventListener('DOMContentLoaded', function () {
             searchResults.innerHTML = htmlStr;
 
             const viewButtons = searchResults.querySelectorAll('.buy-btn');
+            console.log("Search results view buttons:", viewButtons.length);
             viewButtons.forEach(btn => {
                 btn.addEventListener('click', e => {
                     const itemID = parseInt(e.currentTarget.getAttribute('data-itemid'), 10);
@@ -758,5 +815,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (categorySelect) {
         categorySelect.addEventListener("change", togglePriceVisibility);
         togglePriceVisibility();
+    } else {
+        console.log("No categorySelect in DOM for price visibility logic");
     }
 });
