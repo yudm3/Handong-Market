@@ -6,7 +6,7 @@ body {
     font-family: Jost, sans-serif;
     margin: 0;
     line-height: normal;
-    cursor: url('cursor.svg'), auto;
+    cursor: url('/images/cursor.svg'), auto;
 }
 
 .header {
