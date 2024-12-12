@@ -115,7 +115,7 @@ body {
     width: 100%;
     max-width: 600px;
     padding: 20px;
-    background-color: #f9f9f9;
+    background-color: #FFFEF5;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
@@ -706,7 +706,7 @@ footer p {
     width: 90%;
     justify-content: space-between;
     padding: 20px;
-    background-color: #f9f9f9;
+    background-color: #FFFEF5;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     height: 60vh; /* Added height: 60% of viewport height */
@@ -905,10 +905,6 @@ footer p {
 
 #goToRegister:hover {
     text-decoration: underline;
-}
-
-body {
-    background-color: #f9f9f9;
 }
 
 .element:hover {
